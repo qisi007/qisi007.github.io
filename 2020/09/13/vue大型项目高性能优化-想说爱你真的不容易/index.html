@@ -135,7 +135,10 @@ var _hmt = _hmt || [];
 	<!-- content -->
 	<div class="mypage">		
 	  		
-
+		<div class="content-count">
+			<span class="words-num"></span>&emsp;
+			<span class="time-box"></span>
+		</div>
 	  <h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><p>&emsp;&emsp;目前公司的<code>电子合同</code>采用<code>表单设计器</code>+<code>合同业务</code>配合实现，做了半年多后终于上线，但是下边员工普遍反映卡顿，甚至卡死，爆栈。尤其是新增和修改合同页面，因为这部分数据量大，逻辑复杂，很容易崩溃，所以决定进行性能优化。</p>
 <h2 id="二、业务场景介绍"><a href="#二、业务场景介绍" class="headerlink" title="二、业务场景介绍"></a>二、业务场景介绍</h2><p>&emsp;&emsp;先来了解一下我们是怎么实现：</p>
 <p>&emsp;&emsp;1. 因为我们公司合同变换频繁，条款之间还有逻辑，所以做了个<code>基础服务</code>（说白了就是组件库），为合同提供模板</p>
@@ -438,6 +441,23 @@ h6 {
 </script>
 
 
+<script>
+	let content = document.querySelector(".mypage");
+	let words = content.innerHTML.length;
+	let wordsNumDom = document.querySelector(".words-num");
+	wordsNumDom.innerHTML = `文章字数: ${words}`;
+	let timeBoxDom = document.querySelector(".time-box");
+	timeBoxDom.innerHTML = `阅读时长: ${parseInt(words*0.2/60)}分钟`
+</script>
+
+<style>
+	.content-count {
+		line-height: 80px;
+		font-size: 14px;
+		text-align: right;
+	}
+</style>
+
 	</div>
   </div>
   <div class="container-narrow">
@@ -446,6 +466,22 @@ h6 {
   
 </p>
 <p>友情链接: <a href="https://www.allqj.com/" target="_blank" rel="noopener">千家找房网</a> </p>
+
+<!-- 
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<span class="site-uv">
+    总访客量:
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>&nbsp;
+
+
+<span class="site-pv">
+    总访问量:
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+ -->
  </footer>
 </div> <!-- container-narrow -->
   

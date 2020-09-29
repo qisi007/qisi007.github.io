@@ -135,7 +135,10 @@ var _hmt = _hmt || [];
 	<!-- content -->
 	<div class="mypage">		
 	  		
-
+		<div class="content-count">
+			<span class="words-num"></span>&emsp;
+			<span class="time-box"></span>
+		</div>
 	  <p>&emsp;&emsp;经过了一天的折腾，我终于为自己的博客添加上了评论系统。坦率的讲，为什么网上那么多方案我还要自己写一篇博客，那就是因为他们说的都有bug,所以我要自己总结一下。</p>
 <p>&emsp;&emsp;我选用的是gitalk评论系统，原因是因为它可以直接在github上管理评论，不需要在别的平台注册，特别方便。下面我来详细说一下hexo博客是如何添加gitalk评论的。</p>
 <p>&emsp;&emsp;先看一下效果：</p>
@@ -183,7 +186,8 @@ var _hmt = _hmt || [];
 <p>&emsp;&emsp;所以上面我们用到了<code>md5</code>,文章名经URL编码后转MD5，然后再生成label,这样就不会超过长度了。</p>
 <p><img src="https://img-blog.csdnimg.cn/20200925173930342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
 <h1 id="四、写在最后"><a href="#四、写在最后" class="headerlink" title="四、写在最后"></a>四、写在最后</h1><p>&emsp;&emsp; 我的博客主题用的是<code>freemind</code>，这是一个复古风格的主题，这个主题本身不带评论插件的，本人进行了二次封装，修改了一些样式和bug,并上传到了自己的<code>github</code>中，欢迎star。  <a href="https://github.com/qisi007/hexo-theme-freemind.386.second"><strong>传送门</strong></a></p>
-<h3 id="个人博客主页：传送门"><a href="#个人博客主页：传送门" class="headerlink" title="个人博客主页：传送门"></a>个人博客主页：<a href="https://www.liuguisheng.vip/" target="_blank" rel="noopener"><strong>传送门</strong></a></h3><h3 id="开源项目（react-admin-plus）：传送门"><a href="#开源项目（react-admin-plus）：传送门" class="headerlink" title="开源项目（react-admin-plus）：传送门"></a>开源项目（react-admin-plus）：<a href="https://github.com/qisi007/react-admin-plus"><strong>传送门</strong></a></h3>	  
+<p>个人博客主页: <a href="https://www.liuguisheng.vip" target="_blank" rel="noopener">传送</a><br>开源项目（react-admin-plus）: <a href="https://github.com/qisi007/react-admin-plus">传送</a></p>
+	  
 	</div>
 
 	<div>
@@ -342,6 +346,23 @@ h6 {
 </script>
 
 
+<script>
+	let content = document.querySelector(".mypage");
+	let words = content.innerHTML.length;
+	let wordsNumDom = document.querySelector(".words-num");
+	wordsNumDom.innerHTML = `文章字数: ${words}`;
+	let timeBoxDom = document.querySelector(".time-box");
+	timeBoxDom.innerHTML = `阅读时长: ${parseInt(words*0.2/60)}分钟`
+</script>
+
+<style>
+	.content-count {
+		line-height: 80px;
+		font-size: 14px;
+		text-align: right;
+	}
+</style>
+
 	</div>
   </div>
   <div class="container-narrow">
@@ -350,6 +371,22 @@ h6 {
   
 </p>
 <p>友情链接: <a href="https://www.allqj.com/" target="_blank" rel="noopener">千家找房网</a> </p>
+
+<!-- 
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<span class="site-uv">
+    总访客量:
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>&nbsp;
+
+
+<span class="site-pv">
+    总访问量:
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+ -->
  </footer>
 </div> <!-- container-narrow -->
   

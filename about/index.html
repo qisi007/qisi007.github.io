@@ -132,7 +132,10 @@ var _hmt = _hmt || [];
 	<!-- content -->
 	<div class="mypage">		
 	  		
-
+		<div class="content-count">
+			<span class="words-num"></span>&emsp;
+			<span class="time-box"></span>
+		</div>
 	  <!-- &emsp;&emsp;大家好，我是这个网站的```站长```，性别男，爱好写bug,毕业于一个垃圾三流本科，专业是电气工程及其自动化，对，没错，你可能会问我，为什么一个搞电器的最后干了程序员，我承认，我是从培训班学习的前端，很多同行都不会瞧不起培训班出身的程序员，嫌弃他们是速成班，学到的都是一些皮毛，业界流传着一个段子：```最后，那帮从培训班出去的程序员大部分都去了美团，少些人选择了百度，因为他们认为，美团的头盔比较好看，电动车骑着也会很拉风```。
 
 &emsp;&emsp;我想说请尊重每一个人，每个人都是有梦想的，或者是为了生活，选择了这个行业，请不要带着这种有色眼镜看待培训班出身的程序员。我到现在还记得在培训班学习的日子，因为我是零基础学的，之前一点没接触过这方面，在里边必须非常努力，不止是我，每个人在里边都很努力，一周上六天课，早起8点上课，晚上一般都是12点、1点睡觉。早起困了喝咖啡，晚上睡不着喝红酒。这样的日子持续了五个多月。
@@ -247,6 +250,23 @@ h6 {
 </script>
 
 
+<script>
+	let content = document.querySelector(".mypage");
+	let words = content.innerHTML.length;
+	let wordsNumDom = document.querySelector(".words-num");
+	wordsNumDom.innerHTML = `文章字数: ${words}`;
+	let timeBoxDom = document.querySelector(".time-box");
+	timeBoxDom.innerHTML = `阅读时长: ${parseInt(words*0.2/60)}分钟`
+</script>
+
+<style>
+	.content-count {
+		line-height: 80px;
+		font-size: 14px;
+		text-align: right;
+	}
+</style>
+
 	</div>
   </div>
   <div class="container-narrow">
@@ -255,6 +275,22 @@ h6 {
   
 </p>
 <p>友情链接: <a href="https://www.allqj.com/" target="_blank" rel="noopener">千家找房网</a> </p>
+
+<!-- 
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<span class="site-uv">
+    总访客量:
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>&nbsp;
+
+
+<span class="site-pv">
+    总访问量:
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+ -->
  </footer>
 </div> <!-- container-narrow -->
   

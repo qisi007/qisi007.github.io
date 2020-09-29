@@ -135,7 +135,10 @@ var _hmt = _hmt || [];
 	<!-- content -->
 	<div class="mypage">		
 	  		
-
+		<div class="content-count">
+			<span class="words-num"></span>&emsp;
+			<span class="time-box"></span>
+		</div>
 	  <p>&emsp;&emsp;作为一名合格的程序员，拥有一个自己的个人网站，那想必是非常舒服了。我们可以在里边写写技术博客，发发牢骚，记录自己的生活。当然，我们可以在博客园，掘金的博客网站发表，但是那毕竟是人家的东西，我们应该试着搭建一个自己的博客。但是，做网站就要买服务器，买服务器就要花钱，这对于我们这帮屌丝程序员来说当然是不太友好，这时候，我们就想到一个搭建很熟悉的东西–github。<br>&emsp;&emsp;github作为世界上最大的同性交友基地，它除了能为广大男性同胞带来灵魂上的快感，还有一个巨大的作用，那就是可以充当一个小型的服务器。</p>
 <p>&emsp;&emsp;<strong>使用gitlab搭建个人博客的好处非常多，比如：</strong></p>
 <ol>
@@ -537,6 +540,23 @@ h6 {
 </script>
 
 
+<script>
+	let content = document.querySelector(".mypage");
+	let words = content.innerHTML.length;
+	let wordsNumDom = document.querySelector(".words-num");
+	wordsNumDom.innerHTML = `文章字数: ${words}`;
+	let timeBoxDom = document.querySelector(".time-box");
+	timeBoxDom.innerHTML = `阅读时长: ${parseInt(words*0.2/60)}分钟`
+</script>
+
+<style>
+	.content-count {
+		line-height: 80px;
+		font-size: 14px;
+		text-align: right;
+	}
+</style>
+
 	</div>
   </div>
   <div class="container-narrow">
@@ -545,6 +565,22 @@ h6 {
   
 </p>
 <p>友情链接: <a href="https://www.allqj.com/" target="_blank" rel="noopener">千家找房网</a> </p>
+
+<!-- 
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<span class="site-uv">
+    总访客量:
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>&nbsp;
+
+
+<span class="site-pv">
+    总访问量:
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+ -->
  </footer>
 </div> <!-- container-narrow -->
   
