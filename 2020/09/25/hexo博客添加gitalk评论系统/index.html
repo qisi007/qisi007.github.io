@@ -347,12 +347,24 @@ h6 {
 
 
 <script>
+	// 统计字数
 	let content = document.querySelector(".mypage");
 	let words = content.innerHTML.length;
 	let wordsNumDom = document.querySelector(".words-num");
 	wordsNumDom.innerHTML = `文章字数: ${words}`;
+	// 计算阅读时长
 	let timeBoxDom = document.querySelector(".time-box");
-	timeBoxDom.innerHTML = `阅读时长: ${parseInt(words*0.2/60)}分钟`
+	timeBoxDom.innerHTML = `阅读时长: ${parseInt(words*0.2/60)}分钟`;
+	// 获取当前地址，歌单和关于我页面不添加
+	let currentUrl = window.location.href;
+	let arrUrl = currentUrl.split('/');
+	let otherPage = new Set(['about', 'music']);
+	if ( otherPage.has(arrUrl[arrUrl.length-2]) ) {
+		let contentCountDom = document.querySelector(".content-count");
+		contentCountDom.style.display = 'none';
+	}
+
+	
 </script>
 
 <style>
