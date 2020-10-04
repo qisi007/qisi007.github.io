@@ -61,6 +61,22 @@ var _hmt = _hmt || [];
 </script>
 
 
+
+  <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
 <meta name="generator" content="Hexo 4.2.0"></head>
 
  <body>  
@@ -238,7 +254,7 @@ var _hmt = _hmt || [];
 </ol>
 <p>&emsp;&emsp;常见的博客生成工具有两种，一个是<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a>,另一个是<a href="http://jekyllcn.com/" target="_blank" rel="noopener">jekyll</a>。两者其实大同小异，但是jekyll语法和配置相对于复杂，它需要ruby环境。而hexo就比较简单易上手，只需要node环境就ok了。下面我们进入正题，详细介绍如何使用hexo+github搭建个人博客。</p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>首先你得有一个github账号吧，注册过程这里不做过多介绍了。<a href="https://github.com/join?source=header-home">注册账号点这里</a></li>
+<li>首先你得有一个github账号吧，注册过程这里不做过多介绍了。<a href="https://github.com/join?source=header-home" target="_blank" rel="noopener">注册账号点这里</a></li>
 <li>配置node环境,根据系统下载好node安装包，一路下一步安装就ok了。<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">node下载</a></li>
 <li>shell工具，这个可以自行选择，比如cmd，powerShell,git等，建议使用<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a></li>
 <li>如果你想要自己的域名，可以花钱去申请一个，一般点的域名也不是太贵，一年几十块钱，其实这点钱对于程序员也不算什么，少买件格子衫就有了。</li>
@@ -299,19 +315,19 @@ var _hmt = _hmt || [];
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/github/">github<span>2</span></a></li>
-		
-			<li><a href="/tags/vue/">vue<span>1</span></a></li>
-		
-			<li><a href="/tags/性能优化/">性能优化<span>1</span></a></li>
-		
-			<li><a href="/tags/vue性能优化/">vue性能优化<span>1</span></a></li>
-		
-			<li><a href="/tags/gitalk/">gitalk<span>1</span></a></li>
-		
 			<li><a href="/tags/hexo/">hexo<span>2</span></a></li>
 		
 			<li><a href="/tags/前端性能优化/">前端性能优化<span>1</span></a></li>
+		
+			<li><a href="/tags/vue/">vue<span>1</span></a></li>
+		
+			<li><a href="/tags/github/">github<span>2</span></a></li>
+		
+			<li><a href="/tags/vue性能优化/">vue性能优化<span>1</span></a></li>
+		
+			<li><a href="/tags/性能优化/">性能优化<span>1</span></a></li>
+		
+			<li><a href="/tags/gitalk/">gitalk<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -362,6 +378,24 @@ var _hmt = _hmt || [];
 	
 	
 </div> <!-- row-fluid -->
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+    // 黑暗模式(需要调整)
+    new Darkmode({
+      bottom: "50px", 
+      left: "32px",
+      time: ".5s",
+      mixColor: "#fff",
+      backgroundColor: "#fff",
+      buttonColorDark: "#1fb19e",
+      buttonColorLight: "#fff", 
+      saveInCookies: true, 
+      label: "🌓", 
+      autoMatchOsTheme: false
+    }).showWidget();
+</script> -->
 	</div>
   </div>
   <div class="container-narrow">
