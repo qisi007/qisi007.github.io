@@ -6,7 +6,7 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>更好用的侧边栏工具-----better-sidebar | This-刘贵生的博客</title>
+  <title>程序员装逼新技能----利用shell脚本自动化推送代码 | This-刘贵生的博客</title>
   <meta name="author" content="刘贵生">
   
   <meta name="description" content="个人博客主页,不定期分享一些前端资源。来即是缘,多逛一会儿再走也不迟。">
@@ -14,7 +14,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="更好用的侧边栏工具-----better-sidebar"/>
+  <meta property="og:title" content="程序员装逼新技能----利用shell脚本自动化推送代码"/>
   <meta property="og:site_name" content="This-刘贵生的博客"/>
 
   
@@ -135,7 +135,7 @@ var _hmt = _hmt || [];
 
 	
 		<div class="page-header">
-			<h1> 更好用的侧边栏工具-----better-sidebar</h1>
+			<h1> 程序员装逼新技能----利用shell脚本自动化推送代码</h1>
 		</div>
 	
 
@@ -162,7 +162,7 @@ var _hmt = _hmt || [];
 
 					<span class="meta-widget">
 						<span>创建日期:</span>
-						2020-10-06
+						2020-10-17
 					</span>
 					&nbsp;
 					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-book-half" fill="currentColor"
@@ -178,132 +178,17 @@ var _hmt = _hmt || [];
 					</svg>
 					<span class="time-box"></span>
 				</div>
-				<p>&emsp;&emsp;可能是我眼界较小，没有在市面上见过类似的侧边栏工具，所以想封装一个这样的组件。也是受我们官网的启发，效果如下：</p>
-<p><img src="https://qjprod-images.oss-cn-beijing.aliyuncs.com/menuResource/1601956097623?name=44444.gif" alt="image"></p>
-<h3 id="封装思路"><a href="#封装思路" class="headerlink" title="封装思路"></a>封装思路</h3><ol>
-<li>由两个组件组成，父组件用来包裹，子组件用来放具体内容（受<code>element-ui</code>组件库的<code>时间线</code>的启发）</li>
-<li>支持位置自定义，返回顶部按钮可选</li>
-<li>子组件<code>better-sidebar-item</code>可以自定义图标，标题，弹层，跳转链接</li>
-<li>弹层内容通过插槽引入</li>
-<li></li>
-</ol>
-<h3 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h3><p><img src="https://img-blog.csdnimg.cn/20201006140458940.gif" alt="image"></p>
-<p>目前就能想到这么些东西，封装难度并不大，下面是使用说明：</p>
-<br/>
-
-<h3 id="文档地址"><a href="#文档地址" class="headerlink" title="文档地址"></a>文档地址</h3><p><a href="https://www.liuguisheng.vip/better-sidebar/">地址</a></p>
-<h1 id="better-sidebar-侧边栏工具"><a href="#better-sidebar-侧边栏工具" class="headerlink" title="better-sidebar(侧边栏工具)"></a>better-sidebar(侧边栏工具)</h1><h3 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h3><pre><code>npm i better-sidebar --save</code></pre><br/>
-
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><pre><code>import Vue from &quot;vue&quot;;
-import BetterSidebar from &quot;better-sidebar&quot;;
-import &quot;better-sidebar/dist/lib/better-sidebar.css&quot;;
-
-Vue.use(BetterSidebar);</code></pre><br/>
-
-<h3 id="better-sidebar-组件介绍"><a href="#better-sidebar-组件介绍" class="headerlink" title="better-sidebar 组件介绍"></a>better-sidebar 组件介绍</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>类型</th>
-<th>可选值</th>
-<th>默认值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>top</td>
-<td>number</td>
-<td>-</td>
-<td>100</td>
-<td>侧边栏距离浏览器顶部的位置</td>
-</tr>
-<tr>
-<td>position</td>
-<td>string</td>
-<td>left/right</td>
-<td>right</td>
-<td>侧边栏的位置</td>
-</tr>
-<tr>
-<td>topButton</td>
-<td>boolean</td>
-<td>true/false</td>
-<td>true</td>
-<td>是否显示返回顶部按钮</td>
-</tr>
-</tbody></table>
-<br/>
-
-<h3 id="better-sidebar-item-组件介绍"><a href="#better-sidebar-item-组件介绍" class="headerlink" title="better-sidebar-item 组件介绍"></a>better-sidebar-item 组件介绍</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>类型</th>
-<th>可选值</th>
-<th>默认值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>icon</td>
-<td>string</td>
-<td>-</td>
-<td>-</td>
-<td>图标字体(该依赖不提供,需要自行下载,引入项目中)</td>
-</tr>
-<tr>
-<td>title</td>
-<td>string</td>
-<td>-</td>
-<td>-</td>
-<td>文字</td>
-</tr>
-<tr>
-<td>popver</td>
-<td>boolean</td>
-<td>true/false</td>
-<td>false</td>
-<td>是否显示弹出层（内容通过<code>slot</code>插入）</td>
-</tr>
-<tr>
-<td>link</td>
-<td>string</td>
-<td>-</td>
-<td>-</td>
-<td>点击跳转到新的页面地址</td>
-</tr>
-</tbody></table>
-<br/>
-
-
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>&lt;template&gt;
-    &lt;better-sidebar&gt;
-      &lt;better-sidebar-item
-        class=&quot;cell-box&quot;
-        icon=&quot;icon-gonggao iconfont&quot;
-        title=&quot;公告&quot;
-        popver=&quot;true&quot;
-        &gt;插槽&lt;/better-sidebar-item
-      &gt;
-      &lt;better-sidebar-item
-        class=&quot;cell-box&quot;
-        icon=&quot;icon-biaoge iconfont&quot;
-        title=&quot;统计&quot;
-        link=&quot;https://www.liuguisheng.vip&quot;
-      /&gt;
-      &lt;better-sidebar-item
-        class=&quot;cell-box&quot;
-        icon=&quot;icon-huodong iconfont&quot;
-        title=&quot;活动&quot;
-      /&gt;
-    &lt;/better-sidebar&gt;
-&lt;/template&gt;
-</code></pre><br/>
-
-<h3 id="开源协议"><a href="#开源协议" class="headerlink" title="开源协议"></a>开源协议</h3><p><a href="https://github.com/qisi007/better-sidebar/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a></p>
-<br/>
-
-<h3 id="github地址"><a href="#github地址" class="headerlink" title="github地址"></a>github地址</h3><p><a href="https://github.com/qisi007/better-sidebar" target="_blank" rel="noopener">地址</a></p>
+				<p>&emsp;&emsp;前几天看了<code>cube-ui</code>的代码，发现了这么一个文件感觉很有意思</p>
+<p><img src="https://img-blog.csdnimg.cn/20201017105354558.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p>怎么看怎么眼熟，有点像自动上传到npm仓库的流程，当我执行了一下<code>package.json</code>下的这行代码更加确定了我的想法</p>
+<pre><code>&quot;release&quot;: &quot;sh build/release.sh&quot;,</code></pre><p>我仔细一想，为什么不拿这个脚本去提交代码呢，所以自己也写了一个类似的东西，很简单，也能看懂。</p>
+<p>在<code>src</code>下新建一个<code>git.sh</code>的文件，里边写入如下东西：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1412010/202010/1412010-20201017110105689-1081613968.png" alt=""></p>
+<p>在<code>package.json</code>的<code>scripts</code>下新增一行代码：</p>
+<pre><code>&quot;shell&quot;: &quot;sh ./src/git.sh&quot;</code></pre><p>然后执行</p>
+<pre><code>npm run shell</code></pre><p>果然，代码被成功推送到了远程</p>
+<p><img src="https://img2020.cnblogs.com/blog/1412010/202010/1412010-20201017110404056-611728447.png" alt=""></p>
+<p>所以只要以后我们修改一下<code>commit</code>信息，执行这个脚本就行了，不用一个命令一个命令的敲了，是不是很省事？</p>
 
 			</div>
 
@@ -313,13 +198,12 @@ Vue.use(BetterSidebar);</code></pre><br/>
 
     
     
-    <a href="/2020/10/17/程序员装逼新技能-利用shell脚本自动化推送代码/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> 上一页</a>
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>上一页</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2020/09/25/hexo博客添加gitalk评论系统/" type="button" class="btn btn-default ">下一页<i
+    <a href="/2020/10/06/更好用的侧边栏工具-better-sidebar/" type="button" class="btn btn-default ">下一页<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -351,7 +235,7 @@ Vue.use(BetterSidebar);</code></pre><br/>
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/组件库/">组件库<span>1</span></a></li>
+    <li><a href="/categories/coding技巧/">coding技巧<span>1</span></a></li>
   </li>
 
     </ul>
@@ -364,7 +248,7 @@ Vue.use(BetterSidebar);</code></pre><br/>
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/vue/">vue<span>2</span></a></li> <li><a href="/tags/package/">package<span>1</span></a></li> <li><a href="/tags/vue组件库/">vue组件库<span>1</span></a></li>
+  <li><a href="/tags/shell/">shell<span>1</span></a></li> <li><a href="/tags/自动化/">自动化<span>1</span></a></li> <li><a href="/tags/git/">git<span>1</span></a></li>
     </ul>
 	</div>
 		
