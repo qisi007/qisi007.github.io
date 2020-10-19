@@ -262,7 +262,7 @@
       <span class="post-meta-item-icon">
         <i class="far fa-comment"></i>
       </span>
-      <span class="post-meta-item-text">Valine：</span>
+      <span class="post-meta-item-text">评论：</span>
     
     <a title="valine" href="/2020/10/17/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A3%85%E9%80%BC%E6%96%B0%E6%8A%80%E8%83%BD-%E5%88%A9%E7%94%A8shell%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81/#valine-comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2020/10/17/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A3%85%E9%80%BC%E6%96%B0%E6%8A%80%E8%83%BD-%E5%88%A9%E7%94%A8shell%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81/" itemprop="commentCount"></span>
@@ -295,15 +295,15 @@
         <p>&emsp;&emsp;前几天看了<code>cube-ui</code>的代码，发现了这么一个文件感觉很有意思</p>
 <a id="more"></a>
 
-<p><img src="https://img-blog.csdnimg.cn/20201017105354558.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20201017105354558.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
 <p>怎么看怎么眼熟，有点像自动上传到npm仓库的流程，当我执行了一下<code>package.json</code>下的这行代码更加确定了我的想法</p>
 <pre><code>&quot;release&quot;: &quot;sh build/release.sh&quot;,</code></pre><p>我仔细一想，为什么不拿这个脚本去提交代码呢，所以自己也写了一个类似的东西，很简单，也能看懂。</p>
 <p>在<code>src</code>下新建一个<code>git.sh</code>的文件，里边写入如下东西：</p>
-<p><img src="https://img2020.cnblogs.com/blog/1412010/202010/1412010-20201017110105689-1081613968.png" alt=""></p>
+<p><img data-src="https://img2020.cnblogs.com/blog/1412010/202010/1412010-20201017110105689-1081613968.png" alt=""></p>
 <p>在<code>package.json</code>的<code>scripts</code>下新增一行代码：</p>
 <pre><code>&quot;shell&quot;: &quot;sh ./src/git.sh&quot;</code></pre><p>然后执行</p>
 <pre><code>npm run shell</code></pre><p>果然，代码被成功推送到了远程</p>
-<p><img src="https://img2020.cnblogs.com/blog/1412010/202010/1412010-20201017110404056-611728447.png" alt=""></p>
+<p><img data-src="https://img2020.cnblogs.com/blog/1412010/202010/1412010-20201017110404056-611728447.png" alt=""></p>
 <p>所以只要以后我们修改一下<code>commit</code>信息，执行这个脚本就行了，不用一个命令一个命令的敲了，是不是很省事？</p>
 
     </div>
@@ -689,7 +689,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       el         : '#valine-comments',
       verify     : false,
       notify     : false,
-      appId      : 'g9qVSK6cYRhOeEQSl9KU34Q6',
+      appId      : 'g9qVSK6cYRhOeEQSl9KU34Q6-gzGzoHsz',
       appKey     : '8fsTazmCuQx8TeTNYNpJ9Siz',
       placeholder: "来即是缘，不留下你的身影你怎么知道咱们合不合适？",
       avatar     : 'mm',
@@ -699,7 +699,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       lang       : '' || 'zh-cn',
       path       : location.pathname,
       recordIP   : false,
-      serverURLs : ''
+      serverURLs : 'https://g9qvsk6c.lc-cn-n1-shared.com'
     });
   }, window.Valine);
 });
