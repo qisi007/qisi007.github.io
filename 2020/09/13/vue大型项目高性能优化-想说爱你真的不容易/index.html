@@ -261,6 +261,20 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/09/13/vue%E5%A4%A7%E5%9E%8B%E9%A1%B9%E7%9B%AE%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E6%83%B3%E8%AF%B4%E7%88%B1%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%B8%8D%E5%AE%B9%E6%98%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/13/vue%E5%A4%A7%E5%9E%8B%E9%A1%B9%E7%9B%AE%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E6%83%B3%E8%AF%B4%E7%88%B1%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%B8%8D%E5%AE%B9%E6%98%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -476,7 +490,7 @@ export default {
 
           </div>
           
-    <div class="comments" id="gitalk-container"></div>
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -697,7 +711,7 @@ export default {
         });
     }
 
-    let { app_id, app_key, server_url } = {"enable":true,"app_id":"g9qVSK6cYRhOeEQSl9KU34Q6-gzGzoHsz","app_key":"8fsTazmCuQx8TeTNYNpJ9Siz","server_url":null,"security":true};
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"g9qVSK6cYRhOeEQSl9KU34Q6-gzGzoHsz","app_key":"8fsTazmCuQx8TeTNYNpJ9Siz","server_url":"https://g9qvsk6c.lc-cn-n1-shared.com","security":true};
     function fetchData(api_server) {
       var Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {
@@ -783,23 +797,32 @@ export default {
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
 <script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : '3ed6057b4ee48f98653e',
-      clientSecret: '05d14cd1c55cb5a3a5dc3130c989688765e7fc28',
-      repo        : 'qisi007.github.io',
-      owner       : 'qisi007',
-      admin       : ['qisi007'],
-      id          : '6297e34d575aaee67e6293cd30597180',
-        language: 'zh-CN',
-      distractionFreeMode: true
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
     });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'g9qVSK6cYRhOeEQSl9KU34Q6',
+      appKey     : '8fsTazmCuQx8TeTNYNpJ9Siz',
+      placeholder: "来即是缘，不留下你的身影你怎么知道咱们合不合适？",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
 });
 </script>
 
