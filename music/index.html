@@ -43,7 +43,7 @@
 <meta property="og:description" content="网易云音乐ID: 大帅比鸭吼">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-30T10:05:29.000Z">
-<meta property="article:modified_time" content="2020-09-30T02:06:16.483Z">
+<meta property="article:modified_time" content="2020-10-19T10:25:20.376Z">
 <meta property="article:author" content="刘贵生">
 <meta property="article:tag" content="JavaScript 前端 vue node 个人博客">
 <meta name="twitter:card" content="summary">
@@ -213,7 +213,7 @@
       
       <div class="post-body">
           <html>
-    网易云音乐ID: 大帅比鸭吼
+   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 网易云音乐ID: 大帅比鸭吼
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" style="width:600px;height:700px;margin-left:50%;transform:translate(-300px);" src="//music.163.com/outchain/player?type=0&id=2050354045&auto=1&height=430"></iframe>
 </html>
 
@@ -414,6 +414,7 @@
       Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
         .then(response => response.json())
         .then(({ results }) => {
+
           if (results.length > 0) {
             var counter = results[0];
             leancloudSelector(url).innerText = counter.time + 1;

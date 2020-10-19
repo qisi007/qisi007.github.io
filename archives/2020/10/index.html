@@ -456,6 +456,7 @@
       Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
         .then(response => response.json())
         .then(({ results }) => {
+
           if (results.length > 0) {
             var counter = results[0];
             leancloudSelector(url).innerText = counter.time + 1;
