@@ -43,7 +43,7 @@
 <meta property="og:description" content="今天换了新的next主题，原因并不是以前的不好看，主要是以前的主题ssr收录并不好，博客开了也一年多了，只有主页被收录了， 其他页面并没有被收录。可能是作者没有做这个工作。  当然，之前的主题我还是很喜欢的，复古的风格，而且自己搞了也有挺长时间，装饰了很久，并做了二次封装。如果有能力的大神会做 这个的话希望优化一下，下面是仓库地址：  地址  这个主题还是比较潮流的，用户量比较多，集成的东西也比较">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-19T08:28:31.000Z">
-<meta property="article:modified_time" content="2020-10-19T09:38:53.286Z">
+<meta property="article:modified_time" content="2020-10-19T09:41:05.182Z">
 <meta property="article:author" content="刘贵生">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="github">
@@ -218,7 +218,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-10-19 16:28:31 / 修改时间：17:38:53" itemprop="dateCreated datePublished" datetime="2020-10-19T16:28:31+08:00">2020-10-19</time>
+              <time title="创建时间：2020-10-19 16:28:31 / 修改时间：17:41:05" itemprop="dateCreated datePublished" datetime="2020-10-19T16:28:31+08:00">2020-10-19</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,11 +231,25 @@
             </span>
 
           
+            <span id="/2020/10/19/%E4%BB%8A%E5%A4%A9%E6%8D%A2%E4%BA%86%E6%96%B0%E7%9A%84%E4%B8%BB%E9%A2%98next%EF%BC%8C%E5%BC%80%E5%90%AF%E6%96%B0%E7%9A%84%E9%87%8C%E7%A8%8B%E7%A2%91/" class="post-meta-item leancloud_visitors" data-flag-title="今天换了新的主题next，开启新的里程碑" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>403</span>
+              <span>411</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -272,6 +286,7 @@
 <li>添加了文章末尾结束语</li>
 <li>对网站底部进行排版更新</li>
 <li>添加了网站右下角插件</li>
+<li>更改了进度条样式</li>
 </ul>
 <p>目前更新了这么多东西，后续接着搞，感谢。</p>
 <blockquote>
@@ -477,13 +492,121 @@
     <span title="站点阅读时长">15 分钟</span>
 </div>
 
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
 
 
 
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"g9qVSK6cYRhOeEQSl9KU34Q6-gzGzoHsz","app_key":"8fsTazmCuQx8TeTNYNpJ9Siz","server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
