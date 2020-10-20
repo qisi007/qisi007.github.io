@@ -255,13 +255,6 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
-            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
   
   <span class="post-meta-item">
     
@@ -346,7 +339,7 @@
 <p>&emsp;&emsp;所以上面我们用到了<code>md5</code>,文章名经URL编码后转MD5，然后再生成label,这样就不会超过长度了。</p>
 <p><img data-src="https://img-blog.csdnimg.cn/20200925173930342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
 <h1 id="四、写在最后"><a href="#四、写在最后" class="headerlink" title="四、写在最后"></a>四、写在最后</h1><p>&emsp;&emsp; 我的博客主题用的是<code>freemind</code>，这是一个复古风格的主题，这个主题本身不带评论插件的，本人进行了二次封装，修改了一些样式和bug,并上传到了自己的<code>github</code>中，欢迎star。  <a href="https://github.com/qisi007/hexo-theme-freemind.386.second" target="_blank" rel="noopener"><strong>传送门</strong></a></p>
-<p>个人博客主页: <a href="https://www.liuguisheng.vip">传送</a><br>开源项目（react-admin-plus）: <a href="https://github.com/qisi007/react-admin-plus" target="_blank" rel="noopener">传送</a></p>
+<p>个人博客主页: <a href="https://www.liuguisheng.vip">传送</a><br>开源项目（react-admin-plus）: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpc2kwMDcvcmVhY3QtYWRtaW4tcGx1cw==">传送<i class="fa fa-external-link-alt"></i></span></p>
 
     </div>
 
@@ -362,6 +355,27 @@
 </div>
       
     </div>
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/weixinpay.jpg" alt="刘贵生 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="刘贵生 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
         
 
 <div>
@@ -410,10 +424,11 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag" classfa fa-tag># hexo</a>
-              <a href="/tags/github/" rel="tag" classfa fa-tag># github</a>
-              <a href="/tags/gitalk/" rel="tag" classfa fa-tag># gitalk</a>
+              <a href="/tags/hexo/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> hexo</a>
+              <a href="/tags/github/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> github</a>
+              <a href="/tags/gitalk/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> gitalk</a>
           </div>
 
         
@@ -594,15 +609,6 @@
         <span id="busuanzi_value_site_uv"></span>
       </span>
     </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
 </div>
 
 
@@ -610,93 +616,6 @@
 
 
 
-<script>
-  (function() {
-    function leancloudSelector(url) {
-      url = encodeURI(url);
-      return document.getElementById(url).querySelector('.leancloud-visitors-count');
-    }
-
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.id);
-      var title = visitors.dataset.flagTitle;
-
-      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
-        .then(response => response.json())
-        .then(({ results }) => {
-
-          if (results.length > 0) {
-            var counter = results[0];
-            leancloudSelector(url).innerText = counter.time + 1;
-            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .catch(error => {
-                console.error('Failed to save visitor count', error);
-              });
-          } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-
-    function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.id);
-      });
-
-      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
-        .then(response => response.json())
-        .then(({ results }) => {
-          for (let url of entries) {
-            let target = results.find(item => item.url === url);
-            leancloudSelector(url).innerText = target ? target.time : 0;
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-
-    let { app_id, app_key, server_url } = {"enable":true,"app_id":"g9qVSK6cYRhOeEQSl9KU34Q6-gzGzoHsz","app_key":"8fsTazmCuQx8TeTNYNpJ9Siz","server_url":"https://g9qvsk6c.lc-cn-n1-shared.com","security":true};
-    function fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${api_server}/1.1${url}`, {
-          method,
-          headers: {
-            'X-LC-Id'     : app_id,
-            'X-LC-Key'    : app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      if (CONFIG.page.isPost) {
-        if (CONFIG.hostname !== location.hostname) return;
-        addCount(Counter);
-      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
-        showTime(Counter);
-      }
-    }
-
-    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
-
-    if (api_server) {
-      fetchData(api_server);
-    } else {
-      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
-        .then(response => response.json())
-        .then(({ api_server }) => {
-          fetchData('https://' + api_server);
-        });
-    }
-  })();
-</script>
 
 
       </div>
@@ -789,7 +708,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       avatar     : 'mm',
       meta       : guest,
       pageSize   : '10' || 10,
-      visitor    : false,
+      visitor    : true,
       lang       : '' || 'zh-cn',
       path       : location.pathname,
       recordIP   : false,
