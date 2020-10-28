@@ -1176,7 +1176,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e54f79;
+  background: #2634c9;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1313,6 +1313,9 @@ pre .javascript .function {
 .post-toc ol > ol {
   padding-left: 0;
 }
+.post-toc ol >li {
+  margin-left: 0;
+}
 .post-toc ol a {
   transition-property: all;
   transition-delay: 0s;
@@ -1320,9 +1323,11 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
 }
 .post-toc .nav-item {
-  line-height: 1.8;
+  line-height: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: left;
+  margin-left: 30px;
   white-space: nowrap;
 }
 .post-toc .nav .nav-child {
