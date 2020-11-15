@@ -171,6 +171,11 @@
     <a href="/project/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>开源项目</a>
 
   </li>
+        <li class="menu-item menu-item-molestation">
+
+    <a href="/molestation/" rel="section"><i class="fa fa-smile fa-fw"></i>调戏页</a>
+
+  </li>
   </ul>
 </nav>
 
@@ -230,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-09 09:31:18" itemprop="dateModified" datetime="2020-11-09T09:31:18+08:00">2020-11-09</time>
+                <time title="修改时间：2020-11-15 16:05:42" itemprop="dateModified" datetime="2020-11-15T16:05:42+08:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,20 +279,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>&emsp;&emsp;做前端几年了,也积累了一些方法,今天拿出来和大家分享一下, 希望对大家有用.</p>
-<br>
+          做前端几年了,也积累了一些方法,今天拿出来和大家分享一下, 希望对大家有用.
 
 
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><pre><code>npm i h5-api --save</code></pre><br>
-
-<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><pre><code>import { h5Api } from &quot;h5-api&quot;;</code></pre><ul>
-<li>ts项目需要声明类型</li>
-</ul>
-<br>
+使用方法
+npm i h5-api --save
 
 
+引入
+import { h5Api } from "h5-api";
 
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2>
+ * ts项目需要声明类型
+
+
+方法
+1. isFirstEntryEdge()
+介绍: 判断是否首次进入页面
+
+参数: 无
+
+返回值: 首次进入返回true,否则返回false
+
+例子:
+
+    if ( isFirstEntryEdge() ) {
+        do something...
+    }
+
+2. isPc()
+介绍: 判断设备是否为电脑
+
+参数: 无
+
+返回值: 
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/11/06/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB-h5-api/#more" rel="contents">
