@@ -634,8 +634,6 @@
   </div>
 
   
-  
-  <script color='157,199,223' opacity='0.6' zIndex='-1' count='80' src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script size="100" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
@@ -653,6 +651,8 @@
 <script src="/js/next-boot.js"></script>
 
 
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
 
 
   
@@ -729,20 +729,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-  
 
-  <canvas id="evanyou"></canvas>
-  <style>
-    #evanyou {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-  </style>
-  <script src="/js/evan-you.js"></script>
+
+  
+  
 
 
 
@@ -750,7 +740,6 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   <script src="/js/wobblewindow.js"></script>
   <script>
     //只在桌面版网页启用特效
-    if( window.innerWidth > 768  ){
       $(document).ready(function () {
         
           $('#header').wobbleWindow({
@@ -779,14 +768,17 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
             movementBottom: false,
             movementLeft: false,
             movementRight: false,
-            offsetX: ,
             position: 'absolute',
             debug: false,
           });
         
       });
-    }
   </script>
 
+
+
+
+
+  
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
 </html>
