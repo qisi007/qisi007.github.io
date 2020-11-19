@@ -1175,7 +1175,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9a46db;
+  background: #2affbf;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2445,8 +2445,11 @@ header {
     width: 1200px;
   }
 }
-.post-meta-divider {
+.busuanzi-count {
   display: none;
+}
+.busuanzi-main {
+  display: block;
 }
 @-moz-keyframes leftAndRight {
   0% {
