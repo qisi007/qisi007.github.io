@@ -165,6 +165,20 @@
   </url>
   
   <url>
+    <loc>https://www.liuguisheng.vip/tags/package/</loc>
+    <lastmod>2020-11-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liuguisheng.vip/tags/vue%E7%BB%84%E4%BB%B6%E5%BA%93/</loc>
+    <lastmod>2020-11-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.liuguisheng.vip/tags/h5/</loc>
     <lastmod>2020-11-20</lastmod>
     <changefreq>daily</changefreq>
@@ -187,20 +201,6 @@
   
   <url>
     <loc>https://www.liuguisheng.vip/tags/util/</loc>
-    <lastmod>2020-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liuguisheng.vip/tags/package/</loc>
-    <lastmod>2020-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liuguisheng.vip/tags/vue%E7%BB%84%E4%BB%B6%E5%BA%93/</loc>
     <lastmod>2020-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
