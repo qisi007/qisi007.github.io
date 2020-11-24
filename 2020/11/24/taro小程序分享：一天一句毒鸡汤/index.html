@@ -39,23 +39,23 @@
     var CONFIG = {"hostname":"www.liuguisheng.vip","root":"/","scheme":"Muse","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="做前端几年了,也积累了一些方法,今天拿出来和大家分享一下, 希望对大家有用.   使用方法 npm i h5-api --save   引入 import { h5Api } from &quot;h5-api&quot;;   * ts项目需要声明类型   方法 1. isFirstEntryEdge() 介绍: 判断是否首次进入页面  参数: 无  返回值: 首次进入返回true,否则返回false  例子:">
+  <meta name="description" content="今天没意思，学习用taro做了个小程序，一天一句毒鸡汤，提神醒脑，快乐翻倍。  目前就一个页面，可以切换毒鸡汤，支持分享给好友。  后续做打算做成一个平台， 目的就是给我们日常枯燥的工作增添一些欢乐，也会增加一些毒鸡汤上传功能和评审功能。  期待我后续的更新吧。    也欢迎大家关注我的开源项目，react-admin-plus，欢迎star">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开源项目分享-h5-api">
-<meta property="og:url" content="https://www.liuguisheng.vip/2020/11/06/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB-h5-api/index.html">
+<meta property="og:title" content="taro小程序分享：一天一句毒鸡汤">
+<meta property="og:url" content="https://www.liuguisheng.vip/2020/11/24/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%86%E4%BA%AB%EF%BC%9A%E4%B8%80%E5%A4%A9%E4%B8%80%E5%8F%A5%E6%AF%92%E9%B8%A1%E6%B1%A4/index.html">
 <meta property="og:site_name" content="This-刘贵生的博客">
-<meta property="og:description" content="做前端几年了,也积累了一些方法,今天拿出来和大家分享一下, 希望对大家有用.   使用方法 npm i h5-api --save   引入 import { h5Api } from &quot;h5-api&quot;;   * ts项目需要声明类型   方法 1. isFirstEntryEdge() 介绍: 判断是否首次进入页面  参数: 无  返回值: 首次进入返回true,否则返回false  例子:">
+<meta property="og:description" content="今天没意思，学习用taro做了个小程序，一天一句毒鸡汤，提神醒脑，快乐翻倍。  目前就一个页面，可以切换毒鸡汤，支持分享给好友。  后续做打算做成一个平台， 目的就是给我们日常枯燥的工作增添一些欢乐，也会增加一些毒鸡汤上传功能和评审功能。  期待我后续的更新吧。    也欢迎大家关注我的开源项目，react-admin-plus，欢迎star">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-06T09:01:09.000Z">
-<meta property="article:modified_time" content="2020-11-15T08:05:42.286Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201124141753595.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-11-24T06:12:16.000Z">
+<meta property="article:modified_time" content="2020-11-24T06:28:17.090Z">
 <meta property="article:author" content="刘贵生">
-<meta property="article:tag" content="h5">
-<meta property="article:tag" content="api">
-<meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="util">
+<meta property="article:tag" content="taro">
+<meta property="article:tag" content="小程序">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201124141753595.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70">
 
-<link rel="canonical" href="https://www.liuguisheng.vip/2020/11/06/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB-h5-api/">
+<link rel="canonical" href="https://www.liuguisheng.vip/2020/11/24/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%86%E4%BA%AB%EF%BC%9A%E4%B8%80%E5%A4%A9%E4%B8%80%E5%8F%A5%E6%AF%92%E9%B8%A1%E6%B1%A4/">
 
 
 <script id="page-configurations">
@@ -68,7 +68,7 @@
   };
 </script>
 
-  <title>开源项目分享-h5-api | This-刘贵生的博客</title>
+  <title>taro小程序分享：一天一句毒鸡汤 | This-刘贵生的博客</title>
   
 
 
@@ -215,7 +215,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.liuguisheng.vip/2020/11/06/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB-h5-api/">
+    <link itemprop="mainEntityOfPage" href="https://www.liuguisheng.vip/2020/11/24/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%86%E4%BA%AB%EF%BC%9A%E4%B8%80%E5%A4%A9%E4%B8%80%E5%8F%A5%E6%AF%92%E9%B8%A1%E6%B1%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
@@ -228,7 +228,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          开源项目分享-h5-api
+          taro小程序分享：一天一句毒鸡汤
         </h1>
 
         <div class="post-meta">
@@ -237,28 +237,22 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-11-06 17:01:09" itemprop="dateCreated datePublished" datetime="2020-11-06T17:01:09+08:00">2020-11-06</time>
+              <time title="创建时间：2020-11-24 14:12:16 / 修改时间：14:28:17" itemprop="dateCreated datePublished" datetime="2020-11-24T14:12:16+08:00">2020-11-24</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-15 16:05:42" itemprop="dateModified" datetime="2020-11-15T16:05:42+08:00">2020-11-15</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">开源项目</span></a>
+                  <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" itemprop="url" rel="index"><span itemprop="name">小程序</span></a>
                 </span>
             </span>
 
           
-            <span id="/2020/11/06/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB-h5-api/" class="post-meta-item leancloud_visitors" data-flag-title="开源项目分享-h5-api" title="阅读次数">
+            <span id="/2020/11/24/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%86%E4%BA%AB%EF%BC%9A%E4%B8%80%E5%A4%A9%E4%B8%80%E5%8F%A5%E6%AF%92%E9%B8%A1%E6%B1%A4/" class="post-meta-item leancloud_visitors" data-flag-title="taro小程序分享：一天一句毒鸡汤" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -273,8 +267,8 @@
       </span>
       <span class="post-meta-item-text">评论：</span>
     
-    <a title="valine" href="/2020/11/06/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB-h5-api/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/06/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB-h5-api/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/11/24/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%86%E4%BA%AB%EF%BC%9A%E4%B8%80%E5%A4%A9%E4%B8%80%E5%8F%A5%E6%AF%92%E9%B8%A1%E6%B1%A4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/24/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%86%E4%BA%AB%EF%BC%9A%E4%B8%80%E5%A4%A9%E4%B8%80%E5%8F%A5%E6%AF%92%E9%B8%A1%E6%B1%A4/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -283,13 +277,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>2.7k</span>
+              <span>161</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -301,190 +295,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>&emsp;&emsp;做前端几年了,也积累了一些方法,今天拿出来和大家分享一下, 希望对大家有用.</p>
-<br/>
-
+        <p>今天没意思，学习用taro做了个小程序，一天一句毒鸡汤，提神醒脑，快乐翻倍。</p>
+<p>目前就一个页面，可以切换毒鸡汤，支持分享给好友。</p>
+<p>后续做打算做成一个平台， 目的就是给我们日常枯燥的工作增添一些欢乐，也会增加一些毒鸡汤上传功能和评审功能。</p>
+<p>期待我后续的更新吧。</p>
 <a id="more"></a>
 
-
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><pre><code>npm i h5-api --save</code></pre><br/>
-
-<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><pre><code>import { h5Api } from &quot;h5-api&quot;;</code></pre><ul>
-<li>ts项目需要声明类型</li>
-</ul>
-<br/>
-
-
-
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="1-isFirstEntryEdge"><a href="#1-isFirstEntryEdge" class="headerlink" title="1. isFirstEntryEdge()"></a>1. isFirstEntryEdge()</h3><p><strong>介绍:</strong> 判断是否首次进入页面</p>
-<p><strong>参数:</strong> 无</p>
-<p><strong>返回值:</strong> 首次进入返回<code>true</code>,否则返回<code>false</code></p>
-<p><strong>例子:</strong></p>
-<pre><code>    if ( isFirstEntryEdge() ) {
-        do something...
-    }</code></pre><h3 id="2-isPc"><a href="#2-isPc" class="headerlink" title="2. isPc()"></a>2. isPc()</h3><p><strong>介绍:</strong> 判断设备是否为电脑</p>
-<p><strong>参数:</strong> 无</p>
-<p><strong>返回值:</strong> 如果是pc端返回<code>true</code>,否则返回<code>false</code></p>
-<p><strong>例子:</strong></p>
-<pre><code>    if ( isPc() ) {
-        do something...
-    }</code></pre><h3 id="3-pageJump-url-blank"><a href="#3-pageJump-url-blank" class="headerlink" title="3. pageJump( url, blank )"></a>3. pageJump( url, blank )</h3><p><strong>介绍:</strong> 跳转页面</p>
-<p><strong>参数:</strong> </p>
-<ul>
-<li>url 跳转的地址  string类型(开头必须包含<code>http</code>或者<code>https</code>) </li>
-<li>blank 是否在新页面打开 boolean类型  默认值: true</li>
-</ul>
-<p><strong>返回值:</strong> 无</p>
-<p><strong>例子:</strong></p>
-<pre><code>    pageJump(&quot;https://www.liuguisheng.vip&quot;, true);</code></pre><h3 id="4-prodeceRandomString-length-isDate"><a href="#4-prodeceRandomString-length-isDate" class="headerlink" title="4. prodeceRandomString( length, isDate )"></a>4. prodeceRandomString( length, isDate )</h3><p><strong>介绍: </strong>生成一个随机字符串</p>
-<p><strong>参数: </strong></p>
-<ul>
-<li>length 随机数长度 number类型</li>
-<li>isDate 是否添加时间戳 boolean类型  默认值: false</li>
-</ul>
-<p><strong>返回值: </strong>生成的字符串</p>
-<p><strong>例子:</strong></p>
-<pre><code>    let str =  prodeceRandomString( 10, true );
-
-    console.log(str);</code></pre><h3 id="5-moneyToCapitals-n"><a href="#5-moneyToCapitals-n" class="headerlink" title="5. moneyToCapitals( n )"></a>5. moneyToCapitals( n )</h3><p><strong>介绍: </strong>金额小写转大写</p>
-<p><strong>参数:</strong> </p>
-<ul>
-<li>n 小写金额 number类型</li>
-</ul>
-<p><strong>返回值:</strong> 返回生成的大写金额</p>
-<p><strong>例子:</strong></p>
-<pre><code>    let capitalizeMoney =  prodeceRandomString( 10, true );
-
-    console.log(capitalizeMoney);</code></pre><h3 id="6-getCurrentUrl"><a href="#6-getCurrentUrl" class="headerlink" title="6. getCurrentUrl ()"></a>6. getCurrentUrl ()</h3><p><strong>介绍: </strong>获取地址栏url</p>
-<p><strong>参数:</strong> 无</p>
-<p><strong>返回值:</strong> 地址栏的url</p>
-<p><strong>例子:</strong></p>
-<pre><code>    let url = getCurrentUrl();
-
-    console.log(url);</code></pre><h3 id="7-deepCopy-value"><a href="#7-deepCopy-value" class="headerlink" title="7. deepCopy ( value )"></a>7. deepCopy ( value )</h3><p><strong>介绍: </strong>深拷贝方法</p>
-<p><strong>参数:</strong> </p>
-<ul>
-<li>value 需要拷贝的值 任意类型</li>
-</ul>
-<p><strong>返回值:</strong> 深拷贝后的值</p>
-<p><strong>例子:</strong></p>
-<pre><code>    let obj = {
-        name: &quot;liu&quot;,
-        home: &quot;https://www.liuguisheng.vip&quot;
-    }
-    let result = deepCopy(obj);
-
-    console.log(obj === result);</code></pre><h3 id="8-emptyCheck"><a href="#8-emptyCheck" class="headerlink" title="8. emptyCheck"></a>8. emptyCheck</h3><p><strong>介绍: </strong>校验一个对象是否有空值</p>
-<p><strong>参数:</strong> 每个方法的传参有所区别</p>
-<p><strong>内置方法:</strong></p>
-<ul>
-<li>emptyCheck.checkObject( obj, unInclude ) 校验对象, obj为需要校验的对象,unInclude为不需要校验的key</li>
-<li>emptyCheck.checkNumber ( num ) 校验数字</li>
-<li>emptyCheck.checkString ( str ) 校验字符串</li>
-<li>emptyCheck.checkArray ( arr ) 校验数组</li>
-</ul>
-<p><strong>返回值:</strong> 如果有空值返回<code>true</code>, 否则返回<code>false</code></p>
-<p><strong>例子:</strong></p>
-<pre><code>    let obj = {
-        name: &quot;liu&quot;,
-        home: &quot;https://www.liuguisheng.vip&quot;,
-        info: {
-            age: 27,
-            idCard: &#39;&#39;,
-            girlFriend: &#39;&#39;
-        }
-    }
-
-    let unInclude = [&#39;girlFriend&#39;];
-
-    let check = new emptyCheck();
-
-    let result = check.checkObject(obj, unInclude);
-
-    console.log(result);</code></pre><h3 id="9-charToPx-length-fontSize"><a href="#9-charToPx-length-fontSize" class="headerlink" title="9. charToPx ( length, fontSize )"></a>9. charToPx ( length, fontSize )</h3><p><strong>介绍: </strong>字符转像素</p>
-<p><strong>参数:</strong> </p>
-<ul>
-<li>length 字符长度 number类型</li>
-<li>fontSize 字体大小 number类型</li>
-</ul>
-<p><strong>返回值:</strong> 生成的像素值</p>
-<p><strong>例子:</strong></p>
-<pre><code>    let result = charToPx ( 30, 14 );
-    console.log( result );</code></pre><h3 id="10-cmToPx-cm"><a href="#10-cmToPx-cm" class="headerlink" title="10. cmToPx ( cm )"></a>10. cmToPx ( cm )</h3><p><strong>介绍: </strong>厘米转像素</p>
-<p><strong>参数:</strong> </p>
-<ul>
-<li>cm 厘米 number类型</li>
-</ul>
-<p><strong>返回值:</strong> 生成的像素值</p>
-<p><strong>例子:</strong></p>
-<pre><code>    let result = cmToPx ( 30 );
-    console.log( result );</code></pre><h3 id="11-arrayIntersection-arr1-arr2"><a href="#11-arrayIntersection-arr1-arr2" class="headerlink" title="11. arrayIntersection ( arr1, arr2 )"></a>11. arrayIntersection ( arr1, arr2 )</h3><p><strong>介绍: </strong>两个数组取交集</p>
-<p><strong>参数:</strong> </p>
-<ul>
-<li>arr1 数组1 any[] 类型</li>
-<li>arr2 数组1 any[] 类型</li>
-</ul>
-<p><strong>返回值:</strong> 生成的新数组</p>
-<p><strong>例子:</strong></p>
-<pre><code>    let arr1 = [1,2,3,4];
-    let arr2 = [3,4,5,6];
-    let result = arrayIntersectionFun ( arr1, arr2 );
-    console.log( result );</code></pre><h3 id="12-arraySubtraction-arr1-arr2"><a href="#12-arraySubtraction-arr1-arr2" class="headerlink" title="12. arraySubtraction ( arr1, arr2 )"></a>12. arraySubtraction ( arr1, arr2 )</h3><p><strong>介绍: </strong>两个数组取交集</p>
-<p><strong>参数:</strong> </p>
-<ul>
-<li>arr1 数组1 any[] 类型</li>
-<li>arr2 数组1 any[] 类型</li>
-</ul>
-<p><strong>返回值:</strong> 生成的新数组</p>
-<p><strong>例子:</strong></p>
-<pre><code>    let arr1 = [1,2,3,4];
-    let arr2 = [3,4,5,6];
-    let result = arraySubtractionFun ( arr1, arr2 );
-    console.log( result );</code></pre><h3 id="13-keyNameMapping-obj-config"><a href="#13-keyNameMapping-obj-config" class="headerlink" title="13. keyNameMapping ( obj, config )"></a>13. keyNameMapping ( obj, config )</h3><p><strong>介绍: </strong>对象键名映射(只支持简单对象)</p>
-<p><strong>参数:</strong> </p>
-<ul>
-<li>obj 原对象 object类型</li>
-<li>config 映射配置 object类型</li>
-</ul>
-<p><strong>返回值:</strong> 生成的新对象</p>
-<p><strong>例子:</strong></p>
-<pre><code>    let obj = {
-        name: &quot;liu&quot;,
-        home: &quot;https://www.liuguisheng.vip&quot;,
-        age: 27
-    };
-    let config = {
-        name: &quot;id&quot;,
-        home: &quot;index&quot;,
-        info: &quot;message&quot;
-    }
-
-    let result = keyNameMapping ( obj, config );
-    console.log( result );</code></pre><h3 id="14-telMosaic-tel"><a href="#14-telMosaic-tel" class="headerlink" title="14. telMosaic ( tel )"></a>14. telMosaic ( tel )</h3><p><strong>介绍: </strong>手机号打码</p>
-<p><strong>参数:</strong> </p>
-<ul>
-<li>tel 手机号码 number|字符串类型</li>
-</ul>
-<p><strong>返回值:</strong> 生成的新手机号</p>
-<p><strong>例子:</strong></p>
-<pre><code>    let result = telMosaic ( 17698443243 );
-    console.log( result );</code></pre><h3 id="15-idCardMosaic-idCard"><a href="#15-idCardMosaic-idCard" class="headerlink" title="15. idCardMosaic ( idCard )"></a>15. idCardMosaic ( idCard )</h3><p><strong>介绍: </strong>手机号打码</p>
-<p><strong>参数:</strong> </p>
-<ul>
-<li>idCard 身份证号码 number|字符串类型</li>
-</ul>
-<p><strong>返回值:</strong> 生成的身份证</p>
-<p><strong>例子:</strong></p>
-<pre><code>    let result = idCardMosaic ( 130282199508145154 );
-    console.log( result );</code></pre><br/>
-<br/>
-
-<h2 id="开源协议"><a href="#开源协议" class="headerlink" title="开源协议"></a>开源协议</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpc2kwMDcvaDUtYXBpL2Jsb2IvbWFpbi9MSUNFTlNF">MIT License<i class="fa fa-external-link-alt"></i></span></p>
-<br/>
-
-<h2 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpc2kwMDcvaDUtYXBp">地址<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="博客地址"><a href="#博客地址" class="headerlink" title="博客地址"></a>博客地址</h2><p><a href="https://www.liuguisheng.vip">博客</a></p>
-
+<p><img src="https://img-blog.csdnimg.cn/20201124141753595.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="也欢迎大家关注我的开源项目，react-admin-plus，欢迎star"><a href="#也欢迎大家关注我的开源项目，react-admin-plus，欢迎star" class="headerlink" title="也欢迎大家关注我的开源项目，react-admin-plus，欢迎star"></a>也欢迎大家关注我的开源项目，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpc2kwMDcvcmVhY3QtYWRtaW4tcGx1cw==">react-admin-plus<i class="fa fa-external-link-alt"></i></span>，<strong>欢迎star</strong></h3>
     </div>
 
     
@@ -529,7 +347,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.liuguisheng.vip/2020/11/06/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB-h5-api/" title="开源项目分享-h5-api">https://www.liuguisheng.vip/2020/11/06/开源项目分享-h5-api/</a>
+    <a href="https://www.liuguisheng.vip/2020/11/24/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%86%E4%BA%AB%EF%BC%9A%E4%B8%80%E5%A4%A9%E4%B8%80%E5%8F%A5%E6%AF%92%E9%B8%A1%E6%B1%A4/" title="taro小程序分享：一天一句毒鸡汤">https://www.liuguisheng.vip/2020/11/24/taro小程序分享：一天一句毒鸡汤/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -570,10 +388,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/h5/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> h5</a>
-              <a href="/tags/api/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> api</a>
-              <a href="/tags/JavaScript/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> JavaScript</a>
-              <a href="/tags/util/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> util</a>
+              <a href="/tags/taro/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> taro</a>
+              <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> 小程序</a>
           </div>
 
         
@@ -582,13 +398,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/19/%E4%BB%8A%E5%A4%A9%E6%8D%A2%E4%BA%86%E6%96%B0%E7%9A%84%E4%B8%BB%E9%A2%98next%EF%BC%8C%E5%BC%80%E5%90%AF%E6%96%B0%E7%9A%84%E9%87%8C%E7%A8%8B%E7%A2%91/" rel="prev" title="今天换了新的主题next，开启新的里程碑">
-      <i class="fa fa-chevron-left"></i> 今天换了新的主题next，开启新的里程碑
+    <a href="/2020/11/06/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%86%E4%BA%AB-h5-api/" rel="prev" title="开源项目分享-h5-api">
+      <i class="fa fa-chevron-left"></i> 开源项目分享-h5-api
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/11/24/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%86%E4%BA%AB%EF%BC%9A%E4%B8%80%E5%A4%A9%E4%B8%80%E5%8F%A5%E6%AF%92%E9%B8%A1%E6%B1%A4/" rel="next" title="taro小程序分享：一天一句毒鸡汤">
-      taro小程序分享：一天一句毒鸡汤 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -648,7 +461,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入"><span class="nav-number">2.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">3.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-isFirstEntryEdge"><span class="nav-number">3.1.</span> <span class="nav-text">1. isFirstEntryEdge()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-isPc"><span class="nav-number">3.2.</span> <span class="nav-text">2. isPc()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-pageJump-url-blank"><span class="nav-number">3.3.</span> <span class="nav-text">3. pageJump( url, blank )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-prodeceRandomString-length-isDate"><span class="nav-number">3.4.</span> <span class="nav-text">4. prodeceRandomString( length, isDate )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-moneyToCapitals-n"><span class="nav-number">3.5.</span> <span class="nav-text">5. moneyToCapitals( n )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-getCurrentUrl"><span class="nav-number">3.6.</span> <span class="nav-text">6. getCurrentUrl ()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-deepCopy-value"><span class="nav-number">3.7.</span> <span class="nav-text">7. deepCopy ( value )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-emptyCheck"><span class="nav-number">3.8.</span> <span class="nav-text">8. emptyCheck</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-charToPx-length-fontSize"><span class="nav-number">3.9.</span> <span class="nav-text">9. charToPx ( length, fontSize )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-cmToPx-cm"><span class="nav-number">3.10.</span> <span class="nav-text">10. cmToPx ( cm )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-arrayIntersection-arr1-arr2"><span class="nav-number">3.11.</span> <span class="nav-text">11. arrayIntersection ( arr1, arr2 )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-arraySubtraction-arr1-arr2"><span class="nav-number">3.12.</span> <span class="nav-text">12. arraySubtraction ( arr1, arr2 )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-keyNameMapping-obj-config"><span class="nav-number">3.13.</span> <span class="nav-text">13. keyNameMapping ( obj, config )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-telMosaic-tel"><span class="nav-number">3.14.</span> <span class="nav-text">14. telMosaic ( tel )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-idCardMosaic-idCard"><span class="nav-number">3.15.</span> <span class="nav-text">15. idCardMosaic ( idCard )</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开源协议"><span class="nav-number">4.</span> <span class="nav-text">开源协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码地址"><span class="nav-number">5.</span> <span class="nav-text">源码地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博客地址"><span class="nav-number">6.</span> <span class="nav-text">博客地址</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#也欢迎大家关注我的开源项目，react-admin-plus，欢迎star"><span class="nav-number">1.</span> <span class="nav-text">也欢迎大家关注我的开源项目，react-admin-plus，欢迎star</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

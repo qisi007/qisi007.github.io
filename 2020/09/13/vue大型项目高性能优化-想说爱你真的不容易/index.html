@@ -36,7 +36,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.liuguisheng.vip","root":"/","scheme":"Muse","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"www.liuguisheng.vip","root":"/","scheme":"Muse","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="一、背景 目前公司的电子合同采用表单设计器+合同业务配合实现，做了半年多后终于上线，但是下边员工普遍反映卡顿，甚至卡死，爆栈。尤其是新增和修改合同页面，因为这部分数据量大，逻辑复杂，很容易崩溃，所以决定进行性能优化。  二、业务场景介绍 先来了解一下我们是怎么实现：  1. 因为我们公司合同变换频繁，条款之间还有逻辑，所以做了个基础服务（说白了就是组件库），为合同提供模板  2. 表单设计器作为基">
@@ -318,16 +318,16 @@
 <p>&emsp;&emsp;3. 合同项目有一个模块管理页面，可以对多个模板进行维护，比如可以选择启用哪个模板。</p>
 <p>&emsp;&emsp;4. 合同的管理员负责维护模板，可以用表单设计器拖拽生成合同模板，提交后落入数据库，每个合同类型可以同时启用一个模板。</p>
 <p>&emsp;&emsp;5. 最终下边员工用的就是启用的模板（尤其是这部门卡顿） </p>
-<p><strong>下面是电子合同的宏观泳道图：</strong><br><img data-src="https://img-blog.csdnimg.cn/20200216200900531.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><strong>下面是电子合同的宏观泳道图：</strong><br><img src="https://img-blog.csdnimg.cn/20200216200900531.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
 <h2 id="三、页面介绍"><a href="#三、页面介绍" class="headerlink" title="三、页面介绍"></a>三、页面介绍</h2><ol>
-<li>合同模板管理页<br><img data-src="https://img-blog.csdnimg.cn/20200910105834157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
-<li>新增模板页面<br><img data-src="https://img-blog.csdnimg.cn/20200910105956622.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
-<li>新建合同页面<br><img data-src="https://img-blog.csdnimg.cn/202009101101566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
-<li>合同填写页面<br><img data-src="https://img-blog.csdnimg.cn/20200911134425140.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
+<li>合同模板管理页<br><img src="https://img-blog.csdnimg.cn/20200910105834157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
+<li>新增模板页面<br><img src="https://img-blog.csdnimg.cn/20200910105956622.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
+<li>新建合同页面<br><img src="https://img-blog.csdnimg.cn/202009101101566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
+<li>合同填写页面<br><img src="https://img-blog.csdnimg.cn/20200911134425140.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
 </ol>
 <p>&emsp;&emsp;好了，基本的业务逻辑和页面就介绍这么多，特别卡顿的页面就是第四个页面，下面我们分析一下卡顿的原因。</p>
 <h2 id="四、卡顿分析"><a href="#四、卡顿分析" class="headerlink" title="四、卡顿分析"></a>四、卡顿分析</h2><p>&emsp;&emsp;1. 首先就是表单设计器的问题最严重，因为每一个组件需要很多配置项才能够支撑组件的渲染，而一个合同是由上千个组件组成，经过测试，一个合同模板需要5MB的存储空间(数据库用的是MongoDB，存储格式为字符串，几乎不影响)，下面是一个输入框的配置</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20200910103459458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200910103459458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
 <p>&emsp;&emsp;2. 表单设计器的实现用了大量的闭包管理业务，我们都知道，闭包是特别耗内存的。</p>
 <p>&emsp;&emsp;3. 合同模板巨复杂，由上万个组件拼接而成，我把模板数据down下来看了一下，大约是16000多个组件，大小为3.4MB。</p>
 <p>&emsp;&emsp;4. 因为表单设计器中包括<code>id,model,事件id</code>都是前端随机生成的，采用<code>随机字符串+时间戳</code>的形式，一共46位。</p>
@@ -434,7 +434,7 @@ export default {
 <p>&emsp;&emsp; 我们还可以优化一下表单设计器的代码，把闭包换个实现方式，应该也能提高加载速度，后续会做这些。</p>
 <p>&emsp;&emsp; 合同业务项目也优化了一些接口，代码，前后端交互方式，以及页面的交互方式提高了性能和视觉效果。</p>
 <h2 id="七、总结"><a href="#七、总结" class="headerlink" title="七、总结"></a>七、总结</h2><p>&emsp;&emsp; 这是我第一次费这么大劲做vue项目的性能优化，虽然坎坷，但也留下了好结果，我们从最初加载需要50秒甚至一分钟，到现在10秒左右就能加载成功，速度提高可近5倍。</p>
-<p>&emsp;&emsp; 整体效果如下：<br><img data-src="https://qjprod-images.oss-cn-beijing.aliyuncs.com/menuResource/1600564965755?name=111.gif" alt="image"></p>
+<p>&emsp;&emsp; 整体效果如下：<br><img src="https://qjprod-images.oss-cn-beijing.aliyuncs.com/menuResource/1600564965755?name=111.gif" alt="image"></p>
 <p>&emsp;&emsp; 今日成果，虽数月，但众人拾柴，得以燎原，此非一人之功，谢而不及。</p>
 
     </div>
@@ -616,20 +616,20 @@ export default {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -787,7 +787,6 @@ export default {
   
   <script size="100" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
