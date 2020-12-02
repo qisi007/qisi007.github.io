@@ -45,8 +45,8 @@
 <meta property="og:description" content="没有图片了呢! ×">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.liuguisheng.vip/album/$%7Bimages[0]%7D">
-<meta property="article:published_time" content="2020-12-02T06:41:20.403Z">
-<meta property="article:modified_time" content="2020-12-02T06:41:20.403Z">
+<meta property="article:published_time" content="2020-12-02T07:50:20.932Z">
+<meta property="article:modified_time" content="2020-12-02T07:50:20.932Z">
 <meta property="article:author" content="刘贵生">
 <meta property="article:tag" content="JavaScript 前端 vue node 个人博客">
 <meta name="twitter:card" content="summary">
@@ -276,11 +276,11 @@
             transform: rotate(45deg);
         }
 
-        .image-list .image-list_item .image-cover {
+        /* .image-list .image-list_item .image-cover {
             width: 800px;
             height: 550px;
             
-        }
+        } */
         .image-cover_pre {
             animation: imgCutPre 1s;
         }
@@ -374,23 +374,17 @@
 <script>
     const albumList = [
         {
-            title: "今天，我去了一趟布达拉宫。",
-            tag: "2020-11-10",
-            content: "布达拉宫位于中国西藏自治区首府拉萨市区西北的玛布日山上，是一座宫堡式建筑群，最初是吐蕃王朝赞普松赞干布为迎娶尺尊公主和文成公主而兴建。于17世纪重建后，成为历代达赖喇嘛的冬宫居所，为西藏政教合一的统治中心。1961年，布达拉宫成为了中华人民共和国国务院第一批全国重点文物保护单位之一。1994年，布达拉宫被列为世界文化遗产。布达拉宫的主体建筑为白宫和红宫两部分。",
-            cover: "https://img-blog.csdnimg.cn/2020120209001726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70",
+            title: "程序员与猫的日常。",
+            tag: "2020-12-2",
+            content: "姓名： 刘大米，只能生活在民间家庭的高级物种，擅长躲在柜子里睡觉。也喜欢穿梭于沙发，飘窗，以及卧室中的床等，是世界少有的跑酷达人。被人们称作 '神兽'。",
+            cover: "http://qkpba2663.hn-bkt.clouddn.com/IMG20191017222046.jpg",
             images: [
-                "https://img-blog.csdnimg.cn/2020120209001726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70",
-                "https://img-blog.csdnimg.cn/20201202090054802.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70"
-            ]
-        },
-        {
-            title: "美丽的唐山我的梦",
-            tag: "2020-11-20",
-            content: "唐山，简称“唐”，河北省地级市，位于河北省东部、华北平原东北部，南临渤海，北依燕山，毗邻京津，地处华北与东北通道的咽喉要地，总面积为13472平方千米，是中国（河北）自由贸易试验区组成部分。",
-            cover: "https://img-blog.csdnimg.cn/20201202090054802.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70",
-            images: [
-            "https://img-blog.csdnimg.cn/2020120209001726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70",
-                "https://img-blog.csdnimg.cn/20201202090054802.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70"
+                "http://qkpba2663.hn-bkt.clouddn.com/IMG20190809212215%281%29.jpg",
+                "http://qkpba2663.hn-bkt.clouddn.com/IMG20191017222046.jpg",
+                "http://qkpba2663.hn-bkt.clouddn.com/IMG20200202132112.jpg",
+                "http://qkpba2663.hn-bkt.clouddn.com/IMG20200325013753.jpg",
+                "http://qkpba2663.hn-bkt.clouddn.com/cat1.jpg"
+
             ]
         }
     ]
@@ -438,12 +432,12 @@
         let btnItem = btnList[k];
         let item = list[k]
 
-        item.onmouseover = function () {
-            btnItem.style.opacity = 1
-        }
-        item.onmouseleave = function () {
-            btnItem.style.opacity = 0
-        }
+        // item.onmouseover = function () {
+        //     btnItem.style.opacity = 1
+        // }
+        // item.onmouseleave = function () {
+        //     btnItem.style.opacity = 0
+        // }
 
         preButtonItem.onclick = function (e) {
             if (index!==0) {
