@@ -45,8 +45,8 @@
 <meta property="og:description" content="没有图片了呢! ×">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.liuguisheng.vip/album/$%7Bimages[0]%7D">
-<meta property="article:published_time" content="2020-12-02T07:54:24.335Z">
-<meta property="article:modified_time" content="2020-12-02T07:54:24.335Z">
+<meta property="article:published_time" content="2020-12-02T08:02:54.304Z">
+<meta property="article:modified_time" content="2020-12-02T08:02:54.304Z">
 <meta property="article:author" content="刘贵生">
 <meta property="article:tag" content="JavaScript 前端 vue node 个人博客">
 <meta name="twitter:card" content="summary">
@@ -378,10 +378,11 @@
             content: "姓名： 刘大米，只能生活在民间家庭的高级物种，擅长躲在柜子里睡觉。也喜欢穿梭于沙发，飘窗，以及卧室中的床等，是世界少有的跑酷达人。被人们称作 '神兽'。",
             cover: "http://qkpba2663.hn-bkt.clouddn.com/IMG20191017222046.jpg",
             images: [
-                "http://qkpba2663.hn-bkt.clouddn.com/IMG20191017222046.jpg",
-                "http://qkpba2663.hn-bkt.clouddn.com/IMG20200202132112.jpg",
-                "http://qkpba2663.hn-bkt.clouddn.com/IMG20200325013753.jpg",
-                "http://qkpba2663.hn-bkt.clouddn.com/cat1.jpg"
+                "https://blog-1300740786.cos.ap-nanjing.myqcloud.com/IMG20190809212215(1).jpg",
+                "https://blog-1300740786.cos.ap-nanjing.myqcloud.com/IMG20190923213005.jpg",
+                "https://blog-1300740786.cos.ap-nanjing.myqcloud.com/IMG20191017222046.jpg",
+                "https://blog-1300740786.cos.ap-nanjing.myqcloud.com/IMG20200202132112.jpg",
+                "https://blog-1300740786.cos.ap-nanjing.myqcloud.com/IMG20200325013753.jpg"
 
             ]
         }
@@ -441,12 +442,13 @@
             if (index!==0) {
                 index--
             } else {
-                message.style.opacity = 1;
-                let top = e.pageY;
-                message.style.top = top-clientWidth/2 + 'px';
-                setTimeout(() => {
-                    message.style.opacity = 0;
-                },3000)
+                index = 0
+                // message.style.opacity = 1;
+                // let top = e.pageY;
+                // message.style.top = top-clientWidth/2 + 'px';
+                // setTimeout(() => {
+                //     message.style.opacity = 0;
+                // },3000)
             }
             imageItem.src = imgSrcItem[index];
         }
@@ -455,12 +457,13 @@
             if (index!==imgSrcItem.length-1) {
                 index++
             } else {
-                message.style.opacity = 1;
-                let top = e.pageY;
-                message.style.top = top-clientWidth/2 + 'px';
-                setTimeout(() => {
-                    message.style.opacity = 0;
-                },3000)
+                index = 0
+                // message.style.opacity = 1;
+                // let top = e.pageY;
+                // message.style.top = top-clientWidth/2 + 'px';
+                // setTimeout(() => {
+                //     message.style.opacity = 0;
+                // },3000)
             }
             imageItem.src = imgSrcItem[index];
         }
