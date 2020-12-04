@@ -6,7 +6,7 @@
   <link href="https://www.liuguisheng.vip/atom.xml" rel="self"/>
   
   <link href="https://www.liuguisheng.vip/"/>
-  <updated>2020-12-04T10:16:07.906Z</updated>
+  <updated>2020-12-04T10:20:56.474Z</updated>
   <id>https://www.liuguisheng.vip/</id>
   
   <author>
@@ -21,19 +21,25 @@
     <link href="https://www.liuguisheng.vip/2020/12/04/%E9%80%82%E5%90%88web%E7%AB%AF%E7%9A%84%E5%A4%9A%E5%88%97%E9%80%89%E6%8B%A9%E5%99%A8-super-multi-select/"/>
     <id>https://www.liuguisheng.vip/2020/12/04/%E9%80%82%E5%90%88web%E7%AB%AF%E7%9A%84%E5%A4%9A%E5%88%97%E9%80%89%E6%8B%A9%E5%99%A8-super-multi-select/</id>
     <published>2020-12-04T10:13:17.000Z</published>
-    <updated>2020-12-04T10:16:07.906Z</updated>
+    <updated>2020-12-04T10:20:56.474Z</updated>
     
     
-    <summary type="html">&lt;hr&gt;
-&lt;h1 id=&quot;super-multi-select-多列选择器&quot;&gt;&lt;a href=&quot;#super-multi-select-多列选择器&quot; class=&quot;headerlink&quot; title=&quot;super-multi-select(多列选择器)&quot;&gt;&lt;/a&gt;super-multi-select(多列选择器)&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://blog-1300740786.cos.ap-nanjing.myqcloud.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20201203172757.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;下载依赖&quot;&gt;&lt;a href=&quot;#下载依赖&quot; class=&quot;headerlink&quot; title=&quot;下载依赖&quot;&gt;&lt;/a&gt;下载依赖&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;npm i super-multi-select --save&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+    <summary type="html">super-multi-select(多列选择器)
 
-&lt;h3 id=&quot;引用&quot;&gt;&lt;a href=&quot;#引用&quot; class=&quot;headerlink&quot; title=&quot;引用&quot;&gt;&lt;/a&gt;引用&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;import Vue from &amp;quot;vue&amp;quot;;
-import superMultiSelect from &amp;quot;super-multi-select&amp;quot;;
 
-Vue.use(superMultiSelect);&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+下载依赖
+npm i super-multi-select --save
 
-&lt;h3 id=&quot;better-sidebar-组件介绍&quot;&gt;&lt;a href=&quot;#better-sidebar-组件介绍&quot; class=&quot;headerlink&quot; title=&quot;better-sidebar 组件介绍&quot;&gt;&lt;/a&gt;better-sidebar 组件介绍&lt;/h3&gt;</summary>
+
+引用
+import Vue from &quot;vue&quot;;
+import superMultiSelect from &quot;super-multi-select&quot;;
+
+Vue.use(superMultiSelect);
+
+
+better-sidebar 组件介绍
+属性类型可选值默认值描述options{label: string, value: string}[][]-[]选项数据placeholderstring--默认提示disabledbooleantrue/fal</summary>
     
     
     
