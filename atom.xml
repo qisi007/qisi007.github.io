@@ -6,7 +6,7 @@
   <link href="https://www.liuguisheng.vip/atom.xml" rel="self"/>
   
   <link href="https://www.liuguisheng.vip/"/>
-  <updated>2020-12-04T09:57:48.247Z</updated>
+  <updated>2020-12-04T10:15:17.995Z</updated>
   <id>https://www.liuguisheng.vip/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>适合web端的多列选择器---super-multi-select</title>
+    <link href="https://www.liuguisheng.vip/2020/12/04/%E9%80%82%E5%90%88web%E7%AB%AF%E7%9A%84%E5%A4%9A%E5%88%97%E9%80%89%E6%8B%A9%E5%99%A8-super-multi-select/"/>
+    <id>https://www.liuguisheng.vip/2020/12/04/%E9%80%82%E5%90%88web%E7%AB%AF%E7%9A%84%E5%A4%9A%E5%88%97%E9%80%89%E6%8B%A9%E5%99%A8-super-multi-select/</id>
+    <published>2020-12-04T10:13:17.000Z</published>
+    <updated>2020-12-04T10:15:17.995Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;super-multi-select-多列选择器&quot;&gt;&lt;a href=&quot;#super-multi-select-多列选择器&quot; class=&quot;headerlink&quot; title=&quot;super-multi-select(多列选择器)&quot;&gt;&lt;/a&gt;super-multi-select(多列选择器)&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://blog-1300740786.cos.ap-nanjing.myqcloud.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20201203172757.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;下载依赖&quot;&gt;&lt;a href=&quot;#下载依赖&quot; class=&quot;headerlink&quot; title=&quot;下载依赖&quot;&gt;&lt;/a&gt;下载依赖&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;npm i super-multi-select --save&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+
+&lt;h3 id=&quot;引用&quot;&gt;&lt;a href=&quot;#引用&quot; class=&quot;headerlink&quot; title=&quot;引用&quot;&gt;&lt;/a&gt;引用&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;import Vue from &amp;quot;vue&amp;quot;;
+import superMultiSelect from &amp;quot;super-multi-select&amp;quot;;
+
+Vue.use(superMultiSelect);&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+
+&lt;h3 id=&quot;better-sidebar-组件介绍&quot;&gt;&lt;a href=&quot;#better-sidebar-组件介绍&quot; class=&quot;headerlink&quot; title=&quot;better-sidebar 组件介绍&quot;&gt;&lt;/a&gt;better-sidebar 组件介绍&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;属性&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;可选值&lt;/th&gt;
+&lt;th&gt;默认值&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;options&lt;/td&gt;
+&lt;td&gt;{label: string, value: string}[][]&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;[]&lt;/td&gt;
+&lt;td&gt;选项数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;placeholder&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;默认提示&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;disabled&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;true/false&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;是否禁用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>做了这么多年前端，为什么你还是不会写业务代码？</title>
