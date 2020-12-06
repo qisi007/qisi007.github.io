@@ -59,7 +59,7 @@ better-sidebar 组件介绍
     <link href="https://www.liuguisheng.vip/2020/12/03/%E5%81%9A%E4%BA%86%E8%BF%99%E4%B9%88%E5%A4%9A%E5%B9%B4%E5%89%8D%E7%AB%AF%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E8%BF%98%E6%98%AF%E4%B8%8D%E4%BC%9A%E5%86%99%E4%B8%9A%E5%8A%A1%E4%BB%A3%E7%A0%81%EF%BC%9F/"/>
     <id>https://www.liuguisheng.vip/2020/12/03/%E5%81%9A%E4%BA%86%E8%BF%99%E4%B9%88%E5%A4%9A%E5%B9%B4%E5%89%8D%E7%AB%AF%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E8%BF%98%E6%98%AF%E4%B8%8D%E4%BC%9A%E5%86%99%E4%B8%9A%E5%8A%A1%E4%BB%A3%E7%A0%81%EF%BC%9F/</id>
     <published>2020-12-03T03:04:06.000Z</published>
-    <updated>2020-12-06T01:06:17.900Z</updated>
+    <updated>2020-12-06T01:15:51.802Z</updated>
     
     
     <summary type="html">我在平时工作中也会负责一些代码审查的工作，做的多了，就发现了一个问题：大部分程序员习惯把所有的逻辑都写在vue文件里，所以这就导致一个问题，也就是你项目中的.vue文件的代码会巨多，相反，你的js/ts文件中的代码会没有那么多。如果是一个小型项目当然还好，如果是一个大型的项目，这可能就是维护人员的噩梦了，因为后续的维护成本是巨大的。至于为什么，相信你看完这篇博客就能懂我的意思了。
@@ -75,9 +75,9 @@ better-sidebar 组件介绍
     <category term="项目经验" scheme="https://www.liuguisheng.vip/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
     
     
-    <category term="项目经验" scheme="https://www.liuguisheng.vip/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
-    
     <category term="vue" scheme="https://www.liuguisheng.vip/tags/vue/"/>
+    
+    <category term="项目经验" scheme="https://www.liuguisheng.vip/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
     
     <category term="ts" scheme="https://www.liuguisheng.vip/tags/ts/"/>
     
@@ -291,9 +291,9 @@ npm i better-sidebar </summary>
     
     <category term="vue" scheme="https://www.liuguisheng.vip/tags/vue/"/>
     
-    <category term="vue组件库" scheme="https://www.liuguisheng.vip/tags/vue%E7%BB%84%E4%BB%B6%E5%BA%93/"/>
-    
     <category term="package" scheme="https://www.liuguisheng.vip/tags/package/"/>
+    
+    <category term="vue组件库" scheme="https://www.liuguisheng.vip/tags/vue%E7%BB%84%E4%BB%B6%E5%BA%93/"/>
     
   </entry>
   
