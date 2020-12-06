@@ -44,17 +44,17 @@
 <meta property="og:site_name" content="This-刘贵生的博客">
 <meta property="og:description" content="我在平时工作中也会负责一些代码审查的工作，做的多了，就发现了一个问题：大部分程序员习惯把所有的逻辑都写在vue文件里，所以这就导致一个问题，也就是你项目中的.vue文件的代码会巨多，相反，你的js&#x2F;ts文件中的代码会没有那么多。如果是一个小型项目当然还好，如果是一个大型的项目，这可能就是维护人员的噩梦了，因为后续的维护成本是巨大的。至于为什么，相信你看完这篇博客就能懂我的意思了。  今天有时间静下">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog-1300740786.cos.ap-nanjing.myqcloud.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20201203111933.png">
-<meta property="og:image" content="https://blog-1300740786.cos.ap-nanjing.myqcloud.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20201203113805.png">
-<meta property="og:image" content="https://blog-1300740786.cos.ap-nanjing.myqcloud.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20201204152710.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/1412010/202012/1412010-20201206090343336-1521101554.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/1412010/202012/1412010-20201206090408270-160768681.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/1412010/202012/1412010-20201206090611972-655863785.png">
 <meta property="article:published_time" content="2020-12-03T03:04:06.000Z">
-<meta property="article:modified_time" content="2020-12-04T09:57:48.247Z">
+<meta property="article:modified_time" content="2020-12-06T01:06:17.900Z">
 <meta property="article:author" content="刘贵生">
-<meta property="article:tag" content="vue">
 <meta property="article:tag" content="项目经验">
+<meta property="article:tag" content="vue">
 <meta property="article:tag" content="ts">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-1300740786.cos.ap-nanjing.myqcloud.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20201203111933.png">
+<meta name="twitter:image" content="https://img2020.cnblogs.com/blog/1412010/202012/1412010-20201206090343336-1521101554.png">
 
 <link rel="canonical" href="https://www.liuguisheng.vip/2020/12/03/%E5%81%9A%E4%BA%86%E8%BF%99%E4%B9%88%E5%A4%9A%E5%B9%B4%E5%89%8D%E7%AB%AF%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E8%BF%98%E6%98%AF%E4%B8%8D%E4%BC%9A%E5%86%99%E4%B8%9A%E5%8A%A1%E4%BB%A3%E7%A0%81%EF%BC%9F/">
 
@@ -248,7 +248,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-04 17:57:48" itemprop="dateModified" datetime="2020-12-04T17:57:48+08:00">2020-12-04</time>
+                <time title="修改时间：2020-12-06 09:06:17" itemprop="dateModified" datetime="2020-12-06T09:06:17+08:00">2020-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -311,13 +311,13 @@
 
 <p>&emsp;&emsp;首先我们想思考一个问题：<strong><code>.vue</code>文件到底是用来干嘛用的？</strong></p>
 <p>&emsp;&emsp;我们可以看一下<code>vue官网</code>是如何介绍这款框架的:</p>
-<p><img src="https://blog-1300740786.cos.ap-nanjing.myqcloud.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20201203111933.png" alt="image"></p>
+<p><img src="https://img2020.cnblogs.com/blog/1412010/202012/1412010-20201206090343336-1521101554.png" alt="image"></p>
 <p>&emsp;&emsp;这个视图层也就<code>vm</code>，说白了就是我们写的页面。</p>
 <p>&emsp;&emsp;那么页面中应该负责干什么呢？无非就是用<code>html</code>和<code>css</code>代码搭建页面结构，然后页面中可以能有一些元素的事件，比如说按钮的点击事件，表单的查询，表格的请求数据的动作等等。</p>
 <p>&emsp;&emsp;所以综上所述我们可以总结一句话： <strong><code>.vue</code>文件中包含一些页面结构以及页面元素动作的发起。</strong></p>
 <p>&emsp;&emsp;那么，动作的发起者有了，动作的执行者是谁呢？</p>
 <p>&emsp;&emsp;我们看一些我们平常写的项目结构是啥样的，拿一个ts项目为例：</p>
-<p><img src="https://blog-1300740786.cos.ap-nanjing.myqcloud.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20201203113805.png" alt="image"></p>
+<p><img src="https://img2020.cnblogs.com/blog/1412010/202012/1412010-20201206090408270-160768681.png" alt="image"></p>
 <p>&emsp;&emsp;这个是<code>src</code>下的目录结构，应该是分的比较详细的，各个文件夹有不同的作用，这也符合单一职责。</p>
 <p>&emsp;&emsp;我们在回过头来看一些谁能当作动作的执行者呢？<code>api</code>只负责调用接口，他拿到数据后就抛出了，数据这时候已经流向别处了，<code>assets</code>只放静态资源,这两个显然不能。<code>component</code>，<code>public_component</code>，<code>instance</code>，<code>mixin</code>和<code>views</code>全是用来搭建页面的，<code>mixin</code>虽然是<code>ts</code>文件，但是他的定义也是<code>可以分发Vue组件中的可复用功能</code>，这些显然也是不行的。<code>interface</code>和<code>utils</code>这些是抽象出来的东西，显然是不能放业务代码的。<code>store</code>现在已经不被大家看好了，因为<code>vuex</code>中的通信实在是太繁琐了，目前我们的项目只用来放一些字典数据用来缓存。还剩下<code>routers</code>，<code>middleware</code>，<code>style</code>这三个显然不是干这个用的。最后就只剩下<code>domain</code>了。</p>
 <p>&emsp;&emsp;<code>domain</code>（也有叫<code>service</code>的）作为业务层，我们给他最初的定义就是写一些业务代码，按钮的点击事件，页面的滚动事件显然不是业务代码，这些可以负责调用业务代码，也就是我们上面说的动作的发起者。这时候业务层的作用就来了，就是充当动作的执行者。设想一下，我点击一个按钮去请求一个表格数据，那么按钮上肯定绑定一个<code>click</code>事件，点击完成之后就应该调接口了，后续的事情就可以交给业务层了，由业务层完成后续的逻辑，比如我拿数据需要调用<code>api层</code>先请求一下后台数据，拿到数据看一下有没有请求成功，数据是不是我们想要的格式，处理好时候就可以交给页面层渲染了。</p>
@@ -424,7 +424,7 @@ export class TableList {
 }</code></pre><blockquote>
 <p>最终效果</p>
 </blockquote>
-<p><img src="https://blog-1300740786.cos.ap-nanjing.myqcloud.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20201204152710.png" alt="image"></p>
+<p><img src="https://img2020.cnblogs.com/blog/1412010/202012/1412010-20201206090611972-655863785.png" alt="image"></p>
 <p>&emsp;&emsp;我们可以看出这里的代码大部分写在了<code>.vue</code>文件中，里边包含了一些判断和数据处理，而且业务层文件基本没发挥它的作用，只是简单的调用了接口而已，我们知道一个类最基本的就是要构造他，才能体现它的多态，这里只是一个页面有表格业务操作，如果我们有很多个表格呢，是不是就会有很多个业务文件？</p>
 <p>&emsp;&emsp;如果我们按照我的说法，把业务代码不写在页面而是写在service中，看看是什么效果:</p>
 <blockquote>
@@ -687,8 +687,8 @@ export default class PreviewPage extends Vue {
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/vue/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> vue</a>
               <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> 项目经验</a>
+              <a href="/tags/vue/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> vue</a>
               <a href="/tags/ts/" rel="tag" classfa fa-tag><i class="fa fa-tag"></i> ts</a>
           </div>
 
