@@ -158,20 +158,6 @@
 
   
   <url>
-    <loc>https://www.liuguisheng.vip/tags/taro/</loc>
-    <lastmod>2020-12-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liuguisheng.vip/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
-    <lastmod>2020-12-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.liuguisheng.vip/tags/hexo/</loc>
     <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
@@ -187,6 +173,20 @@
   
   <url>
     <loc>https://www.liuguisheng.vip/tags/gitalk/</loc>
+    <lastmod>2020-12-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liuguisheng.vip/tags/taro/</loc>
+    <lastmod>2020-12-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liuguisheng.vip/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -307,14 +307,14 @@
 
   
   <url>
-    <loc>https://www.liuguisheng.vip/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+    <loc>https://www.liuguisheng.vip/categories/%E5%8D%9A%E5%AE%A2%E6%8F%92%E4%BB%B6/</loc>
     <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.liuguisheng.vip/categories/%E5%8D%9A%E5%AE%A2%E6%8F%92%E4%BB%B6/</loc>
+    <loc>https://www.liuguisheng.vip/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
