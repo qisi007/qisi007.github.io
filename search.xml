@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>react-admin-plus 正式开源, 欢迎star</title>
+      <link href="/2020/12/09/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar/"/>
+      <url>/2020/12/09/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar/</url>
+      
+        <content type="html"><![CDATA[<hr><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>基于react、ant-ui、typescript的前端微服务框架。欢迎star。</p><h2 id="在线地址"><a href="#在线地址" class="headerlink" title="在线地址"></a>在线地址</h2><p><a href="https://www.liuguisheng.vip/react-admin-plus/#/login" target="_blank">在线demo</a></p><h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>&emsp;&emsp;沉淀了几个月的时间，这款框架终于正式的和大家见面了!</p><p>&emsp;&emsp;先说一下我做这个项目的初衷，其实市面上已经有几款类似的产品了，但是总结起来就是：乱，杂。所以自己打算重新写一个类似的项目。本着简约至上的原则，加上<code>react</code>带给我的方便，开发了这个项目。</p><p>&emsp;&emsp;本人做公司的项目也快三年，期间大部分时间在写业务项目，也有一些时间在做基础服务。所以我也算是了解在实际开发中我们的需求是什么，我们真正会用到的组件会有哪些，针对这些痛点，我在这个项目中也有注意到。</p><p>&emsp;&emsp;我们在写项目的时候最怕的是什么？无非就是维护难，代码乱。针对这个，我对项目做了一些基础配置，一个页面无需手动开发，只需要添加一些配置文件即可，也符合我们设计原则的开闭原则，即对扩展开放，对修改关闭。</p><p>&emsp;&emsp;深情不及久伴，厚爱无需多言。简单介绍过后我也不废话了，直接上图介绍一下这个项目：</p><blockquote><p>登录页采用了渐变色</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20201209180834123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p><p>密码账号随便输入，我们就进入了主页：</p><blockquote><p>主页</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20201209181432812.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p><p>整个项目的ui组件采用了<code>ant</code>，并没有进行主题后编译，维持原来的蓝色主题</p><blockquote><p>字体图标</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20201209181459658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p><blockquote><p>echarts图表</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20201209181545394.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p><blockquote><p>表格</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20201209181620438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p><blockquote><p>骨架屏</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20201209181642877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p><blockquote><p>高德地图</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20201209181703446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p><blockquote><p>富文本编辑器</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20201209181737141.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p><blockquote><p>多级菜单</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20201209181936803.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p><blockquote><p>集成外链</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20201209182032115.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p><p>好了，目前就这么多功能，后续会有更新，可以看项目下的<code>TODO.md</code>，里边有我对这个项目所有的规划。</p><blockquote><h3 id="开源不易，给个star吧。"><a href="#开源不易，给个star吧。" class="headerlink" title="开源不易，给个star吧。"></a>开源不易，给个star吧。</h3></blockquote><h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cudHNsYW5nLmNuL2RvY3MvaG9tZS5odG1s">TypeScript<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly96aC1oYW5zLnJlYWN0anMub3JnLw==">react<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1JlYWN0VHJhaW5pbmcvcmVhY3Qtcm91dGVyL3RyZWUvbWFzdGVyL3BhY2thZ2VzL3JlYWN0LXJvdXRlci1kb20=">react-router-dom<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9hbnQuZGVzaWduL2luZGV4LWNu">ant-ui<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9tb2J4LmpzLm9yZy9SRUFETUUuaHRtbA==">mobx<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuc2Fzcy5oay9kb2NzLw==">sass<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9wYWdlcy5naXRodWIuY29tLw==">gh-pages<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9lY2hhcnRzLmFwYWNoZS5vcmcvemgvaW5kZXguaHRtbA==">echarts<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2UvZWNoYXJ0cy1mb3ItcmVhY3Q=">echarts-for-react<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2UvY29weS10by1jbGlwYm9hcmQ=">copy-to-clipboard<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9lbGVtZWZlLmdpdGh1Yi5pby9yZWFjdC1hbWFwL2FydGljbGVzL3N0YXJ0">react-amap<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9icmFmdC5tYXJnb3guY24v">braft-editor<i class="fa fa-external-link-alt"></i></span></li></ul><blockquote><p>衷心的感谢以上所有插件的作者</p></blockquote><br/><h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpc2kwMDcvcmVhY3QtYWRtaW4tcGx1cy9ibG9iL21hc3Rlci9MSUNFTlNF">MIT License<i class="fa fa-external-link-alt"></i></span></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开源项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+            <tag> 开源项目 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>适合web端的多列选择器---super-multi-select</title>
       <link href="/2020/12/04/%E9%80%82%E5%90%88web%E7%AB%AF%E7%9A%84%E5%A4%9A%E5%88%97%E9%80%89%E6%8B%A9%E5%99%A8-super-multi-select/"/>
       <url>/2020/12/04/%E9%80%82%E5%90%88web%E7%AB%AF%E7%9A%84%E5%A4%9A%E5%88%97%E9%80%89%E6%8B%A9%E5%99%A8-super-multi-select/</url>
@@ -49,9 +78,9 @@
       
         <tags>
             
-            <tag> vue </tag>
-            
             <tag> 项目经验 </tag>
+            
+            <tag> vue </tag>
             
             <tag> ts </tag>
             
@@ -105,11 +134,11 @@
       
         <tags>
             
+            <tag> JavaScript </tag>
+            
             <tag> h5 </tag>
             
             <tag> api </tag>
-            
-            <tag> JavaScript </tag>
             
             <tag> util </tag>
             
