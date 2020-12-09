@@ -6,7 +6,7 @@
   <link href="https://www.liuguisheng.vip/atom.xml" rel="self"/>
   
   <link href="https://www.liuguisheng.vip/"/>
-  <updated>2020-12-09T10:25:50.545Z</updated>
+  <updated>2020-12-09T10:26:53.163Z</updated>
   <id>https://www.liuguisheng.vip/</id>
   
   <author>
@@ -21,16 +21,23 @@
     <link href="https://www.liuguisheng.vip/2020/12/09/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar/"/>
     <id>https://www.liuguisheng.vip/2020/12/09/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar/</id>
     <published>2020-12-09T09:57:37.000Z</published>
-    <updated>2020-12-09T10:25:50.545Z</updated>
+    <updated>2020-12-09T10:26:53.163Z</updated>
     
     
-    <summary type="html">&lt;hr&gt;
-&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;基于react、ant-ui、typescript的前端微服务框架。欢迎star。&lt;/p&gt;
-&lt;h2 id=&quot;在线地址&quot;&gt;&lt;a href=&quot;#在线地址&quot; class=&quot;headerlink&quot; title=&quot;在线地址&quot;&gt;&lt;/a&gt;在线地址&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.liuguisheng.vip/react-admin-plus/#/login&quot; target=&quot;_blank&quot;&gt;在线demo&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;项目介绍&quot;&gt;&lt;a href=&quot;#项目介绍&quot; class=&quot;headerlink&quot; title=&quot;项目介绍&quot;&gt;&lt;/a&gt;项目介绍&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;沉淀了几个月的时间，这款框架终于正式的和大家见面了!&lt;/p&gt;
-&lt;p&gt;&amp;emsp;&amp;emsp;先说一下我做这个项目的初衷，其实市面上已经有几款类似的产品了，但是总结起来就是：乱，杂。所以自己打算重新写一个类似的项目。本着简约至上的原则，加上&lt;code&gt;react&lt;/code&gt;带给我的方便，开发了这个项目。&lt;/p&gt;
-&lt;p&gt;&amp;emsp;&amp;emsp;本人做公司的项目也快三年，期间大部分时间在写业务项目，也有一些时间在做基础服务。所以我也算是了解在实际开发中我们的需求是什么，我们真正会用到的组件会有哪些，针对这些痛点，我在这个项目中也有注意到。&lt;/p&gt;
-&lt;p&gt;&amp;emsp;&amp;emsp;我们在写项目的时候最怕的是什么？无非就是维护难，代码乱。针对这个，我对项目做了一些基础配置，一个页面无需手动开发，只需要添加一些配置文件即可，也符合我们设计原则的开闭原则，即对扩展开放，对修改关闭。&lt;/p&gt;</summary>
+    <summary type="html">简介
+基于react、ant-ui、typescript的前端微服务框架。欢迎star。
+
+在线地址
+在线demo
+
+项目介绍
+沉淀了几个月的时间，这款框架终于正式的和大家见面了!
+
+先说一下我做这个项目的初衷，其实市面上已经有几款类似的产品了，但是总结起来就是：乱，杂。所以自己打算重新写一个类似的项目。本着简约至上的原则，加上react带给我的方便，开发了这个项目。
+
+本人做公司的项目也快三年，期间大部分时间在写业务项目，也有一些时间在做基础服务。所以我也算是了解在实际开发中我们的需求是什么，我们真正会用到的组件会有哪些，针对这些痛点，我在这个项目中也有注意到。
+
+我们在写项目的时候最怕的是</summary>
     
     
     
@@ -104,9 +111,9 @@ better-sidebar 组件介绍
     <category term="项目经验" scheme="https://www.liuguisheng.vip/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
     
     
-    <category term="项目经验" scheme="https://www.liuguisheng.vip/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
-    
     <category term="vue" scheme="https://www.liuguisheng.vip/tags/vue/"/>
+    
+    <category term="项目经验" scheme="https://www.liuguisheng.vip/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
     
     <category term="ts" scheme="https://www.liuguisheng.vip/tags/ts/"/>
     
