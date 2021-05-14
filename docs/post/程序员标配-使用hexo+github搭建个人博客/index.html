@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My New Hugo Site &middot; My New Hugo Site</title>
+    <title>程序员标配--使用hexo&#43;github搭建个人博客 &middot; My New Hugo Site</title>
 
     <meta name="description" content="">
 
     <meta name="generator" content="Hugo 0.83.1" />
     <meta name="twitter:card" content="summary">
     
-    <meta name="twitter:title" content="My New Hugo Site &middot; My New Hugo Site">
+    <meta name="twitter:title" content="程序员标配--使用hexo&#43;github搭建个人博客 &middot; My New Hugo Site">
     <meta name="twitter:description" content="">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="My New Hugo Site &middot; My New Hugo Site">
+    <meta property="og:title" content="程序员标配--使用hexo&#43;github搭建个人博客 &middot; My New Hugo Site">
     <meta property="og:description" content="">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
@@ -58,190 +58,6 @@
         <div>
             
             <div class="posts">
-                
-                <h1 class="content-subhead">14 May 2021, 16:12</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="https://www.liuguisheng.vip/post/%E6%83%B3%E8%AF%B4%E7%88%B1%E4%BD%A0%E4%B8%8D%E5%AE%B9%E6%98%93-vue%E5%A4%A7%E5%9E%8B%E9%A1%B9%E7%9B%AE%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-title">想说爱你不容易--vue大型项目高性能优化</a>
-
-                        <p class="post-meta">
-                            
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        <h2 id="一背景-一背景一背景"><a href="#%E4%B8%80%E3%80%81%E8%83%8C%E6%99%AF" title="一、背景"></a>一、背景</h2>
-<p>  目前公司的<code>电子合同</code>采用<code>表单设计器</code>+<code>合同业务</code>配合实现，做了半年多后终于上线，但是下边员工普遍反映卡顿，甚至卡死，爆栈。尤其是新增和修改合同页面，因为这部分数据量大，逻辑复杂，很容易崩溃，所以决定进行性能优化。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h2 id="二业务场景介绍-二业务场景介绍二业务场景介绍"><a href="#%E4%BA%8C%E3%80%81%E4%B8%9A%E5%8A%A1%E5%9C%BA%E6%99%AF%E4%BB%8B%E7%BB%8D" title="二、业务场景介绍"></a>二、业务场景介绍</h2>
-<p>  先来了解一下我们是怎么实现：</p>
-<p>  1. 因为我们公司合同变换频繁，条款之间还有逻辑，所以做了个<code>基础服务</code>（说白了就是组件库），为合同提供模板</p>
-<p>  2. 表单设计器作为基础服务，打包成了组件库，嵌入到合同项目，包括合同生成组件（拖拽生成合同模板）和合同预览组件（加载数据库中的合同模板数据）</p>
-<p>  3. 合同项目有一个模块管理页面，可以对多个模板进行维护，比如可以选择启用哪个模板。</p>
-<p>  4. 合同的管理员负责维护模板，可以用表单设计器拖拽生成合同模板，提交后落入数据库，每个合同类型可以同时启用一个模板。</p>
-<p>  5. 最终下边员工用的就是启用的模板（尤其是这部门卡顿）</p>
-<p><strong>下面是电子合同的宏观泳道图：</strong>
-<img src="https://img-blog.csdnimg.cn/20200216200900531.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h2 id="三页面介绍-三页面介绍三页面介绍"><a href="#%E4%B8%89%E3%80%81%E9%A1%B5%E9%9D%A2%E4%BB%8B%E7%BB%8D" title="三、页面介绍"></a>三、页面介绍</h2>
-<ol>
-<li>合同模板管理页
-<img src="https://img-blog.csdnimg.cn/20200910105834157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
-<li>新增模板页面
-<img src="https://img-blog.csdnimg.cn/20200910105956622.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
-<li>新建合同页面
-<img src="https://img-blog.csdnimg.cn/202009101101566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
-<li>合同填写页面
-<img src="https://img-blog.csdnimg.cn/20200911134425140.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></li>
-</ol>
-<p>  好了，基本的业务逻辑和页面就介绍这么多，特别卡顿的页面就是第四个页面，下面我们分析一下卡顿的原因。</p>
-<h2 id="四卡顿分析-四卡顿分析四卡顿分析"><a href="#%E5%9B%9B%E3%80%81%E5%8D%A1%E9%A1%BF%E5%88%86%E6%9E%90" title="四、卡顿分析"></a>四、卡顿分析</h2>
-<p>  1. 首先就是表单设计器的问题最严重，因为每一个组件需要很多配置项才能够支撑组件的渲染，而一个合同是由上千个组件组成，经过测试，一个合同模板需要5MB的存储空间(数据库用的是MongoDB，存储格式为字符串，几乎不影响)，下面是一个输入框的配置</p>
-<p><img src="https://img-blog.csdnimg.cn/20200910103459458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVMaXVndWlzaGVuZw==,size_16,color_FFFFFF,t_70" alt="image"></p>
-<p>  2. 表单设计器的实现用了大量的闭包管理业务，我们都知道，闭包是特别耗内存的。</p>
-<p>  3. 合同模板巨复杂，由上万个组件拼接而成，我把模板数据down下来看了一下，大约是16000多个组件，大小为3.4MB。</p>
-<p>  4. 因为表单设计器中包括<code>id,model,事件id</code>都是前端随机生成的，采用<code>随机字符串+时间戳</code>的形式，一共46位。</p>
-<p>  5. 合同项目属于大型项目，业务场景及其复杂，包括合同管理，附件管理，合同列表，新增页面，审批页面等等，我计算了一下，光路由页面就有三十多个，<code>页面，组件，样式,业务</code>巨多，如果不做处理，不卡才怪</p>
-<h2 id="五性能优化-五性能优化五性能优化"><a href="#%E4%BA%94%E3%80%81%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96" title="五、性能优化"></a>五、性能优化</h2>
-<h4 id="1-第一次尝试-1-第一次尝试1-第一次尝试"><a href="#1-%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95" title="1. 第一次尝试"></a>1. 第一次尝试</h4>
-<p>  说一下我的优化思路：首先，电子合同由表单设计器和合同业务两个项目共同完成，合同模板加载慢的原因是浏览器渲染了大量的模板数据，这些模板数据是由多个组组成的（大约12个），我第一想到的就是<code>分组渲染</code>，先加载一个组，先让用户看到页面，然后在继续加载，一个一个,最终加载完成。这也是被大家认可的方案。</p>
-<p>  然后我就开始实现这个分组渲染，做了大概有二十多天吧，一点效果没出来。</p>
-<p>  先看一下渲染的代码：</p>
-<pre><code>&amp;lt;template v-show=&amp;quot;itemManage===&amp;#39;group&amp;#39;&amp;quot;&amp;gt;
-  &amp;lt;preview-item-template v-for=&amp;quot;(item) in domainNodeList&amp;quot;
-                        :key=&amp;quot;item.id&amp;quot;
-                        :formNode=&amp;quot;item&amp;quot;
-                        :parent=&amp;quot;domainNodeList&amp;quot;&amp;gt;
-  &amp;lt;/preview-item-template&amp;gt;
-&amp;lt;/template&amp;gt;`&lt;/pre&gt;
-
-&amp;emsp;&amp;emsp;上面就是所有组加载的代码，这是一个`v-for`,做分组渲染，我想到使用`vue的异步组件`实现，但是这是一个循环，所有的组件注册的都是同一个名字，这显然是不能用异步组件的，除非注册的是不同名字的组件，但是我想了很长时间都做出来效果，所以这二十多天，失败了。
-
-#### [](#2-第二次尝试 &quot;2.第二次尝试&quot;)2.第二次尝试
-
-&amp;emsp;&amp;emsp;上边说了，模板加载慢是因为浏览器渲染了大量的数据，我们知道，js是单线程的，也就是说，所有任务只能在一个线程上完成，一次只能做一件事。前面的任务没做完，后面的任务只能等着。因此js处理数据的能力有限，所以在朋友的建议下调研了一把`webworker`。
-
-&amp;emsp;&amp;emsp;webworker的作用，就是为js创造多线程环境，允许主线程创建Worker线程，将一些任务分配给后者运行。在主线程运行的同时，Worker线程在后台运行，两者互不干扰。
-
-&amp;emsp;&amp;emsp;看了一把文档我第一时间觉得这个方案不可行。说到底我们就是想要webworker为我们开辟县城用来处理大量数据，但是webworker处理的大数据，不是指数据量非常大，而是要从计算量来看，通常用时不能控制在毫秒级内的运算都可以考虑放在web worker中执行。而我们的合同模板数据恰恰是数据量大，并不需要做特别大的运算。
-
-&amp;emsp;&amp;emsp;第二次尝试失败。
-
-#### [](#3-第三次尝试 &quot;3.第三次尝试&quot;)3.第三次尝试
-
-&amp;emsp;&amp;emsp;后来在同事的建议下决定采用`ssr`,也就是`服务端预渲染`。我们平常写的vue项目打包后生成`dist`,运维会把这个文件夹放在服务器中，我们看到的页面其实就是生成执行的`render函数`，这是比较耗时的。
-
-&amp;emsp;&amp;emsp;所谓的服务端渲染，就是在`服务端`生成静态页面，然后交给`客户端`渲染。
-
-&amp;emsp;&amp;emsp;自己从零搭建一套服务端渲染的应用是相当复杂的，所以我最终选用了`nuxt`框架。关于nuxt框架我不多做介绍，可以自己去看文档&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9udXh0anMub3JnLw==&quot;&gt;（传送门）&lt;/span&gt;。这个框架有自己的脚手架，也是vue官方推荐的。
-
-&amp;emsp;&amp;emsp;经过了一周的时间，完成了从vue向nuxt的迁移，大部门页面速度有了明显的提升。
-
-&amp;emsp;&amp;emsp;**除了我们想优化的新增合同页面。**
-
-&amp;emsp;&amp;emsp;经过分析，合同项目用到的组件库有`element-UI`和我问自己的表单设计器，element只有部门组件支持ssr，像是`表格和树`是不支持ssr的，所以就不存在服务端渲染了。
-
-&amp;emsp;&amp;emsp;我也曾尝试过弄一把表单设计器，让它支持ssr，但是并没有效果，如果有谁知道，可以联系我。
-
-&amp;emsp;&amp;emsp;很显然，第三次也失败了。
-
-#### [](#4-第四次尝试 &quot;4.第四次尝试&quot;)4.第四次尝试
-
-&amp;emsp;&amp;emsp;命运总是很捉弄人，优化了一个多月的合同，速度并没有显著的提升，领导很着急，我也很着急。
-
-&amp;emsp;&amp;emsp;突然有一天，我在回家的途中，记得那天风雨交加，雷霆大作，一声巨雷轰天响，把我好的idea都劈出来了。我一下子想到了分组加载的实现。
-
-先来看一把代码的实现（只展示了部分代码）：
-
-&lt;pre&gt;`&amp;lt;template&amp;gt;
-  &amp;lt;div class=&amp;quot;dialog-preview&amp;quot; v-show=&amp;quot;!formLoading&amp;quot;&amp;gt;
-      &amp;lt;el-form  ref=&amp;quot;previewForm&amp;quot; onsubmit=&amp;quot;return false&amp;quot;
-                :size=&amp;quot;formSettingState.componentSize&amp;quot;
-                @hook:mounted=&amp;quot;formMounted&amp;quot;
-                :model=&amp;quot;formModels&amp;quot;&amp;gt;
-
-        &amp;lt;template v-show=&amp;quot;itemManage===&amp;#39;group&amp;#39;&amp;quot;&amp;gt;
-          &amp;lt;preview-item-template v-for=&amp;quot;(item) in cutDomainNodeList.one&amp;quot;
-                                :key=&amp;quot;item.id&amp;quot;
-                                :formNode=&amp;quot;item&amp;quot;
-                                :parent=&amp;quot;cutDomainNodeList.one&amp;quot;&amp;gt;
-          &amp;lt;/preview-item-template&amp;gt;
-        &amp;lt;/template&amp;gt;
-        &amp;lt;template v-if=&amp;quot;itemManage===&amp;#39;group&amp;#39; &amp;amp;&amp;amp; formLoadingTwo&amp;quot;&amp;gt;
-          &amp;lt;preview-item-template v-for=&amp;quot;(item) in cutDomainNodeList.two&amp;quot;
-                                :key=&amp;quot;item.id&amp;quot;
-                                :formNode=&amp;quot;item&amp;quot;
-                                :parent=&amp;quot;cutDomainNodeList.two&amp;quot;&amp;gt;
-          &amp;lt;/preview-item-template&amp;gt;
-        &amp;lt;/template&amp;gt;
-         &amp;lt;template v-if=&amp;quot;itemManage===&amp;#39;group&amp;#39; &amp;amp;&amp;amp; formLoadingThree&amp;quot;&amp;gt;
-          &amp;lt;preview-item-template v-for=&amp;quot;(item) in cutDomainNodeList.three&amp;quot;
-                                :key=&amp;quot;item.id&amp;quot;
-                                :formNode=&amp;quot;item&amp;quot;
-                                :parent=&amp;quot;cutDomainNodeList.three&amp;quot;&amp;gt;
-          &amp;lt;/preview-item-template&amp;gt;
-        &amp;lt;/template&amp;gt;
-        &amp;lt;/template&amp;gt;
-      &amp;lt;/el-form&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/template&amp;gt;
-&amp;lt;script&amp;gt;
-export default {
-    data() {
-        return {
-          formLoading: true,
-          formLoadingTwo: false,
-          formLoadingThree: false
-        }
-    },
-    computed: {
-        cutDomainNodeList () {
-          let { domainNodeList } = this;
-          let length = domainNodeList.length;
-          if ( length &amp;lt;= 4 ) {
-            return {
-              one: domainNodeList
-            }
-          }else {
-            return {
-              one: domainNodeList.filter((el, index) =&amp;gt; index &amp;lt;=2 ),
-              two: domainNodeList.filter((el, index) =&amp;gt; index&amp;gt;2 &amp;amp;&amp;amp; index &amp;lt;=5 ),
-              three: domainNodeList.filter((el, index ) =&amp;gt; index &amp;gt; 5)
-            }
-        }
-    },
-    methods: {
-        formMounted () {
-          setTimeout(() =&amp;gt; { this.formLoading = false },  500);
-          setTimeout(() =&amp;gt; { this.formLoadingTwo = true },  700);
-          setTimeout(() =&amp;gt; { this.formLoadingThree = true},  900);
-        }
-    }
-}
-</code></pre>
-<p><strong>分块加载实现思路：</strong></p>
-<p>   1. 首先我把模板数据这个list利用计算属性先做了个判断，如果数组长度小于4，证明数据量较小，不需要分块加载，如果大于4证明数据量大，需要进行分块加载</p>
-<p>   2. 分块加载是根据数组索引过滤的，第一块是0-2组，第二块是2-5组，第三块是索引大于5的（也可以分割的跟细），然后再页面中分别遍历渲染</p>
-<p>   3. 看一下<code>html</code>中的<code>el-form</code>这个标签，里边有个<code>@hook:mounted=&amp;quot;formMounted&amp;quot;</code>这句话，<code>@hook:</code>+<code>生命周期</code>代表在这个生命周期时执行，我们等<code>mounted</code>执行完延时500mm开始加载第一块，700mm加载第二块，900毫秒加载第三块，这样分块加载的效果就出来了。</p>
-<h2 id="六其他方面优化-六其他方面优化六其他方面优化"><a href="#%E5%85%AD%E3%80%81%E5%85%B6%E4%BB%96%E6%96%B9%E9%9D%A2%E4%BC%98%E5%8C%96" title="六、其他方面优化"></a>六、其他方面优化</h2>
-<p>    首先添加了骨架屏组件，让用户在等待的时候能看到过渡效果。</p>
-<p>   上面提到，合同模板大约在<code>3.4MB</code>，这个就是个纯<code>json</code>,让浏览器一下子加载这个么大的数据难免卡顿，所以我就在想能不能优化一下模板大小，从而能够提升加载速度。</p>
-<p>   表单设计器中包括<code>id,model,事件id</code>都是前端随机生成的，采用<code>随机字符串+时间戳</code>的形式，一共46位，一个英文字符就是一个字节，这就是46个字节，所以我们可以缩短一下随机数的长度，从而减少一下模板大小。</p>
-<p>   最终选用了26位随机数，我算了一下，大约能减少一半大小。</p>
-<p>   后来我们让测试人员新生成了一个模板，果然，新模板大小<code>1.44MB</code>，缩短了一倍还多。</p>
-<p>   其他方面，我们知道表单设计器有些配置做的不到位，所以管理员不得不换个别的方式拖拽模板，所以我们加了一些配置项，从而使管理员可以少拖拽一些组件。这部分优化下来，模板大小大约减少了<code>300多kb</code>.</p>
-<p>   我们还可以优化一下表单设计器的代码，把闭包换个实现方式，应该也能提高加载速度，后续会做这些。</p>
-<p>   合同业务项目也优化了一些接口，代码，前后端交互方式，以及页面的交互方式提高了性能和视觉效果。</p>
-<h2 id="七总结-七总结七总结"><a href="#%E4%B8%83%E3%80%81%E6%80%BB%E7%BB%93" title="七、总结"></a>七、总结</h2>
-<p>   这是我第一次费这么大劲做vue项目的性能优化，虽然坎坷，但也留下了好结果，我们从最初加载需要50秒甚至一分钟，到现在10秒左右就能加载成功，速度提高可近5倍。</p>
-<p>   整体效果如下：
-<img src="https://qjprod-images.oss-cn-beijing.aliyuncs.com/menuResource/1600564965755?name=111.gif" alt="image"></p>
-<p>   今日成果，虽数月，但众人拾柴，得以燎原，此非一人之功，谢而不及。</p>
-
-                    </div>
-                </section>
-                
                 <h1 class="content-subhead">14 May 2021, 16:12</h1>
                 <section class="post">
                     <header class="post-header">
@@ -253,7 +69,17 @@ export default {
                             
                         </p>
                     </header>
-
+                    
+                    <div class="post-share">
+                        <div class="post-share-links">
+                            <h4 style="">Share</h4>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                    
                     <div class="post-description">
                         <p>  作为一名合格的程序员，拥有一个自己的个人网站，那想必是非常舒服了。我们可以在里边写写技术博客，发发牢骚，记录自己的生活。当然，我们可以在博客园，掘金的博客网站发表，但是那毕竟是人家的东西，我们应该试着搭建一个自己的博客。但是，做网站就要买服务器，买服务器就要花钱，这对于我们这帮屌丝程序员来说当然是不太友好，这时候，我们就想到一个搭建很熟悉的东西–github。
   github作为世界上最大的同性交友基地，它除了能为广大男性同胞带来灵魂上的快感，还有一个巨大的作用，那就是可以充当一个小型的服务器。</p>
@@ -456,11 +282,9 @@ linux和mac用户需要添加权限
 <!-- raw HTML omitted -->
 
                     </div>
+                    
                 </section>
-                
             </div>
-            
-
             <div class="footer">
     <div class="pure-menu pure-menu-horizontal pure-menu-open">
         <ul>
