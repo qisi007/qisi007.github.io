@@ -1,5 +1,52 @@
 baseURL = "https://www.liuguisheng.vip/"
 languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "purehugo"
+title = "凤凰城下的小码农"
+description = "一个被代码耽误的大艺术家"
+theme = "freelancer"
 publishDir = "docs"
+
+
+# 主导航菜单
+name="首页"
+url="/"
+weight="1"
+[[menu.main]]
+name="博文"
+url="/post"
+weight="2"
+[[menu.main]]
+name="新闻"
+url="/news"
+weight="3"
+[[menu.main]]
+name="关于"
+url="/about"
+weight="4"
+
+# 页脚导航菜单
+[[menu.foot]]
+name="网站首页"
+url="/"
+weight="4"
+[[menu.foot]]
+name="博文集合"
+url="/post"
+weight="3"
+[[menu.foot]]
+name="新闻列表"
+url="/news"
+weight="2"
+[[menu.foot]]
+name="关于我们"
+url="/about"
+weight="1"
+
+[params]
+    [params.header]
+        name = "凤凰城下的小码农"
+        subtitle = "一个被代码耽误的大艺术家"
+        image = "header.jpg"
+
+
+
+

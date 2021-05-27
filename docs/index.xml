@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>凤凰城下的小码农</title>
     <link>https://www.liuguisheng.vip/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on 凤凰城下的小码农</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 May 2021 16:12:56 +0800</lastBuildDate><atom:link href="https://www.liuguisheng.vip/index.xml" rel="self" type="application/rss+xml" />
@@ -48,6 +48,15 @@ npm install -g hexo`&amp;lt;/pre&amp;gt; linux和mac用户需要添加权限 &am
   themes: 主题文件夹
   _config.yml: 网站的配置信息，大部分配置都可以在这里修改
   package.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.liuguisheng.vip/quote/%E8%BF%99%E9%87%8C%E5%91%A2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.liuguisheng.vip/quote/%E8%BF%99%E9%87%8C%E5%91%A2/</guid>
+      <description>hahahah</description>
     </item>
     
   </channel>
