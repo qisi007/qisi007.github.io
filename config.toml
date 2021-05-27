@@ -17,25 +17,28 @@ publishDir = "docs"
         image = "header.jpg"
         otherText = "网站升级中...........  更多内容请关注公众号【凤凰城下的小码农】"
 
+    [params.about.button]
+        text = "这里"
+
 
     [params.contact]
         title = "反馈"
 
-        [params.contact.form.name]
-            text = "姓名："
-            placeholder = "请输入姓名："
-        [params.contact.form.email]
-            text = "电子邮件："
-            placeholder = "请输入电子邮件："
-        [params.contact.form.phone]
-            text = "电话："
-            placeholder = "请输入电话："
-        [params.contact.form.message]
-            text = "意见："
-            placeholder = "请输入意见："
-
-        [params.contact.form.button]
-            text = "提交"
+        [params.contact.form]
+            [params.contact.form.name]
+                text = "姓名："
+                placeholder = "请输入姓名："
+            [params.contact.form.email]
+                text = "电子邮件："
+                placeholder = "请输入电子邮件："
+            [params.contact.form.phone]
+                text = "电话："
+                placeholder = "请输入电话："
+            [params.contact.form.message]
+                text = "意见："
+                placeholder = "请输入意见："
+            [params.contact.form.button]
+                text = "提交"
 
 
 
