@@ -8,19 +8,24 @@ publishDir = "docs"
 
 # 主导航菜单
 name="首页"
-url="/"
+url="https://www.liuguisheng.vip/"
 weight="1"
+
 [[menu.main]]
 name="博文"
-url="/post"
+url="https://www.liuguisheng.vip/post"
+post = "_blank"
 weight="2"
+
 [[menu.main]]
 name="新闻"
-url="/news"
+url="https://www.liuguisheng.vip/news"
 weight="3"
+
+
 [[menu.main]]
 name="关于"
-url="/about"
+url="https://www.liuguisheng.vip/about"
 weight="4"
 
 # 页脚导航菜单
