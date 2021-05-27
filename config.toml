@@ -6,50 +6,10 @@ theme = "freelancer"
 publishDir = "docs"
 
 
-# 主导航菜单
-name="首页"
-url="https://www.liuguisheng.vip/"
-weight="1"
-
-[[menu.main]]
-name="博文"
-url="https://www.liuguisheng.vip/post"
-post = "_blank"
-weight="2"
-
-[[menu.main]]
-name="新闻"
-url="https://www.liuguisheng.vip/news"
-weight="3"
-
-
-[[menu.main]]
-name="关于"
-url="https://www.liuguisheng.vip/about"
-weight="4"
-
-# 页脚导航菜单
-[[menu.foot]]
-name="网站首页"
-url="/"
-weight="4"
-[[menu.foot]]
-name="博文集合"
-url="/post"
-weight="3"
-[[menu.foot]]
-name="新闻列表"
-url="/news"
-weight="2"
-[[menu.foot]]
-name="关于我们"
-url="/about"
-weight="1"
-
 [params]
     [params.header]
         name = "凤凰城下的小码农"
-        subtitle = "一个被代码耽误的大艺术家"
+        subtitle = "一个被代码耽误的大艺术家 !"
         image = "header.jpg"
         otherText = "网站升级中...........  更多内容请关注公众号【凤凰城下的小码农】"
 

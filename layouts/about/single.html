@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+    <head>
+        {{ partial "head.html" . }}
+
+        <style>
+            #about {
+                margin-top: 60px;
+            }
+        </style>
+    </head>
+    <body id="page-top" class="index">
+
+        {{ partial "nav.html" . }}
+
+      
+       <div id="about">
+           <h1>
+               关于我
+           </h1>
+       </div>
+
+
+    </body>
+</html>
