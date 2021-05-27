@@ -13,6 +13,7 @@
 <!-- Custom CSS -->
 <link href="css/freelancer.css" rel="stylesheet">
 
+<link rel="icon" href="img/header.jpg">
 <!-- Custom Fonts -->
 <link href="https://www.liuguisheng.vip/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -247,7 +248,7 @@
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <a href="" class="btn btn-lg btn-outline">
-                    <i class="fa fa-"></i> 
+                    <i class="fa fa-"></i> 这里
                 </a>
             </div>
         </div>
@@ -259,31 +260,31 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2></h2>
+                <h2>反馈</h2>
                 <hr class="star-primary">
             </div>
         </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <form  action="//formspree.io/" method="POST" name="sentMessage" id="contactForm" novalidate>
+                <form  action="https://formspree.io/f/mleabgzd" method="POST" name="sentMessage" id="contactForm" novalidate>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label></label>
-                            <input type="text" name="name" class="form-control" placeholder="" id="name" required data-validation-required-message="">
+                            <label class="form-label">姓名：</label>
+                            <input type="text" name="name" class="form-control" placeholder="请输入姓名：" id="name" required data-validation-required-message="">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label></label>
-                            <input type="email" name="_replyto" class="form-control" placeholder="" id="email" required data-validation-required-message="">
+                            <label  class="form-label">电子邮件：</label>
+                            <input type="email" name="_replyto" class="form-control" placeholder="请输入电子邮件：" id="email" required data-validation-required-message="">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label></label>
-                            <input type="tel" class="form-control" placeholder="" id="phone" required data-validation-required-message="">
+                            <label  class="form-label">电话：</label>
+                            <input type="tel" class="form-control" placeholder="请输入电话：" id="phone" required data-validation-required-message="">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -293,8 +294,8 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label></label>
-                            <textarea rows="5" name="message" class="form-control" placeholder="" id="message" required data-validation-required-message=""></textarea>
+                            <label  class="form-label">意见：</label>
+                            <textarea rows="5" name="message" class="form-control" placeholder="请输入意见：" id="message" required data-validation-required-message=""></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -302,7 +303,7 @@
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-success btn-lg"></button>
+                            <button type="submit" class="btn btn-success btn-lg">提交</button>
                         </div>
                     </div>
                 </form>
@@ -310,6 +311,13 @@
         </div>
     </div>
 </section>
+
+<style>
+    .form-label {
+        font-size: 24px!important;
+        margin-left: -30px!important;
+    }
+</style>
 
 
         <!-- Footer -->
