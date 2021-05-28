@@ -6,48 +6,33 @@
     <description>Recent content on 凤凰城下的小码农</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 May 2021 16:12:56 +0800</lastBuildDate><atom:link href="https://www.liuguisheng.vip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 May 2021 10:10:16 +0800</lastBuildDate><atom:link href="https://www.liuguisheng.vip/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>想说爱你不容易--vue大型项目高性能优化</title>
-      <link>https://www.liuguisheng.vip/post/%E6%83%B3%E8%AF%B4%E7%88%B1%E4%BD%A0%E4%B8%8D%E5%AE%B9%E6%98%93-vue%E5%A4%A7%E5%9E%8B%E9%A1%B9%E7%9B%AE%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</link>
-      <pubDate>Fri, 14 May 2021 16:12:56 +0800</pubDate>
+      <title>react-admin-plus 正式开源, 欢迎star</title>
+      <link>https://www.liuguisheng.vip/post/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar/</link>
+      <pubDate>Fri, 28 May 2021 10:10:16 +0800</pubDate>
       
-      <guid>https://www.liuguisheng.vip/post/%E6%83%B3%E8%AF%B4%E7%88%B1%E4%BD%A0%E4%B8%8D%E5%AE%B9%E6%98%93-vue%E5%A4%A7%E5%9E%8B%E9%A1%B9%E7%9B%AE%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</guid>
-      <description>一、背景  目前公司的电子合同采用表单设计器+合同业务配合实现，做了半年多后终于上线，但是下边员工普遍反映卡顿，甚至卡死，爆栈。尤其是新增和修改合同页面，因为这部分数据量大，逻辑复杂，很容易崩溃，所以决定进行性能优化。
-二、业务场景介绍  先来了解一下我们是怎么实现：
- 1. 因为我们公司合同变换频繁，条款之间还有逻辑，所以做了个基础服务（说白了就是组件库），为合同提供模板
- 2. 表单设计器作为基础服务，打包成了组件库，嵌入到合同项目，包括合同生成组件（拖拽生成合同模板）和合同预览组件（加载数据库中的合同模板数据）
- 3. 合同项目有一个模块管理页面，可以对多个模板进行维护，比如可以选择启用哪个模板。
- 4. 合同的管理员负责维护模板，可以用表单设计器拖拽生成合同模板，提交后落入数据库，每个合同类型可以同时启用一个模板。
- 5. 最终下边员工用的就是启用的模板（尤其是这部门卡顿）
-下面是电子合同的宏观泳道图： 三、页面介绍  合同模板管理页  新增模板页面  新建合同页面  合同填写页面    好了，基本的业务逻辑和页面就介绍这么多，特别卡顿的页面就是第四个页面，下面我们分析一下卡顿的原因。
-四、卡顿分析  1. 首先就是表单设计器的问题最严重，因为每一个组件需要很多配置项才能够支撑组件的渲染，而一个合同是由上千个组件组成，经过测试，一个合同模板需要5MB的存储空间(数据库用的是MongoDB，存储格式为字符串，几乎不影响)，下面是一个输入框的配置
- 2. 表单设计器的实现用了大量的闭包管理业务，我们都知道，闭包是特别耗内存的。
- 3. 合同模板巨复杂，由上万个组件拼接而成，我把模板数据down下来看了一下，大约是16000多个组件，大小为3.4MB。
- 4. 因为表单设计器中包括id,model,事件id都是前端随机生成的，采用随机字符串+时间戳的形式，一共46位。
- 5. 合同项目属于大型项目，业务场景及其复杂，包括合同管理，附件管理，合同列表，新增页面，审批页面等等，我计算了一下，光路由页面就有三十多个，页面，组件，样式,业务巨多，如果不做处理，不卡才怪
-五、性能优化 1. 第一次尝试  说一下我的优化思路：首先，电子合同由表单设计器和合同业务两个项目共同完成，合同模板加载慢的原因是浏览器渲染了大量的模板数据，这些模板数据是由多个组组成的（大约12个），我第一想到的就是分组渲染，先加载一个组，先让用户看到页面，然后在继续加载，一个一个,最终加载完成。这也是被大家认可的方案。
- 然后我就开始实现这个分组渲染，做了大概有二十多天吧，一点效果没出来。
- 先看一下渲染的代码：
-&amp;amp;lt;template v-show=&amp;amp;quot;itemManage===&amp;amp;#39;group&amp;amp;#39;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;preview-item-template v-for=&amp;amp;quot;(item) in domainNodeList&amp;amp;quot;:key=&amp;amp;quot;item.id&amp;amp;quot;:formNode=&amp;amp;quot;item&amp;amp;quot;:parent=&amp;amp;quot;domainNodeList&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/preview-item-template&amp;amp;gt;&amp;amp;lt;/template&amp;amp;gt;`&amp;lt;/pre&amp;gt;&amp;amp;emsp;&amp;amp;emsp;上面就是所有组加载的代码，这是一个`v-for`,做分组渲染，我想到使用`vue的异步组件`实现，但是这是一个循环，所有的组件注册的都是同一个名字，这显然是不能用异步组件的，除非注册的是不同名字的组件，但是我想了很长时间都做出来效果，所以这二十多天，失败了。#### [](#2-第二次尝试 &amp;quot;2.</description>
+      <guid>https://www.liuguisheng.vip/post/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar/</guid>
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;基于react、ant-ui、typescript的前端微服务框架。欢迎star。&lt;/p&gt;
+&lt;h2 id=&#34;在线地址&#34;&gt;在线地址&lt;/h2&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;在线demo&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h2 id=&#34;项目介绍&#34;&gt;项目介绍&lt;/h2&gt;
+&lt;p&gt;  沉淀了几个月的时间，这款框架终于正式的和大家见面了!&lt;/p&gt;
+&lt;p&gt;  先说一下我做这个项目的初衷，其实市面上已经有几款类似的产品了，但是总结起来就是：乱，杂。所以自己打算重新写一个类似的项目。本着简约至上的原则，加上&lt;code&gt;react&lt;/code&gt;带给我的方便，开发了这个项目。&lt;/p&gt;
+&lt;p&gt;  本人做公司的项目也快三年，期间大部分时间在写业务项目，也有一些时间在做基础服务。所以我也算是了解在实际开发中我们的需求是什么，我们真正会用到的组件会有哪些，针对这些痛点，我在这个项目中也有注意到。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>程序员标配--使用hexo&#43;github搭建个人博客</title>
-      <link>https://www.liuguisheng.vip/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E6%A0%87%E9%85%8D-%E4%BD%BF%E7%94%A8hexo&#43;github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Fri, 14 May 2021 16:12:56 +0800</pubDate>
+      <title>如何用小米手环6替换太空人表盘</title>
+      <link>https://www.liuguisheng.vip/post/%E5%A6%82%E4%BD%95%E7%94%A8%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF6%E6%9B%BF%E6%8D%A2%E5%A4%AA%E7%A9%BA%E4%BA%BA%E8%A1%A8%E7%9B%98/</link>
+      <pubDate>Fri, 28 May 2021 10:10:16 +0800</pubDate>
       
-      <guid>https://www.liuguisheng.vip/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E6%A0%87%E9%85%8D-%E4%BD%BF%E7%94%A8hexo&#43;github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>作为一名合格的程序员，拥有一个自己的个人网站，那想必是非常舒服了。我们可以在里边写写技术博客，发发牢骚，记录自己的生活。当然，我们可以在博客园，掘金的博客网站发表，但是那毕竟是人家的东西，我们应该试着搭建一个自己的博客。但是，做网站就要买服务器，买服务器就要花钱，这对于我们这帮屌丝程序员来说当然是不太友好，这时候，我们就想到一个搭建很熟悉的东西–github。 github作为世界上最大的同性交友基地，它除了能为广大男性同胞带来灵魂上的快感，还有一个巨大的作用，那就是可以充当一个小型的服务器。
- 使用gitlab搭建个人博客的好处非常多，比如：
- 访问速度快，仓库里只需放打包好的静态页面 构建快，代码push到远程仓库后，分分钟构建完 免费（当然这是最大的好处） 易于管理，这得益于github超强的代码管理能力，比如分支，版本回退等 可以绑定自己的域名   常见的博客生成工具有两种，一个是hexo,另一个是jekyll。两者其实大同小异，但是jekyll语法和配置相对于复杂，它需要ruby环境。而hexo就比较简单易上手，只需要node环境就ok了。下面我们进入正题，详细介绍如何使用hexo+github搭建个人博客。
-准备工作  首先你得有一个github账号吧，注册过程这里不做过多介绍了。注册账号点这里 配置node环境,根据系统下载好node安装包，一路下一步安装就ok了。node下载 shell工具，这个可以自行选择，比如cmd，powerShell,git等，建议使用git 如果你想要自己的域名，可以花钱去申请一个，一般点的域名也不是太贵，一年几十块钱，其实这点钱对于程序员也不算什么，少买件格子衫就有了。   好了，基本的准备工作就这些了,下面真的要进入正题了。
-安装hexo hexo需要全局安装，命令如下：
-npm install -g hexo`&amp;lt;/pre&amp;gt; linux和mac用户需要添加权限 &amp;lt;pre&amp;gt;`sudo npm install -g hexo`&amp;lt;/pre&amp;gt; 安装完成之后，接下来我们下载博客模板 # [](#初始化模板 &amp;quot;初始化模板&amp;quot;)初始化模板 首先我们新建一个文件夹用来放模板，文件夹名字随便起，题材不限，这里以`blog`为例,新建blog文件夹，切换到blog，用hexo给出的命令`hexo init`初始化模板 &amp;lt;pre&amp;gt;` mkdir blog cd blog hexo init`&amp;lt;/pre&amp;gt; 下载完成时候，blog文件夹内出现以下文件 ![image](https://img-blog.csdnimg.cn/2020042915153328.png) 下面介绍以下各个文件的作用    scaffolds: 模板文件夹，里边的.md文件都是各个模板，比如page.md是我们新建页面的模板， post是我们新建博客的模板，我们可以修改这些默认模板
-  source: 资源文件夹
-  themes: 主题文件夹
-  _config.yml: 网站的配置信息，大部分配置都可以在这里修改
-  package.</description>
+      <guid>https://www.liuguisheng.vip/post/%E5%A6%82%E4%BD%95%E7%94%A8%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF6%E6%9B%BF%E6%8D%A2%E5%A4%AA%E7%A9%BA%E4%BA%BA%E8%A1%A8%E7%9B%98/</guid>
+      <description>小米手环主题商城是没有太空人表盘的，下面我们介绍如何用小米手环6替换太空人表盘（以安卓手机为例），采用的原理就是替换表盘的源文件
+第一步： 首先我们去小米官网购买一个小米手环（。。。废）
+第二步： 下载小米运动，连接好小米手环之后在商城随便下载一款表盘，同步，我们以【罗小黑】这个主题为例： 第三步: 下载我们需要替换太空人表盘的源文件，关注【凤凰城下的小码农】后回复【太空人】即可获取，或者扫描下方二维码 解压之后就是如下文件，我们可以选择自己喜欢的表盘 第四步 在手机上依次打开如下文件，一个一个打开，千万不能出错（电脑也可以，需要打开开发者模式才能发现内部储存）：
+【文件管理】&amp;mdash;&amp;gt;【Android】&amp;mdash;&amp;gt;【data】&amp;mdash;&amp;gt;【com.xiaomi.hm.health】&amp;mdash;&amp;gt;【watch_skin_local】 我们可以看到有以下文件，这些就是我们在小米运动下载的所有表盘，进去之后会有缩略图，我们可以很清楚是哪一款表盘，把刚才下载的太空人表盘文件随便复制到这个文件夹里就行了，然后重名明改成和这个文件里一样的名字 最后一步： 关闭在打开蓝牙，关闭再打开小米运动，找到我们刚下替换文件的表盘主题，重新同步一把刚才的表盘就行了 你们都替换成功了吗？</description>
     </item>
     
     <item>

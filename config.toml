@@ -40,6 +40,8 @@ publishDir = "docs"
             [params.contact.form.button]
                 text = "提交"
 
+    [params.portfolio]
+        title = "文章精选"
 
 
 

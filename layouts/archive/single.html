@@ -1,26 +1,15 @@
 
+<h2>
+    {{ range where .Site.Pages "Section" "post" }}
+      {{ range (.Pages.GroupByDate "2006") }}
+      <details class="menu" open>
+        <summary>{{ .Key }}</summary>
+        {{ range .Pages }}
+        <article><h3><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h3></article>
+        {{ end }}
+      </details>
+      {{ end }}
+    {{ end }}
+  </h2>
 
-<!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-    <head>
-        {{ partial "head.html" . }}
-    </head>
-    <body id="page-top" class="index">
-        <h2>
-            {{ range where .Site.Pages "Section" "post" }}
-              {{ range (.Pages.GroupByDate "2006") }}
-              <details class="menu" open>
-                <summary>{{ .Key }}</summary>
-                {{ range .Pages }}
-                <article><h3><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h3></article>
-                {{ end }}
-              </details>
-              {{ end }}
-            {{ end }}
-          </h2>
-        {{ partial "footer.html" . }}
-        {{ partial "modals.html" . }}
-        {{ partial "js.html" . }}
-
-    </body>
-</html>
+  <a href="/">回首页</a>
