@@ -74,6 +74,34 @@ publishDir = "docs"
             url = "https://github.com/qisi007/react-admin-plus"
 
     
+    [params.footer.location]
+        title = "123123"
+        address = "www.liuguisheng.vip"
+    
+     [params.footer.social]
+        title = "友情链接"
+
+        [[params.footer.social.networks]]
+            link = "https://github.com/qisi007"
+            icon = "fa-github"
+        [[params.footer.social.networks]]
+            link = "https://github.com/qisi007"
+            icon = "fa-github"
+        [[params.footer.social.networks]]
+            link = "https://github.com/qisi007"
+            icon = "fa-github"
+        [[params.footer.social.networks]]
+            link = "https://github.com/qisi007"
+            icon = "fa-github"
+        [[params.footer.social.networks]]
+            link = "https://github.com/qisi007"
+            icon = "fa-github"
+
+    
+    [params.footer]
+        copyright = "power by 凤凰山下的小码农"
+
+    
 
   
 
