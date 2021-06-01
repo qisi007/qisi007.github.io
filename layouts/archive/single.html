@@ -1,5 +1,7 @@
 
 <h2>
+    {{ print   .Site.Pages}}
+
     {{ range where .Site.Pages "Section" "post" }}
       {{ range (.Pages.GroupByDate "2006") }}
       <details class="menu" open>

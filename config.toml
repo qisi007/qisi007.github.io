@@ -7,9 +7,9 @@ publishDir = "docs"
 
 
 [params]
-
     icon = "header.jpg"
     formspree = "https://formspree.io/f/mleabgzd"
+    toc = true
 
     [params.header]
         name = "凤凰城下的小码农"
@@ -22,7 +22,7 @@ publishDir = "docs"
 
 
     [params.contact]
-        title = "反馈"
+        title = "联系我"
 
         [params.contact.form]
             [params.contact.form.name]
@@ -35,13 +35,45 @@ publishDir = "docs"
                 text = "电话："
                 placeholder = "请输入电话："
             [params.contact.form.message]
-                text = "意见："
-                placeholder = "请输入意见："
+                text = "内容："
+                placeholder = "请输入内容："
             [params.contact.form.button]
                 text = "提交"
 
     [params.portfolio]
-        title = "文章精选"
+        title = "精选文章"
 
 
+        [[params.portfolio.projectList]]
+            title = "如何用小米手环6替换太空人表盘"
+            img = "cabin.png"
+            url = "/post/如何用小米手环6替换太空人表盘"
+        [[params.portfolio.projectList]]
+            title = "如何用小米手环6替换太空人表盘"
+            img = "cabin.png"
+            url = "/post/如何用小米手环6替换太空人表盘"
+        [[params.portfolio.projectList]]
+            title = "如何用小米手环6替换太空人表盘"
+            img = "cabin.png"
+            url = "/post/如何用小米手环6替换太空人表盘"
+
+    [params.project]
+        title = "开源项目"
+
+        [[params.project.list]]
+            title = "react-admin-plus"
+            img = "cabin.png"
+            url = "https://github.com/qisi007/react-admin-plus"
+        [[params.project.list]]
+            title = "react-admin-plus"
+            img = "cabin.png"
+            url = "https://github.com/qisi007/react-admin-plus"
+        [[params.project.list]]
+            title = "react-admin-plus"
+            img = "cabin.png"
+            url = "https://github.com/qisi007/react-admin-plus"
+
+    
+
+  
 
