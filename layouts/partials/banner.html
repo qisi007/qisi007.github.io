@@ -1,0 +1,143 @@
+{{ "<!-- Header -->" | safeHTML }}
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" id="img-responsive" src="img/{{ with .Site.Params.header.image }}{{ . }}{{ else }}profile.png{{ end }}" alt="">
+                <div class="intro-text">
+                    <span class="name" id="name-title">{{ with .Site.Params.header.name }}{{ . }}{{ end }}</span>
+                    <hr class="star-light" id="star-light">
+                    <span class="skills" id="skills">
+                        {{ with .Site.Params.header.subtitle }}{{ . }}{{ end }}
+                    </span>
+                    <p style="margin-top: 10px; font-size: 16px">{{ with .Site.Params.header.otherText }}{{ . }}{{ end }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    let headerImg = document.getElementById('img-responsive');
+    let title = document.getElementById('name-title');
+    let starLight = document.getElementById('star-light');
+    let skills = document.getElementById('skills');
+
+    headerImg.onmouseover = () => {
+        title.classList.add('title-animation')
+        starLight.classList.add('line-animation')
+        skills.classList.add('skills-animation')
+    }
+
+    headerImg.onmouseout = () => {
+        title.classList.remove('title-animation')
+        starLight.classList.remove('line-animation')
+        skills.classList.remove('skills-animation')
+    }
+</script>
+
+<style>
+    .img-responsive {
+        border-radius: 50%; 
+        box-shadow: 0 0 10px #ff8329; 
+    }
+
+    .img-responsive:hover {
+        animation: ani 2s linear infinite;
+    }
+
+    @keyframes ani {
+        0%{
+                box-shadow: 0 0 10px #ff8329;
+                transform: scale(1);
+        }
+        25%{
+                box-shadow: 0 0 20px #ff8329;
+                transform: scale(1.1);
+        }
+        50%{
+                box-shadow: 0 0 40px #ff8329;
+                transform: scale(1.2);
+
+        }
+        75%{
+                box-shadow: 0 0 20px #ff8329;
+                transform: scale(1.1);
+
+        }
+        100%{
+            box-shadow: 0 0 10px #ff8329;
+            transform: scale(1);
+        }
+    }
+
+    .title-animation {
+        animation: title-animation 2s linear infinite;
+    }
+
+    .line-animation {
+        animation: line-animation 2s linear infinite;
+    }
+
+    .skills-animation {
+        animation: skills-animation 3s ease-in-out infinite;
+    }
+
+    @keyframes title-animation {
+        0% {
+            margin-left: 0px;
+        }
+
+        25% {
+            margin-left: 50px;
+        }
+
+        50% {
+            margin-left: 100px;
+        }
+
+        75% {
+            margin-left: 50px;
+        }
+
+        100% {
+            margin-left: 0px;
+        }
+    }
+
+    @keyframes line-animation {
+        0% {
+            transform: translate(0px)
+        }
+
+        25% {
+            transform: translate(-30px)
+        }
+
+        50% {
+            transform: translate(-80px)
+        }
+
+        75% {
+            transform: translate(-30px)
+        }
+
+        100% {
+            transform: translate(0px)
+        }
+    }
+
+    @keyframes skills-animation {
+        0% {
+            margin-left: 0px;
+        }
+
+        50% {
+            margin-left: 300px;
+        }
+
+        100% {
+            margin-left: 0px;
+        }
+    }
+</style>

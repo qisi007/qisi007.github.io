@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 28 May 2021 10:10:16 +0800</lastBuildDate><atom:link href="https://www.liuguisheng.vip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>react-admin-plus 正式开源, 欢迎star</title>
-      <link>https://www.liuguisheng.vip/post/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar/</link>
+      <link>https://www.liuguisheng.vip/post/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar-copy/</link>
       <pubDate>Fri, 28 May 2021 10:10:16 +0800</pubDate>
       
-      <guid>https://www.liuguisheng.vip/post/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar/</guid>
+      <guid>https://www.liuguisheng.vip/post/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar-copy/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;基于react、ant-ui、typescript的前端微服务框架。欢迎star。&lt;/p&gt;
 &lt;h2 id=&#34;在线地址&#34;&gt;在线地址&lt;/h2&gt;
@@ -31,8 +31,37 @@
       <guid>https://www.liuguisheng.vip/post/%E5%A6%82%E4%BD%95%E7%94%A8%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF6%E6%9B%BF%E6%8D%A2%E5%A4%AA%E7%A9%BA%E4%BA%BA%E8%A1%A8%E7%9B%98/</guid>
       <description>小米手环主题商城是没有太空人表盘的，下面我们介绍如何用小米手环6替换太空人表盘（以安卓手机为例），采用的原理就是替换表盘的源文件
 第一步： 首先我们去小米官网购买一个小米手环（。。。废）
+第二步： 下载小米运动，连接好小米手环之后在商城随便下载一款表盘，同步，我们以【罗小黑】这个主题为例： 第三步: 下载我们需要替换太空人表盘的源文件，关注【凤凰城下的小码农】后回复【太空人】即可获取。
+解压之后就是如下文件，我们可以选择自己喜欢的表盘 第四步 在手机上依次打开如下文件，一个一个打开，千万不能出错（电脑也可以，需要打开开发者模式才能发现内部储存）：
+【文件管理】&amp;mdash;&amp;gt;【Android】&amp;mdash;&amp;gt;【data】&amp;mdash;&amp;gt;【com.xiaomi.hm.health】&amp;mdash;&amp;gt;【watch_skin_local】 我们可以看到有以下文件，这些就是我们在小米运动下载的所有表盘，进去之后会有缩略图，我们可以很清楚是哪一款表盘，把刚才下载的太空人表盘文件随便复制到这个文件夹里就行了，然后重名明改成和这个文件里一样的名字 最后一步： 关闭在打开蓝牙，关闭再打开小米运动，找到我们刚下替换文件的表盘主题，重新同步一把刚才的表盘就行了 你们都替换成功了吗？</description>
+    </item>
+    
+    <item>
+      <title>如何用小米手环6替换太空人表盘222</title>
+      <link>https://www.liuguisheng.vip/post/%E5%A6%82%E4%BD%95%E7%94%A8%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF6%E6%9B%BF%E6%8D%A2%E5%A4%AA%E7%A9%BA%E4%BA%BA%E8%A1%A8%E7%9B%98-copy/</link>
+      <pubDate>Thu, 28 May 2020 10:10:16 +0800</pubDate>
+      
+      <guid>https://www.liuguisheng.vip/post/%E5%A6%82%E4%BD%95%E7%94%A8%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF6%E6%9B%BF%E6%8D%A2%E5%A4%AA%E7%A9%BA%E4%BA%BA%E8%A1%A8%E7%9B%98-copy/</guid>
+      <description>小米手环主题商城是没有太空人表盘的，下面我们介绍如何用小米手环6替换太空人表盘（以安卓手机为例），采用的原理就是替换表盘的源文件
+第一步： 首先我们去小米官网购买一个小米手环（。。。废）
 第二步： 下载小米运动，连接好小米手环之后在商城随便下载一款表盘，同步，我们以【罗小黑】这个主题为例： 第三步: 下载我们需要替换太空人表盘的源文件，关注【凤凰城下的小码农】后回复【太空人】即可获取，或者扫描下方二维码 解压之后就是如下文件，我们可以选择自己喜欢的表盘 第四步 在手机上依次打开如下文件，一个一个打开，千万不能出错（电脑也可以，需要打开开发者模式才能发现内部储存）：
 【文件管理】&amp;mdash;&amp;gt;【Android】&amp;mdash;&amp;gt;【data】&amp;mdash;&amp;gt;【com.xiaomi.hm.health】&amp;mdash;&amp;gt;【watch_skin_local】 我们可以看到有以下文件，这些就是我们在小米运动下载的所有表盘，进去之后会有缩略图，我们可以很清楚是哪一款表盘，把刚才下载的太空人表盘文件随便复制到这个文件夹里就行了，然后重名明改成和这个文件里一样的名字 最后一步： 关闭在打开蓝牙，关闭再打开小米运动，找到我们刚下替换文件的表盘主题，重新同步一把刚才的表盘就行了 你们都替换成功了吗？</description>
+    </item>
+    
+    <item>
+      <title>react-admin-plus 正式开源, 欢迎star</title>
+      <link>https://www.liuguisheng.vip/post/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar/</link>
+      <pubDate>Tue, 28 May 2019 10:10:16 +0800</pubDate>
+      
+      <guid>https://www.liuguisheng.vip/post/react-admin-plus-%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90-%E6%AC%A2%E8%BF%8Estar/</guid>
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;基于react、ant-ui、typescript的前端微服务框架。欢迎star。&lt;/p&gt;
+&lt;h2 id=&#34;在线地址&#34;&gt;在线地址&lt;/h2&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;在线demo&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h2 id=&#34;项目介绍&#34;&gt;项目介绍&lt;/h2&gt;
+&lt;p&gt;  沉淀了几个月的时间，这款框架终于正式的和大家见面了!&lt;/p&gt;
+&lt;p&gt;  先说一下我做这个项目的初衷，其实市面上已经有几款类似的产品了，但是总结起来就是：乱，杂。所以自己打算重新写一个类似的项目。本着简约至上的原则，加上&lt;code&gt;react&lt;/code&gt;带给我的方便，开发了这个项目。&lt;/p&gt;
+&lt;p&gt;  本人做公司的项目也快三年，期间大部分时间在写业务项目，也有一些时间在做基础服务。所以我也算是了解在实际开发中我们的需求是什么，我们真正会用到的组件会有哪些，针对这些痛点，我在这个项目中也有注意到。&lt;/p&gt;</description>
     </item>
     
     <item>

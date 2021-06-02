@@ -1,17 +1,54 @@
+<!DOCTYPE html>
+<html>
+<title>{{ .Site.Title }} | 归档</title>
+{{ partial "head.html" . }}
+<style>
+    .archive {
+        margin-top: 120px;
+        min-height: 800px;
+    }
 
-<h2>
-    {{ print   .Site.Pages}}
+    .archive  .archive-menu {
+        margin-top: 50px;
+    }
+    .archive .archive-date {
+        font-size: 50px;
+        font-weight: 600;
+        outline: none;
+        cursor: pointer;
+    }
 
-    {{ range where .Site.Pages "Section" "post" }}
-      {{ range (.Pages.GroupByDate "2006") }}
-      <details class="menu" open>
-        <summary>{{ .Key }}</summary>
-        {{ range .Pages }}
-        <article><h3><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h3></article>
+    .archive .archive-date .unit {
+        font-size: 30px;
+    }
+
+    .archive .archive-article {
+        margin-left: 30px;
+    }
+</style>
+
+<head>
+
+</head>
+
+<body>
+    {{ partial "menu.html" . }}
+    <div class="archive w">
+        {{ range where .Site.Pages "Section" "post" }}
+        {{ range   (.Pages.GroupByDate "2006") }}
+        <details class="menu archive-menu" open>
+            <summary class="archive-date">{{ .Key }} <span class="unit">年</span></summary>
+            {{ range $elem_key, $elem_val := .Pages }}
+            <article class="archive-article">
+                <h3><a href="{{ .Permalink }}" title=" {{ .Title }}">{{add 1 $elem_key}}.&nbsp;{{ .Title }}</a></h3>
+            </article>
+            {{ end }}
+        </details>
         {{ end }}
-      </details>
-      {{ end }}
-    {{ end }}
-  </h2>
+        {{ end }}
+    </div>
 
-  <a href="/">回首页</a>
+    {{ partial "footer.html" . }}
+</body>
+
+</html>

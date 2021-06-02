@@ -2,7 +2,6 @@ baseURL = "https://www.liuguisheng.vip/"
 languageCode = "en-us"
 title = "凤凰城下的小码农"
 description = "一个被代码耽误的大艺术家"
-theme = "freelancer"
 publishDir = "docs"
 
 

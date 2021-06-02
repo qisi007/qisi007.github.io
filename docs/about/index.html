@@ -1,42 +1,22 @@
 <!DOCTYPE html>
-<html lang="en-us">
-    <head>
-        <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<meta name="generator" content="Hugo 0.83.1" />
 <title>凤凰城下的小码农</title>
-<!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-<link href="https://www.liuguisheng.vip/css/bootstrap.min.css" rel="stylesheet">
-<!-- Custom CSS -->
-<link href="css/freelancer.css" rel="stylesheet">
-
-<link rel="icon" href="img/header.jpg">
-<!-- Custom Fonts -->
-<link href="https://www.liuguisheng.vip/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/freelancer.css" rel="stylesheet">
+<link rel="icon" href="/img/header.jpg">
+<link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/css/common.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-
-
-
-        <style>
-            #about {
-                margin-top: 60px;
-            }
-        </style>
-    </head>
-    <body id="page-top" class="index">
-
-        <!-- Navigation -->
+</head>
+<body>
+    <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -76,14 +56,360 @@
     <!-- /.container-fluid -->
 </nav>
 
+    <!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" id="img-responsive" src="img/header.jpg" alt="">
+                <div class="intro-text">
+                    <span class="name" id="name-title">凤凰城下的小码农</span>
+                    <hr class="star-light" id="star-light">
+                    <span class="skills" id="skills">
+                        一个被代码耽误的大艺术家 !
+                    </span>
+                    <p style="margin-top: 10px; font-size: 16px">网站升级中...........  更多内容请关注公众号【凤凰城下的小码农】</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-      
-       <div id="about">
-           <h1>
-               关于我
-           </h1>
-       </div>
+<script>
+    let headerImg = document.getElementById('img-responsive');
+    let title = document.getElementById('name-title');
+    let starLight = document.getElementById('star-light');
+    let skills = document.getElementById('skills');
 
+    headerImg.onmouseover = () => {
+        title.classList.add('title-animation')
+        starLight.classList.add('line-animation')
+        skills.classList.add('skills-animation')
+    }
 
-    </body>
+    headerImg.onmouseout = () => {
+        title.classList.remove('title-animation')
+        starLight.classList.remove('line-animation')
+        skills.classList.remove('skills-animation')
+    }
+</script>
+
+<style>
+    .img-responsive {
+        border-radius: 50%; 
+        box-shadow: 0 0 10px #ff8329; 
+    }
+
+    .img-responsive:hover {
+        animation: ani 2s linear infinite;
+    }
+
+    @keyframes ani {
+        0%{
+                box-shadow: 0 0 10px #ff8329;
+                transform: scale(1);
+        }
+        25%{
+                box-shadow: 0 0 20px #ff8329;
+                transform: scale(1.1);
+        }
+        50%{
+                box-shadow: 0 0 40px #ff8329;
+                transform: scale(1.2);
+
+        }
+        75%{
+                box-shadow: 0 0 20px #ff8329;
+                transform: scale(1.1);
+
+        }
+        100%{
+            box-shadow: 0 0 10px #ff8329;
+            transform: scale(1);
+        }
+    }
+
+    .title-animation {
+        animation: title-animation 2s linear infinite;
+    }
+
+    .line-animation {
+        animation: line-animation 2s linear infinite;
+    }
+
+    .skills-animation {
+        animation: skills-animation 3s ease-in-out infinite;
+    }
+
+    @keyframes title-animation {
+        0% {
+            margin-left: 0px;
+        }
+
+        25% {
+            margin-left: 50px;
+        }
+
+        50% {
+            margin-left: 100px;
+        }
+
+        75% {
+            margin-left: 50px;
+        }
+
+        100% {
+            margin-left: 0px;
+        }
+    }
+
+    @keyframes line-animation {
+        0% {
+            transform: translate(0px)
+        }
+
+        25% {
+            transform: translate(-30px)
+        }
+
+        50% {
+            transform: translate(-80px)
+        }
+
+        75% {
+            transform: translate(-30px)
+        }
+
+        100% {
+            transform: translate(0px)
+        }
+    }
+
+    @keyframes skills-animation {
+        0% {
+            margin-left: 0px;
+        }
+
+        50% {
+            margin-left: 300px;
+        }
+
+        100% {
+            margin-left: 0px;
+        }
+    }
+</style>
+
+    <!-- Portfolio Grid Section -->
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>精选文章</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-sm-4 portfolio-item">
+                <a href="/post/%e5%a6%82%e4%bd%95%e7%94%a8%e5%b0%8f%e7%b1%b3%e6%89%8b%e7%8e%af6%e6%9b%bf%e6%8d%a2%e5%a4%aa%e7%a9%ba%e4%ba%ba%e8%a1%a8%e7%9b%98" class="portfolio-link" data-toggle="modal">
+                    <img src="img/portfolio/cabin.png" class="img-responsive">
+                    <p class="title">如何用小米手环6替换太空人表盘</p>
+                </a>
+            </div>
+            
+            <div class="col-sm-4 portfolio-item">
+                <a href="/post/%e5%a6%82%e4%bd%95%e7%94%a8%e5%b0%8f%e7%b1%b3%e6%89%8b%e7%8e%af6%e6%9b%bf%e6%8d%a2%e5%a4%aa%e7%a9%ba%e4%ba%ba%e8%a1%a8%e7%9b%98" class="portfolio-link" data-toggle="modal">
+                    <img src="img/portfolio/cabin.png" class="img-responsive">
+                    <p class="title">如何用小米手环6替换太空人表盘</p>
+                </a>
+            </div>
+            
+            <div class="col-sm-4 portfolio-item">
+                <a href="/post/%e5%a6%82%e4%bd%95%e7%94%a8%e5%b0%8f%e7%b1%b3%e6%89%8b%e7%8e%af6%e6%9b%bf%e6%8d%a2%e5%a4%aa%e7%a9%ba%e4%ba%ba%e8%a1%a8%e7%9b%98" class="portfolio-link" data-toggle="modal">
+                    <img src="img/portfolio/cabin.png" class="img-responsive">
+                    <p class="title">如何用小米手环6替换太空人表盘</p>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<style>
+    .portfolio-item .portfolio-link {
+        transition: all .3s;
+    }
+    .portfolio-item .portfolio-link:hover {
+        transform: scale(1.1);
+        transition: all .3s;
+    }
+    .portfolio-item .portfolio-link .title{
+            text-align: center;
+            margin-top: 20px;
+    }
+    .portfolio-item .portfolio-link .img-responsive {
+        border-radius: 10px;
+    }
+    .portfolio-item .portfolio-link .img-responsive:hover {
+        animation: none;
+    }
+</style>
+
+    <!-- About Section -->
+<section class="success" id="project">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>开源项目</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+    <div class="row">
+        
+            <div class="col-sm-4 portfolio-item">
+                <a href="https://github.com/qisi007/react-admin-plus" class="portfolio-link" target="_blank" data-toggle="modal">
+                    <img src="img/portfolio/cabin.png" class="img-responsive">
+                    <p class="title">react-admin-plus</p>
+                </a>
+            </div>
+        
+            <div class="col-sm-4 portfolio-item">
+                <a href="https://github.com/qisi007/react-admin-plus" class="portfolio-link" target="_blank" data-toggle="modal">
+                    <img src="img/portfolio/cabin.png" class="img-responsive">
+                    <p class="title">react-admin-plus</p>
+                </a>
+            </div>
+        
+            <div class="col-sm-4 portfolio-item">
+                <a href="https://github.com/qisi007/react-admin-plus" class="portfolio-link" target="_blank" data-toggle="modal">
+                    <img src="img/portfolio/cabin.png" class="img-responsive">
+                    <p class="title">react-admin-plus</p>
+                </a>
+            </div>
+        
+    </div>
+</section>
+
+    <!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>联系我</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <form  action="https://formspree.io/f/mleabgzd" method="POST" name="sentMessage" id="contactForm" novalidate>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label class="form-label">姓名：</label>
+                            <input type="text" name="name" class="form-control" placeholder="请输入姓名：" id="name" required data-validation-required-message="">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label  class="form-label">电子邮件：</label>
+                            <input type="email" name="_replyto" class="form-control" placeholder="请输入电子邮件：" id="email" required data-validation-required-message="">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label  class="form-label">电话：</label>
+                            <input type="tel" class="form-control" placeholder="请输入电话：" id="phone" required data-validation-required-message="">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="hidden"  name="_subject" value="New submission!">
+                        <input type="text" name="_gotcha" style="display:none" />
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label  class="form-label">内容：</label>
+                            <textarea rows="5" name="message" class="form-control" placeholder="请输入内容：" id="message" required data-validation-required-message=""></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12"  style="text-align: center;">
+                            <button type="submit" class="btn btn-success btn-lg" style="width: 200px">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .form-label {
+        font-size: 24px!important;
+        margin-left: -30px!important;
+    }
+</style>
+
+    <!-- Footer -->
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            
+                <div class="footer-col col-md-4">
+                    <h3 style="text-align: left;">友情链接</h3>
+                    <ul class="list-inline" style="display: flex;">
+                        
+                            <li style="margin-left: 20px;">
+                                <a href="https://github.com/qisi007" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+                        
+                            <li style="margin-left: 20px;">
+                                <a href="https://github.com/qisi007" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+                        
+                            <li style="margin-left: 20px;">
+                                <a href="https://github.com/qisi007" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+                        
+                            <li style="margin-left: 20px;">
+                                <a href="https://github.com/qisi007" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+                        
+                            <li style="margin-left: 20px;">
+                                <a href="https://github.com/qisi007" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    power by 凤凰山下的小码农
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll visible-xs visible-sm">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+</body>
 </html>

@@ -1,29 +1,64 @@
+
 <!DOCTYPE html>
-<html lang="zh">
+<html>
+<title>{{ .Site.Title }} | 归档</title>
+{{ partial "head.html" . }}
+<style>
+    .default-box {
+        margin-top: 180px;
+        min-height: 800px;
+    }
+
+    .default-box  .title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .default-box .article {
+        padding: 50px 0;
+    }
+    .default-box .article p {
+       text-indent: 2em;
+       line-height: 2;
+    }
+
+    .default-box .article h1,
+    .default-box .article h2 {
+        margin-top: 40px;
+    }
+
+    .default-box .article h3,
+    .default-box .article h4,
+    .default-box .article h5 {
+        margin-top: 30px;
+    }
+
+    .default-box .article img {
+        max-width: 1000px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+</style>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="img/{{ with .Site.Params.icon }}{{ . }}{{ else }}profile.png{{ end }}">
-    <title>{{.Title}}</title>
+
 </head>
 
 <body>
-    <div  style="width: 1400px; overflow: hidden; margin: 0 auto">
-        <a href="/archive">
-            <h3>返回上一页</h3>
-        </a>
+    {{ partial "menu.html" . }}
+    <div class="default-box w">
         <article>
-            <header>
-                <h1 class="post-title">{{ .Title }}</h1>
-            </header>
-            <div>
+            <h1 class="title">{{ .Title }}</h1>
+            <div class="article">
                 {{.Content}}
             </div>
         </article>
     </div>
-        
+
+    {{ partial "footer.html" . }}
 </body>
 
 </html>
