@@ -4,8 +4,8 @@
         <div class="line"></div>
         <div class="sub-title">一个被敲代码耽误的大艺术家！</div>
     </div>
-    <div class="hot-content"></div>
-    <div class="source"></div>
+    <!-- <div class="hot-content"></div>
+    <div class="source"></div> -->
 </html>
 <style>
     .page {
