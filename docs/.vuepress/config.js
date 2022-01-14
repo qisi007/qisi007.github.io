@@ -55,7 +55,7 @@ module.exports = {
                 ]
             },
             {
-                text: '心得',
+                text: '年终总结',
                 link: '/heart/h1'
             },
             {
