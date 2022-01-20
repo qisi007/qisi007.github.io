@@ -29,7 +29,7 @@ module.exports = {
                     {
                         text: 'vue',
                         link: '/js/js1' 
-                    },
+                    }
                     // {
                     //     text: 'uni-app',
                     //     items: [
@@ -79,13 +79,29 @@ module.exports = {
         sidebar: {
             '/SpringBoot/': [
                 {
-                    title: 'Spring Boot是什么？',
+                    title: 'springBoot简介',
                     path: '/SpringBoot/s1'
                 },
                 {
                     title: 'springBoot 整合其他框架',
                     path: '/SpringBoot/s2'
-                }
+                },
+                {
+                    title: 'yaml语法',
+                    path: '/SpringBoot/s3'
+                },
+                {
+                    title: 'springBoot自动配置-Condition',
+                    path: '/SpringBoot/s4'
+                },
+                {
+                    title: 'springBoot切换web服务器',
+                    path: '/SpringBoot/s5'
+                },
+                {
+                    title: 'Enable注解原理',
+                    path: '/SpringBoot/s6'
+                },
             ],
             '/heart/': [
                 {

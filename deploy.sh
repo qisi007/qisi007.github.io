@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+git add -A
+git commit -m 'update docs'
+
+git push origin main
+
 # 生成静态文件
 npm run build
 
