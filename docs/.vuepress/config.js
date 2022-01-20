@@ -72,7 +72,7 @@ module.exports = {
                 items: [
                     { text: '微信公众号', link: 'https://camo.githubusercontent.com/e622e5f1976aa9eaf9c545342f66202be2cb649937de1e054accb75a8e426b08/68747470733a2f2f766b6365797567752e63646e2e6273706170702e636f6d2f564b4345595547552d66323035313565312d333765352d346234322d386637642d3435346563326139386364642f35333563363835382d383537372d346163612d383862642d3839623561376163666165662e6a7067' },
                     { text: 'Github', link: 'https://github.com/qisi007' },
-                    { text: '掘金', link: 'https://juejin.cn/user/712139234359182/posts' }
+                    { text: '掘金', link: 'https://juejin.cn/user/3931509311153469/posts' }
                 ]
             }
         ],
