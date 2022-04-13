@@ -3,7 +3,6 @@ module.exports = {
     title: '凤凰城下的小码农',
     description: 'TypeScript4 最新官方文档翻译',
     theme: 'reco',
-    // base: './',
     locales: {
         '/': {
             lang: 'zh-CN'
