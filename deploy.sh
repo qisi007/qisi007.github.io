@@ -8,6 +8,8 @@
 # 生成静态文件
 pnpm docs:build
 
+sleep 3s
+
 cp CNAME docs/.vuepress/dist
 
 # 进入生成的文件夹
