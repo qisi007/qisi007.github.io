@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 
-git add -A
-git commit -m 'update docs'
+#git add -A
+#git commit -m 'update docs'
 
-git push origin main
+#git push origin main
 
 # 生成静态文件
-npm run build
+pnpm docs:build
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist

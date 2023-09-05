@@ -1,30 +1,35 @@
-<html>
-    <div class="banner">
-        <img class="img" src="/logo.png"/>
-        <div class="line"></div>
-        <div class="sub-title">一个被敲代码耽误的大艺术家！</div>
-    </div>
-    <div class="wechat">
-        <img class="img" src="/wechat.png">
-        <div style="margin-left: 10em; text-align: center;">
-            <img src="guanzhu.png" style="width: 10em;height: 10em">
-            <p>扫描二维码，关注我的同名公众号</p>
-            <p>回复【55】，更有价值3888的资源免费领取。</p>
-        </div>
-    </div>
-    <div class="source">
-        <p class="title">开源项目</p>
-    </div>
-</html>
-<style>
-    .page {
-        padding-top: 3rem;
-    }
-    .page .page-title {
-        display: none;
-    }
-    .content__default:not(.custom) {
-        max-width: 100%;
-        padding: 0;
-    }
-</style>
+---
+layout: home
+
+title: Vitepress Demo
+titleTemplate: 使用 Vitepress 搭建组件库文档站点。
+
+hero:
+  name: Vitepress
+  text: 使用 Vitepress 搭建组件库文档站点。
+  tagline: 基于 vitepress-theme-demoblock 插件来实现 Vue 组件的支持。
+  image:
+    src: /logo.svg
+    alt: vitepress-theme-demoblock  
+  actions:
+    - theme: brand
+      text: Get Started
+      link: /guide/
+    - theme: alt
+      text: Learn More
+      link: /guide/
+
+features:
+  - icon: ⚡️
+    title: "Vite: The DX that can't be beat"
+    details: Feel the speed of Vite. Instant server start and lightning fast HMR that stays fast regardless of the app size.
+  - icon: 💡
+    title: Designed to be simplicity first
+    details: With Markdown-centered content, it's built to help you focus on writing and deployed with minimum configuration.
+  - icon: 🛠️
+    title: Power of Vue meets Markdown
+    details: Enhance your content with all the features of Vue in Markdown, while being able to customize your site with Vue.
+  - icon: 🔑
+    title: Fully static yet still dynamic
+    details: Go wild with true SSG + SPA architecture. Static on page load, but engage users with 100% interactivity from there.
+---
