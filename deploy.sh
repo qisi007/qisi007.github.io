@@ -25,6 +25,12 @@ sleep 3
 # 进入生成的文件夹
 cd docs/.vuepress/dist/
 
+echo "已切换到发布文件夹，当前位置"
+
+pwd
+
+sleep 3
+
 git init
 git add .
 git commit -m 'deploy'

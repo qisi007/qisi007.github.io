@@ -5,6 +5,8 @@ import path from 'path'
 import nav from './configs/nav'
 import sidebar from './configs/sidebar'
 
+console.log("基础目录："+ process.env.BASE )
+
 export default defineConfig({
   // lang: 'en-US',
   title: 'Vitepress',
@@ -13,7 +15,7 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
 
-  base: process.env.BASE || './',
+  base: process.env.BASE || '/',
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }]
   ],
