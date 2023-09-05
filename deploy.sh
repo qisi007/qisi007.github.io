@@ -23,7 +23,7 @@ echo "文件复制完成，准备发布"
 sleep 3
 
 # 进入生成的文件夹
-cd docs/.vuepress/dist
+cd docs/.vuepress/dist/
 
 git init
 git add .
