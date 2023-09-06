@@ -5,17 +5,15 @@ import path from 'path'
 import nav from './configs/nav'
 import sidebar from './configs/sidebar'
 
-console.log("基础目录："+ process.env.BASE )
-
 export default defineConfig({
   // lang: 'en-US',
-  title: 'Vitepress',
-  description: '使用 Vitepress 搭建组件库文档站点。',
+  title: '凤凰城下的小码农',
+  description: '一个被敲代码耽误的大艺术家',
 
   lastUpdated: true,
   cleanUrls: true,
 
-  base: process.env.BASE || '/',
+  base: '/',
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }]
   ],
@@ -63,17 +61,17 @@ export default defineConfig({
     sidebar,
 
     editLink: {
-      pattern: 'https://github.com/xinlei3166/vitepress-demo/edit/master/docs/:path',
+      pattern: 'https://github.com/qisi007/qisi007.github.io/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页'
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/xinlei3166/vitepress-demo' }
+      { icon: 'github', link: 'https://juejin.cn/user/3931509311153469/posts' }
     ],
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2022-present 君惜'
+      copyright: 'Copyright © 2022-present codeLiu'
     }
   }
 })

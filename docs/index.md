@@ -1,8 +1,8 @@
 ---
 layout: home
 
-title: Vitepress Demo
-titleTemplate: 使用 Vitepress 搭建组件库文档站点。
+title: 凤凰城下的小码农
+titleTemplate: 一个被敲代码耽误的大艺术家
 
 hero:
   name: Vitepress

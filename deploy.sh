@@ -1,12 +1,17 @@
 #!/usr/bin/env sh
 
-#git add -A
-#git commit -m 'update docs'
+echo "准备部署,开始上传代码"
 
-#git push origin main
+sleep 3
+
+git add .
+
+git commit -m 'update docs'
+
+git push origin main
 
 # 生成静态文件
-echo "开始打包"
+echo "代码已上传到仓库，开始打包"
 
 sleep 3
 
@@ -18,14 +23,14 @@ sleep 3
 
 cp CNAME docs/.vitepress/dist/
 
-echo "文件复制完成，准备发布"
+echo "文件复制完成，开始切换目录"
 
 sleep 3
 
 # 进入生成的文件夹
-cd docs/.vuepress/dist/
+cd docs/.vitepress/dist/
 
-echo "已切换到发布文件夹，当前位置"
+echo "已切换到发布文件夹，当前位置："
 
 pwd
 
