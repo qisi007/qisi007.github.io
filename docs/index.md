@@ -5,9 +5,9 @@ title: 凤凰城下的小码农
 titleTemplate: 一个被敲代码耽误的大艺术家
 
 hero:
-  name: Vitepress
-  text: 使用 Vitepress 搭建组件库文档站点。
-  tagline: 基于 vitepress-theme-demoblock 插件来实现 Vue 组件的支持。
+  name: 凤凰城下的小码农
+  text: 一个被敲代码耽误的大艺术家
+  # tagline: 基于 vitepress-theme-demoblock 插件来实现 Vue 组件的支持。
   image:
     src: /logo.svg
     alt: vitepress-theme-demoblock  
