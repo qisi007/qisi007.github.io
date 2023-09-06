@@ -1,74 +1,82 @@
 export default {
-  '/api/': getApiSidebar(),
-  '/components/': getComponentsSidebar(),
-  '/guide/': getGuideSidebar()
+  '/entry/front/': getFrontSidebar(),
+  '/entry/server/': getServerSidebar(),
+  '/entry/article/': getArticleSidebar()
 }
 
-function getApiSidebar() {
+function getFrontSidebar() {
   return [
     {
-      text: '功能',
+      text: 'vue',
       collapsible: true,
       items: [
         {
-          text: '已实现',
-          link: '/api/'
-        },
-      ]
-    }
-  ]
-}
-
-function getComponentsSidebar() {
-  return [
-    {
-      text: '组件',
-      items: [
-        {
-          text: 'Button 按钮',
-          link: '/components/button'
+          text: '001vue的seo问题【上】',
+          link: '/entry/front/001vue的seo问题【上】'
         },
         {
-          text: 'Tabs 标签页',
-          link: '/components/tabs'
-        },
-        {
-          text: 'Modal 对话框',
-          link: '/components/modal'
-        },
-        {
-          text: 'Tag 标签',
-          link: '/components/tag'
-        },
-        {
-          text: 'Vue 引用组件',
-          link: '/components/vue'
-        },
-        {
-          text: 'Vue Script',
-          link: '/components/vue-script'
+          text: '002vue的seo问题【下】',
+          link: '/entry/front/002vue的seo问题【下】'
         }
       ]
     }
   ]
 }
 
-function getGuideSidebar() {
+function getServerSidebar() {
   return [
     {
-      text: '指南',
+      text: 'springBoot',
       items: [
         {
-          text: '文档1',
-          link: '/guide/'
+          text: 'springBoot简介',
+          link: '/entry/server/s1'
         },
         {
-          text: '文档2',
-          link: '/guide/button'
+          text: 'springBoot整合其他框架',
+          link: '/entry/server/s2'
         },
         {
-          text: '文档3',
-          link: '/guide/modal'
+          text: 'yaml语法',
+          link: '/entry/server/s3'
+        },
+        {
+          text: 'springBoot自动配置-Condition',
+          link: '/entry/server/s4'
+        },
+        {
+          text: 'springBoot切换web服务器',
+          link: '/entry/server/s5'
+        },
+        {
+          text: 'Enable注解原理',
+          link: '/entry/server/s6'
+        }
+      ]
+    }
+  ]
+}
+
+function getArticleSidebar() {
+  return [
+    {
+      text: '年终总结',
+      items: [
+        {
+          text: '2019年',
+          link: '/entry/article/h1'
+        },
+        {
+          text: '2020年',
+          link: '/entry/article/h2'
+        },
+        {
+          text: '2021年',
+          link: '/entry/article/h3'
+        },
+        {
+          text: '2022年',
+          link: '/entry/article/h4'
         }
       ]
     }

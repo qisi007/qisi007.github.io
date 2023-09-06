@@ -66,7 +66,8 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://juejin.cn/user/3931509311153469/posts' }
+      { icon: 'github', link: 'https://github.com/qisi007' }
+      // { icon: 'github', link: 'https://juejin.cn/user/3931509311153469/posts' }
     ],
 
     footer: {
