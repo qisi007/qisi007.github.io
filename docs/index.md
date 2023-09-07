@@ -7,7 +7,7 @@ titleTemplate: 一个被敲代码耽误的大艺术家
 hero:
   name: 凤凰城下的小码农
   text: 一个被敲代码耽误的大艺术家
-  # tagline: 基于 vitepress-theme-demoblock 插件来实现 Vue 组件的支持。
+  # tagline: 一个被敲代码耽误的大艺术家
   image:
     src: /logo.svg
     alt: vitepress-theme-demoblock  
