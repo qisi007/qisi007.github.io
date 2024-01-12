@@ -5,11 +5,11 @@ export default [
   {
     text: '我的博客',
     items: [
-        { text: '微信公众号', link: '/entry/common/公众号.md' },
-        { text: '摸鱼小程序', link: '/entry/common/小程序.md' },
-        { text: 'Github', link: 'https://github.com/qisi007' },
-        { text: '掘金', link: 'https://juejin.cn/user/3931509311153469/posts' }
+      { text: '微信公众号', link: '/entry/common/公众号.md' },
+      { text: '摸鱼小程序', link: '/entry/common/小程序.md' },
+      { text: 'Github', link: 'https://github.com/qisi007' },
+      { text: '掘金', link: 'https://juejin.cn/user/3931509311153469/posts' }
     ]
-}
+  }
 ]
 
