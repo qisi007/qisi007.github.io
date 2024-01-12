@@ -21,7 +21,7 @@ echo "打包完成，等待复制站点文件"
 
 sleep 3
 
-cp CNAME docs/.vitepress/dist/
+# cp CNAME docs/.vitepress/dist/
 
 echo "文件复制完成，开始切换目录"
 
