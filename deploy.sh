@@ -46,3 +46,7 @@ sleep 3
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:qisi007/qisi007.github.io.git master:gh-pages
+
+echo "发布完毕"
+
+sleep 3
