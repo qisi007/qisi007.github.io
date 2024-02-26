@@ -36,11 +36,13 @@ pwd
 
 sleep 3
 
+echo "准备部署，开始上传代码"
+
 git init
 git add .
 git commit -m 'deploy'
 
-echo "开始发布"
+echo "代码上传完毕，开始发布"
 
 sleep 3
 
