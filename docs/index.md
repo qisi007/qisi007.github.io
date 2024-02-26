@@ -32,8 +32,4 @@ features:
   - icon: 🔑
     title: Economize
     details: Go wild with true SSG + SPA architecture. Static on page load, but engage users with 100% interactivity from there.
-
-
-
-    
 ---

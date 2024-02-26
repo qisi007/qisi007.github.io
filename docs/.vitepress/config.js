@@ -71,7 +71,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Released under the MIT License.',
+      message: '<a href="https://beian.miit.gov.cn/" target="_blank">冀ICP备2023044822号-2</a>',
       copyright: 'Copyright © 2022-present codeLiu'
     }
   }
