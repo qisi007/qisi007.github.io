@@ -1,5 +1,5 @@
 export default [
-  { text: '一天一句毒鸡汤', link: '/entry/common/小程序.md', activeMatch: '^/entry/common/' },
+  { text: '一天一句毒鸡汤', link: '/entry/common/小程序.md', activeMatch: '' },
   { text: '前端', link: '/entry/front/001vue的seo问题【上】', activeMatch: '^/entry/front/' },
   { text: '后端', link: '/entry/server/s1', activeMatch: '^/entry/server/' },
   { text: '文章', link: '/entry/article/h1', activeMatch: '^/entry/article/' },
