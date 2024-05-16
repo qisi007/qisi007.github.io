@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封面生成工具</title>
+    <script src="./html2canvas.min.js"></script>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            overflow: auto;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100%;
+            width: 1200px;
+            margin: 20px auto 0 auto;
+            color: #4c4c4c;
+        }
+
+        .banner .banner-box {
+            display: flex;
+        }
+
+        .banner .banner-box .banner-box-main {
+            width: 900px;
+            height: 383px;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner .banner-box .banner-box-little {
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner .banner-box .banner-box-little-words {
+            color: #000;
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: #fbbc0c;
+            padding: 10px 35px;
+            border-radius: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .banner .banner-box .banner-box-little-words-small {
+            font-size: 16px;
+            padding: 5px 15px;
+        }
+
+        .banner .banner-input {
+            margin-top: 20px;
+            font-size: 32px;
+        }
+
+        .banner .banner-input .banner-input-text {
+            outline: none;
+            width: 550px;
+            height: 60px;
+            border: 5px solid #ccc;
+            border-radius: 10px;
+            padding-left: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #4c4c4c;
+        }
+
+        .banner .banner-input .banner-input-text:focus {
+            border-color: #7e7e7e;
+        }
+
+        .banner .banner-input .banner-input-button {
+            outline: none;
+            width: 135px;
+            height: 70px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            box-sizing: border-box;
+            margin-left: 20px;
+            background-color: transparent;
+            color: #4c4c4c;
+            cursor: pointer;
+        }
+        .banner .banner-input .banner-input-button-confirm {
+            background: #fbbc0c;
+            color: #fff;
+        }
+
+        .banner .banner-input .banner-input-button:active {
+            transform: scale(.9);
+        }
+
+        .banner .title {
+            margin: 20px 0;
+            display: none;
+        }
+
+        .banner .banner-png {
+            cursor: grab;
+        }
+
+        .banner .banner-png {
+            width: 900px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-box">
+            <div class="banner-box-main">
+                <span class="banner-box-little-words"></span>
+            </div>
+            <div class="banner-box-little">
+                <span class="banner-box-little-words banner-box-little-words-small"></span>
+            </div>
+        </div>
+        <div class="banner-input">
+            <input class="banner-input-text" type="text" placeholder="请输入标题" >
+            <input class="banner-input-button banner-input-button-confirm" type="button" value="生成图片" onclick="creatImg()">
+            <input class="banner-input-button" type="button" value="清空" onclick="clearContent()">
+        </div>
+        <h3 class="title">鼠标悬浮到下方图片，右键保存到本地</h3>
+        <img class="banner-png" src="" alt="">
+    </div>
+</body>
+<script>
+    // 输入框dom
+    let inputText = document.querySelector('.banner-input-text')
+    // 标题列表dom
+    let titleWordsList = document.querySelectorAll('.banner-box-little-words')
+    // 默认提示
+    const tipsDefault = '请输入标题'
+
+    /**
+    * @name 实时生成封面
+    * @params {}
+    * @return { void }
+    * @version 2024-05-10 16:17:42 Friday
+    */
+    inputText.oninput = ( e ) => {
+        let text = inputText.value || tipsDefault
+        domTemplat(text)
+    }
+
+    /**
+    * @name 确定生成封面
+    * @params {}
+    * @return { void }
+    * @version 2024-05-10 16:17:42 Friday
+    */
+    const confirm = () => {
+        let text = inputText.value || tipsDefault
+        domTemplat(text)
+    }
+
+    /**
+    * @name 渲染封面
+    * @params { string } 内容
+    * @return { void }
+    * @version 2024-05-10 16:17:42 Friday
+    */
+    const domTemplat = ( value = '' ) => {
+        for( let i = 0; i < titleWordsList.length; i++ ) {
+            titleWordsList[i].innerHTML = value
+            paddingContral(titleWordsList[i], value)
+        }
+    }
+
+    /**
+    * @name 输入为空清空内边距
+    * @params { htmlDivDom } node 清空的节点
+    * @params { string } node 内容
+    * @return { void }
+    * @version 2024-05-10 16:17:42 Friday
+    */
+    const paddingContral = ( node, text ) => {
+        node.style.display = text ? '' : 'none'
+    }
+
+    /**
+    * @name 默认清空内边距
+    * @params {}
+    * @return { void }
+    * @version 2024-05-10 16:17:42 Friday
+    */
+    let text = inputText.value || tipsDefault
+    domTemplat(text)
+
+    /**
+    * @name 生成海报图片
+    * @params {}
+    * @return { void }
+    * @version 2024-05-10 16:17:42 Friday
+    */
+    const creatImg = () => {
+        html2canvas(document.querySelector('.banner-box-main'))
+            .then(canvas => {
+                const imgBase64 = canvas.toDataURL()
+                document.querySelector('.banner-png').src = imgBase64
+                document.querySelector('.banner>.title').style.display = 'block'
+            })
+            .catch(err => {
+                console.log('canvas生成失败')
+            })
+    }
+
+    /**
+    * @name 清空内容
+    * @params {}
+    * @return { void }
+    * @version 2024-05-10 16:17:42 Friday
+    */
+    const clearContent = () => {
+        document.querySelector('.banner-png').src = ''
+        document.querySelector('.banner>.title').style.display = 'none'
+        domTemplat(tipsDefault)
+    }
+
+</script>
+</html>
