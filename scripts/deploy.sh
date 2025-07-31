@@ -36,7 +36,7 @@ echo "已切换到发布文件夹，当前位置："
 pwd
 
 sleep 3
-
+git init
 git add .
 git commit -m 'deploy'
 
