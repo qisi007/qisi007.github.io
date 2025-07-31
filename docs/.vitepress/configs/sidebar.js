@@ -11,12 +11,22 @@ function getFrontSidebar() {
       collapsible: true,
       items: [
         {
-          text: '001vue的seo问题【上】',
+          text: 'vue的seo问题【上】',
           link: '/entry/front/001vue的seo问题【上】'
         },
         {
-          text: '002vue的seo问题【下】',
+          text: 'vue的seo问题【下】',
           link: '/entry/front/002vue的seo问题【下】'
+        }
+      ]
+    },
+    {
+      text: '黑科技',
+      collapsible: true,
+      items: [
+        {
+          text: 'gitee推送代码自动部署到静态资源服务器',
+          link: '/entry/front/gitee推送代码自动部署到静态资源服务器'
         }
       ]
     }

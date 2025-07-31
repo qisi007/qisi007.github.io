@@ -3,6 +3,7 @@
 echo "准备部署,开始上传代码"
 
 sleep 3
+cd ../
 
 git add .
 
