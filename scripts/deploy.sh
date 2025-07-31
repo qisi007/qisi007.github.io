@@ -36,7 +36,6 @@ pwd
 
 sleep 3
 
-git init
 git add .
 git commit -m 'deploy'
 
