@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>springBoot整合其他框架 | 凤凰城下的小码农</title>
+    <meta name="description" content="一个被敲代码耽误的大艺术家">
+    <meta name="generator" content="VitePress v1.6.3">
+    <link rel="preload stylesheet" href="/assets/style.BTj4-iuK.css" as="style">
+    <link rel="preload stylesheet" href="/vp-icons.css" as="style">
+    
+    <script type="module" src="/assets/app.BgVlfJ7E.js"></script>
+    <link rel="preload" href="/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="modulepreload" href="/assets/chunks/theme.sB9U6gm9.js">
+    <link rel="modulepreload" href="/assets/chunks/framework.B_KIjQED.js">
+    <link rel="modulepreload" href="/assets/entry_server_s2.md.D70_hI0L.lean.js">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg">
+    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+  </head>
+  <body>
+    <div id="app"><div class="Layout" data-v-0a171f02><!--[--><!--]--><!--[--><span tabindex="-1" data-v-a10bdd95></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-a10bdd95>Skip to content</a><!--]--><!----><header class="VPNav" data-v-0a171f02 data-v-e005f469><div class="VPNavBar" data-v-e005f469 data-v-6dbb0925><div class="wrapper" data-v-6dbb0925><div class="container" data-v-6dbb0925><div class="title" data-v-6dbb0925><div class="VPNavBarTitle has-sidebar" data-v-6dbb0925 data-v-b9f533c2><a class="title" href="/" data-v-b9f533c2><!--[--><!--]--><!--[--><img class="VPImage logo" src="/logo.svg" alt data-v-ca487972><!--]--><span data-v-b9f533c2>凤凰城下的小码农</span><!--[--><!--]--></a></div></div><div class="content" data-v-6dbb0925><div class="content-body" data-v-6dbb0925><!--[--><!--]--><div class="VPNavBarSearch search" data-v-6dbb0925><!--[--><!----><div id="local-search"><button type="button" class="DocSearch DocSearch-Button" aria-label="Search"><span class="DocSearch-Button-Container"><span class="vp-icon DocSearch-Search-Icon"></span><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"><kbd class="DocSearch-Button-Key"></kbd><kbd class="DocSearch-Button-Key">K</kbd></span></button></div><!--]--></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-6dbb0925 data-v-c55c42da><span id="main-nav-aria-label" class="visually-hidden" data-v-c55c42da> Main Navigation </span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/entry/common/%E5%B0%8F%E7%A8%8B%E5%BA%8F" tabindex="0" data-v-c55c42da data-v-ac39a631><!--[--><span data-v-ac39a631>一天一句毒鸡汤</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/entry/front/001vue%E7%9A%84seo%E9%97%AE%E9%A2%98%E3%80%90%E4%B8%8A%E3%80%91" tabindex="0" data-v-c55c42da data-v-ac39a631><!--[--><span data-v-ac39a631>前端</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink active" href="/entry/server/s1" tabindex="0" data-v-c55c42da data-v-ac39a631><!--[--><span data-v-ac39a631>后端</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/entry/article/h1" tabindex="0" data-v-c55c42da data-v-ac39a631><!--[--><span data-v-ac39a631>文章</span><!--]--></a><!--]--><!--[--><div class="VPFlyout VPNavBarMenuGroup" data-v-c55c42da data-v-c9af65ae><button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-c9af65ae><span class="text" data-v-c9af65ae><!----><span data-v-c9af65ae>我的博客</span><span class="vpi-chevron-down text-icon" data-v-c9af65ae></span></span></button><div class="menu" data-v-c9af65ae><div class="VPMenu" data-v-c9af65ae data-v-52039ee7><div class="items" data-v-52039ee7><!--[--><!--[--><div class="VPMenuLink" data-v-52039ee7 data-v-0be511d6><a class="VPLink link" href="/entry/common/%E5%85%AC%E4%BC%97%E5%8F%B7" data-v-0be511d6><!--[--><span data-v-0be511d6>微信公众号</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-52039ee7 data-v-0be511d6><a class="VPLink link" href="/entry/common/%E5%B0%8F%E7%A8%8B%E5%BA%8F" data-v-0be511d6><!--[--><span data-v-0be511d6>摸鱼小程序</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-52039ee7 data-v-0be511d6><a class="VPLink link vp-external-link-icon" href="https://github.com/qisi007" target="_blank" rel="noreferrer" data-v-0be511d6><!--[--><span data-v-0be511d6>Github</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-52039ee7 data-v-0be511d6><a class="VPLink link vp-external-link-icon" href="https://juejin.cn/user/3931509311153469/posts" target="_blank" rel="noreferrer" data-v-0be511d6><!--[--><span data-v-0be511d6>掘金</span><!--]--></a></div><!--]--><!--]--></div><!--[--><!--]--></div></div></div><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-6dbb0925 data-v-3e01ace2><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-3e01ace2 data-v-b4d38f5e data-v-069cc5aa><span class="check" data-v-069cc5aa><span class="icon" data-v-069cc5aa><!--[--><span class="vpi-sun sun" data-v-b4d38f5e></span><span class="vpi-moon moon" data-v-b4d38f5e></span><!--]--></span></span></button></div><div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-6dbb0925 data-v-04bf89d4 data-v-76d6725c><!--[--><a class="VPSocialLink no-icon" href="https://github.com/qisi007" aria-label="github" target="_blank" rel="noopener" data-v-76d6725c data-v-9e58879d><span class="vpi-social-github"></span></a><!--]--></div><div class="VPFlyout VPNavBarExtra extra" data-v-6dbb0925 data-v-d71b580c data-v-c9af65ae><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-c9af65ae><span class="vpi-more-horizontal icon" data-v-c9af65ae></span></button><div class="menu" data-v-c9af65ae><div class="VPMenu" data-v-c9af65ae data-v-52039ee7><!----><!--[--><!--[--><!----><div class="group" data-v-d71b580c><div class="item appearance" data-v-d71b580c><p class="label" data-v-d71b580c>Appearance</p><div class="appearance-action" data-v-d71b580c><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-d71b580c data-v-b4d38f5e data-v-069cc5aa><span class="check" data-v-069cc5aa><span class="icon" data-v-069cc5aa><!--[--><span class="vpi-sun sun" data-v-b4d38f5e></span><span class="vpi-moon moon" data-v-b4d38f5e></span><!--]--></span></span></button></div></div></div><div class="group" data-v-d71b580c><div class="item social-links" data-v-d71b580c><div class="VPSocialLinks social-links-list" data-v-d71b580c data-v-76d6725c><!--[--><a class="VPSocialLink no-icon" href="https://github.com/qisi007" aria-label="github" target="_blank" rel="noopener" data-v-76d6725c data-v-9e58879d><span class="vpi-social-github"></span></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-6dbb0925 data-v-adc16329><span class="container" data-v-adc16329><span class="top" data-v-adc16329></span><span class="middle" data-v-adc16329></span><span class="bottom" data-v-adc16329></span></span></button></div></div></div></div><div class="divider" data-v-6dbb0925><div class="divider-line" data-v-6dbb0925></div></div></div><!----></header><div class="VPLocalNav has-sidebar empty" data-v-0a171f02 data-v-73a400d1><div class="container" data-v-73a400d1><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-73a400d1><span class="vpi-align-left menu-icon" data-v-73a400d1></span><span class="menu-text" data-v-73a400d1>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-73a400d1 data-v-dea3e18c><button data-v-dea3e18c>Return to top</button><!----></div></div></div><aside class="VPSidebar" data-v-0a171f02 data-v-57d5c358><div class="curtain" data-v-57d5c358></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-57d5c358><span class="visually-hidden" id="sidebar-aria-label" data-v-57d5c358> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="no-transition group" data-v-cbcda528><section class="VPSidebarItem level-0 has-active" data-v-cbcda528 data-v-5f71a8c4><div class="item" role="button" tabindex="0" data-v-5f71a8c4><div class="indicator" data-v-5f71a8c4></div><h2 class="text" data-v-5f71a8c4>springBoot</h2><!----></div><div class="items" data-v-5f71a8c4><!--[--><div class="VPSidebarItem level-1 is-link" data-v-5f71a8c4 data-v-5f71a8c4><div class="item" data-v-5f71a8c4><div class="indicator" data-v-5f71a8c4></div><a class="VPLink link link" href="/entry/server/s1" data-v-5f71a8c4><!--[--><p class="text" data-v-5f71a8c4>springBoot简介</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-5f71a8c4 data-v-5f71a8c4><div class="item" data-v-5f71a8c4><div class="indicator" data-v-5f71a8c4></div><a class="VPLink link link" href="/entry/server/s2" data-v-5f71a8c4><!--[--><p class="text" data-v-5f71a8c4>springBoot整合其他框架</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-5f71a8c4 data-v-5f71a8c4><div class="item" data-v-5f71a8c4><div class="indicator" data-v-5f71a8c4></div><a class="VPLink link link" href="/entry/server/s3" data-v-5f71a8c4><!--[--><p class="text" data-v-5f71a8c4>yaml语法</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-5f71a8c4 data-v-5f71a8c4><div class="item" data-v-5f71a8c4><div class="indicator" data-v-5f71a8c4></div><a class="VPLink link link" href="/entry/server/s4" data-v-5f71a8c4><!--[--><p class="text" data-v-5f71a8c4>springBoot自动配置-Condition</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-5f71a8c4 data-v-5f71a8c4><div class="item" data-v-5f71a8c4><div class="indicator" data-v-5f71a8c4></div><a class="VPLink link link" href="/entry/server/s5" data-v-5f71a8c4><!--[--><p class="text" data-v-5f71a8c4>springBoot切换web服务器</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-5f71a8c4 data-v-5f71a8c4><div class="item" data-v-5f71a8c4><div class="indicator" data-v-5f71a8c4></div><a class="VPLink link link" href="/entry/server/s6" data-v-5f71a8c4><!--[--><p class="text" data-v-5f71a8c4>Enable注解原理</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-0a171f02 data-v-7af1f797><div class="VPDoc has-sidebar has-aside" data-v-7af1f797 data-v-3808fea6><!--[--><!--]--><div class="container" data-v-3808fea6><div class="aside" data-v-3808fea6><div class="aside-curtain" data-v-3808fea6></div><div class="aside-container" data-v-3808fea6><div class="aside-content" data-v-3808fea6><div class="VPDocAside" data-v-3808fea6 data-v-490403c7><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-490403c7 data-v-fb5962ac><div class="content" data-v-fb5962ac><div class="outline-marker" data-v-fb5962ac></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-fb5962ac>本页目录</div><ul class="VPDocOutlineItem root" data-v-fb5962ac data-v-f3378a54><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-490403c7></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-3808fea6><div class="content-container" data-v-3808fea6><!--[--><!--]--><main class="main" data-v-3808fea6><div style="position:relative;" class="vp-doc _entry_server_s2" data-v-3808fea6><div><h2 id="_1-springboot整合junit" tabindex="-1">1.springBoot整合Junit <a class="header-anchor" href="#_1-springboot整合junit" aria-label="Permalink to &quot;1.springBoot整合Junit&quot;">​</a></h2><ol><li>搭建SpringBoot工程</li><li>引入starter-test起步依赖</li><li>编写测试类</li><li>添加测试相关注解</li></ol><ul><li>@RunWith(SpringClass.classs)</li><li>SpringBootTest(class = 启动类.class)</li></ul><p>首先，创建好项目之后，springBoot默认帮我们引入了 <code>starter-test</code>这个依赖，我们可以看一下 <code>pom.xml</code>,里边已经引入了：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;dependency&gt;</span></span>
+<span class="line"><span>    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span></span>
+<span class="line"><span>    &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span></span>
+<span class="line"><span>    &lt;scope&gt;test&lt;/scope&gt;</span></span>
+<span class="line"><span>&lt;/dependency&gt;</span></span></code></pre></div><p>所以我们省去了这个步骤</p><p>因为单元测试我们大部分测试的业务中的代码，所以我们写一个service, 代码如下：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>package com.example.javaspringboot.service;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import org.springframework.web.bind.annotation.GetMapping;</span></span>
+<span class="line"><span>import org.springframework.web.bind.annotation.RequestMapping;</span></span>
+<span class="line"><span>import org.springframework.web.bind.annotation.RestController;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>@RestController</span></span>
+<span class="line"><span>@RequestMapping(&quot;/person&quot;)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>public class person {</span></span>
+<span class="line"><span>@GetMapping(&quot;/getUser&quot;)</span></span>
+<span class="line"><span>    public void getUser () {</span></span>
+<span class="line"><span>        System.out.print(&quot;张三&quot;);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>然后我们写一个单元测试，路径我们就在test/java下新建一个testPerson的类，代码如下：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>package com.example.javaspringboot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import com.example.javaspringboot.controller.HelloJava;</span></span>
+<span class="line"><span>import org.junit.jupiter.api.Test;</span></span>
+<span class="line"><span>import org.junit.runner.RunWith;</span></span>
+<span class="line"><span>import org.springframework.beans.factory.annotation.Autowired;</span></span>
+<span class="line"><span>import org.springframework.boot.test.context.SpringBootTest;</span></span>
+<span class="line"><span>import org.springframework.test.context.junit4.SpringRunner;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>@RunWith(SpringRunner.class)</span></span>
+<span class="line"><span>@SpringBootTest(classes = JavaSpringBootApplication.class)</span></span>
+<span class="line"><span>class JavaSpringBootApplicationTests {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Autowired</span></span>
+<span class="line"><span>    private HelloJava helloJava;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Test</span></span>
+<span class="line"><span>    void testHello() {</span></span>
+<span class="line"><span>        helloJava.hello();</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>然后启动一下这个类，我的项目在控制台包了个错,上边显示找不到RunWith这个注解，我从网上找了方法，原因是我们没有引入junit, 我们在maven的配置中引入一下这个包：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;dependency&gt;</span></span>
+<span class="line"><span>    &lt;groupId&gt;junit&lt;/groupId&gt;</span></span>
+<span class="line"><span>    &lt;artifactId&gt;junit&lt;/artifactId&gt;</span></span>
+<span class="line"><span>    &lt;version&gt;4.12&lt;/version&gt;</span></span>
+<span class="line"><span>    &lt;scope&gt;test&lt;/scope&gt;</span></span>
+<span class="line"><span>&lt;/dependency&gt;</span></span></code></pre></div><p>然后刷新一下maven，可以看到代码的飘红消失了，在启动一下测试类，可以看到控制台打印了 <code>张三</code>, 符合我们的预期；</p><p>如果测试类的包名和我们代码写的包名一样，我们可以不用指定引导类文件，也就是直接写 @SpringBootTest</p><h2 id="_2-springboot整合redis" tabindex="-1">2.springBoot整合Redis <a class="header-anchor" href="#_2-springboot整合redis" aria-label="Permalink to &quot;2.springBoot整合Redis&quot;">​</a></h2><ol><li>搭建SpringBoot工程</li><li>引入redis起步依赖</li><li>配置redis相关属性</li><li>注入RedisTemplate模板</li><li>编写测试方法，测试</li></ol><p>我们还是用之前的工程，在 <code>pom.xml</code>中引入redis依赖：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;dependency&gt;</span></span>
+<span class="line"><span>    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span></span>
+<span class="line"><span>    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span></span>
+<span class="line"><span>&lt;/dependency&gt;</span></span></code></pre></div><p>然后刷新一下maven</p><p>然后在我们修改一下之前写的测试类，代码如下：</p><div class="language-package vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">package</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span></span></span>
+<span class="line"><span>import com.example.javaspringboot.controller.HelloJava;</span></span>
+<span class="line"><span>import org.junit.jupiter.api.Test;</span></span>
+<span class="line"><span>import org.junit.runner.RunWith;</span></span>
+<span class="line"><span>import org.springframework.beans.factory.annotation.Autowired;</span></span>
+<span class="line"><span>import org.springframework.boot.test.context.SpringBootTest;</span></span>
+<span class="line"><span>import org.springframework.data.redis.core.RedisTemplate;</span></span>
+<span class="line"><span>import org.springframework.test.context.junit4.SpringRunner;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>@RunWith(SpringRunner.class)</span></span>
+<span class="line"><span>@SpringBootTest(classes = JavaSpringBootApplication.class)</span></span>
+<span class="line"><span>class JavaSpringBootApplicationTests {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Autowired</span></span>
+<span class="line"><span>    private RedisTemplate redisTemplate;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Test</span></span>
+<span class="line"><span>    public void testSet() {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        redisTemplate.boundValueOps(&quot;name&quot;).set(&quot;李四&quot;);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Test</span></span>
+<span class="line"><span>    public void testGet () {</span></span>
+<span class="line"><span>        Object name =  redisTemplate.boundValueOps(&quot;name&quot;).get();</span></span>
+<span class="line"><span>        System.out.print(name);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>可以看到我们写了两个方法，第一个是往<code>redies</code>中存入一个值，第二个是获取这个值并打印</p><p>我们启动一下 <code>redis</code>, 这个文件我存在了我的百度网盘下，关注我的微信公众号【凤凰城下的小码农】后，回复【软件】，里边有一个 【Redis-x64-3.2.100.zip】压缩文件， 解压之后运行【redis-server.exe】即可启动 <code>redis</code></p><p>我们先不调用写入的方法，我们先调 <code>testGet</code>这个方法，可以看到控制台中输出一个 <code>null</code>，证明 <code>redies</code>中还没有 <code>name</code>这个 值，然后我们调用 <code>testSet</code> 这个方法，面板中上方有一个条，如果显示绿色，表示 <code>redies</code> 链接成功， 运行完成之后我们再调用 <code>testGet</code> 这个方法，可以看到控制台输出了 <code>李四</code>, 证明我们测试通过</p><p>这个连接的是本地的 <code>redies</code>, 如果是到线上呢，肯定是不能用本地的，我们可以再配置一下，在 <code>application.yaml</code>中写入如下配置</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>server:</span></span>
+<span class="line"><span>  port: 8081</span></span>
+<span class="line"><span>spring:</span></span>
+<span class="line"><span>  porfiles: dev</span></span>
+<span class="line"><span>  redis:</span></span>
+<span class="line"><span>    host: 127.0.0.1  # redis的主机</span></span>
+<span class="line"><span>    port: 6379 # redis的端口号, 默认就是6739， 也可以换成别的</span></span></code></pre></div><h2 id="_3-springboot整合mybatis和mysql" tabindex="-1">3. springBoot整合MyBatis和Mysql <a class="header-anchor" href="#_3-springboot整合mybatis和mysql" aria-label="Permalink to &quot;3. springBoot整合MyBatis和Mysql&quot;">​</a></h2><ol><li>搭建springBoot工程</li><li>引入mybatis起步依赖, 添加mysql驱动</li><li>编写DataSource和MyBatis相关配置</li><li>定义表和实体类</li><li>编写dao和mapper文件/纯注解开发</li><li>测试</li></ol><p>下面我们看一下实际代码中如何操作：</p><p>我们在项目工程的pom.xml文件中引入mybatis和mysql的依赖：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>    &lt;dependency&gt;</span></span>
+<span class="line"><span>        &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;</span></span>
+<span class="line"><span>        &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;</span></span>
+<span class="line"><span>        &lt;version&gt;2.1.0&lt;/version&gt;</span></span>
+<span class="line"><span>    &lt;/dependency&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    &lt;dependency&gt;</span></span>
+<span class="line"><span>        &lt;groupId&gt;mysql&lt;/groupId&gt;</span></span>
+<span class="line"><span>        &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span></span>
+<span class="line"><span>        &lt;scope&gt;runtime&lt;/scope&gt;</span></span>
+<span class="line"><span>    &lt;/dependency&gt;</span></span></code></pre></div><p>刷新一下maven，下载一下这些包</p><blockquote><p>a.我们先看一下如何使用注解的方式</p></blockquote><p>首先强调一下,用注解开发可以不用写mybatis配置信息,所以我们只需要配置一下mysql</p><p>在整合mysql之前，我们先启动一下mysql，关于如何启动，这里不过多介绍， 可以查看这篇文章 <a href="https://blog.csdn.net/zhouzezhou/article/details/52446608" target="_blank" rel="noreferrer">传送</a></p><p>我们在mysql中创建一个库，暂且叫他 <code>test</code>, 新建一个表，叫 <code>user</code>， 存一些用户的用户名 <code>name</code>和密码 <code>password</code>， 主键为 <code>id</code>， 随便写几条数据， 这样准备工作就做好了</p><p>我们打开application.yaml文件配置一下</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>    datasource:</span></span>
+<span class="line"><span>    driver-class-name: com.mysql.cj.jdbc.Driver</span></span>
+<span class="line"><span>    url: jdbc:mysql:///test?serverTimezone=UTC  # 本地的可以用///表示</span></span>
+<span class="line"><span>    username: root</span></span>
+<span class="line"><span>    password: root</span></span></code></pre></div><p>注意一定要写 <code>serverTimezone=UTC</code>, 这个是配置时区的，时区对应不上会报错</p><p>然后我们写一个类，路径为 <code>src/main/java/com/example/javaspringboot/domain</code>, 新建一个 User 类，添加用户名和密码的属性，并写getter和setter以及toString的方法，代码如下：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>package com.example.javaspringboot.domain;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>public class User {</span></span>
+<span class="line"><span>    private int id;</span></span>
+<span class="line"><span>    private String name;</span></span>
+<span class="line"><span>    private String password;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    public int getId() {</span></span>
+<span class="line"><span>        return id;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    public void setId(int id) {</span></span>
+<span class="line"><span>        this.id = id;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    public String getUsername() {</span></span>
+<span class="line"><span>        return name;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    public void setUsername(String username) {</span></span>
+<span class="line"><span>        this.name = username;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    public String getPassword() {</span></span>
+<span class="line"><span>        return password;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    public void setPassword(String password) {</span></span>
+<span class="line"><span>        this.password = password;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Override</span></span>
+<span class="line"><span>    public String toString() {</span></span>
+<span class="line"><span>        return &quot;User{&quot; +</span></span>
+<span class="line"><span>                &quot;id=&quot; + id +</span></span>
+<span class="line"><span>                &quot;, username=&#39;&quot; + name + &#39;&#39;&#39; +</span></span>
+<span class="line"><span>                &quot;, password=&#39;&quot; + password + &#39;&#39;&#39; +</span></span>
+<span class="line"><span>                &#39;}&#39;;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>这里说一下如何快速创建getter和setter的方法，在文件中右键，选择【Gererate】， 选择【Getter and Getter】，勾选上对应的属性，点确定就ok了， toString方法一样</p><p>然后我们写一下对应的mapper, 目前我了解到mapper的作用是作为单独的一层，写一些数据库相关操作的映射，这样我们就不必再业务代码中写一堆查询</p><p>在 <code>src/main/java/com/example/javaspringboot/mapper</code> 路径下新建一个 <code>UserMapper</code>的文件，注意创建是这个文件的类型不是 <code>class</code>而是 <code>interface</code>， 写如下代码：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>package com.example.javaspringboot.mapper;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import com.example.javaspringboot.domain.User;</span></span>
+<span class="line"><span>import org.apache.ibatis.annotations.Mapper;</span></span>
+<span class="line"><span>import org.apache.ibatis.annotations.Select;</span></span>
+<span class="line"><span>import org.springframework.stereotype.Repository;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import java.util.List;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>@Mapper</span></span>
+<span class="line"><span>@Repository</span></span>
+<span class="line"><span>public interface UserMapper {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Select(&quot;select * from user&quot;)</span></span>
+<span class="line"><span>    public List&lt;User&gt; findAll();</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>至此，我们就把刚才在数据库中创建的那个user表里的数据都查出来了，我们写个单元测试验证一下</p><p>我们在单元测试的文件中添加如下代码：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>    @Autowired</span></span>
+<span class="line"><span>    private UserMapper userMapper;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Test</span></span>
+<span class="line"><span>    public void testUser () {</span></span>
+<span class="line"><span>        List&lt;User&gt; list = userMapper.findAll();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        System.out.print(list);</span></span>
+<span class="line"><span>    }</span></span></code></pre></div><p>跑一下单元测试，可以看到控制台已经把数据库中的数据打印出来了！</p><blockquote><p>b. 我们还可以使用xml的方式</p></blockquote><p>我们还用domain文件夹下的 User类</p><p>然后我们在mapper文件夹下新建一个接口，叫做 UserXmlMapper, 里面写上如下代码,注意查询数据的方法我们没有写注解：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>ackage com.example.javaspringboot.mapper;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import com.example.javaspringboot.domain.User;</span></span>
+<span class="line"><span>import org.apache.ibatis.annotations.Mapper;</span></span>
+<span class="line"><span>import org.springframework.stereotype.Repository;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import java.util.List;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>@Mapper</span></span>
+<span class="line"><span>@Repository</span></span>
+<span class="line"><span>public interface UserXmlMapper {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    public List&lt;User&gt; findAll();</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>然后我们写一个xml文件，里边有我们需要的sql语句，以及对应方法的映射，我们通常把这种配置文件放在<code>resource</code>文件夹下，在这个 文件夹下新建一个mapper的文件夹，里边新建一个xml文件，叫UserMapper.xml, 注意xml文件是有约束头的，具体内容如下：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span>
+<span class="line"><span>&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span></span>
+<span class="line"><span>&lt;mapper namespace=&quot;com.example.javaspringboot.mapper.UserXmlMapper&quot;&gt;</span></span>
+<span class="line"><span>    &lt;select id=&quot;findAll&quot; resultType=&quot;user&quot;&gt;</span></span>
+<span class="line"><span>        select * from user</span></span>
+<span class="line"><span>    &lt;/select&gt;</span></span>
+<span class="line"><span>&lt;/mapper&gt;</span></span></code></pre></div><p>这里解释一下，namespace是我们刚才写的接口的全路径，表示当前xml和那个文件的映射，id就是对应方法名，resultType是别名，接下来我 们需要配置一下，使这个xml生效</p><p>在 <code>application.yaml</code>文件中添加如下配置：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>mybatis:</span></span>
+<span class="line"><span>  mapper-locations: classpath:mapper/*Mapper.xml # mapper配置文件的路径，这里匹配所有以Mapper.xml结尾的文件</span></span>
+<span class="line"><span>  type-aliases-package: com.example.javaspringboot.domain # domain的全路径</span></span>
+<span class="line"><span># config-location: # 指定mybatis的核心配置文件</span></span></code></pre></div><p>接下来我们测试一下我们写的代码是否能跑通</p><p>同样在我们的测试类中再添加一个方法：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>    @Autowired</span></span>
+<span class="line"><span>    private UserXmlMapper userXmlMapper;</span></span>
+<span class="line"><span>    </span></span>
+<span class="line"><span>    @Test</span></span>
+<span class="line"><span>    public void testUser2 () {</span></span>
+<span class="line"><span>        List&lt;User&gt; list = userXmlMapper.findAll();</span></span>
+<span class="line"><span>        System.out.print(list);</span></span>
+<span class="line"><span>        System.out.print(&quot;测试通过&quot;);</span></span>
+<span class="line"><span>    }</span></span></code></pre></div><p>可以从控制台看到我们打印的数据已经输出了</p><p>至此， springBoot整合其他框架的内容已经介绍完了。</p><blockquote><p>文中所有的代码以及之后的代码已经上传到github和码云中，想要源码的同学关注我得vx公号【凤凰城下的小码农】后，回复【spring】即可获取。</p></blockquote></div></div></main><footer class="VPDocFooter" data-v-3808fea6 data-v-0dac076a><!--[--><!--]--><div class="edit-info" data-v-0dac076a><div class="edit-link" data-v-0dac076a><a class="VPLink link vp-external-link-icon no-icon edit-link-button" href="https://github.com/qisi007/qisi007.github.io/edit/main/docs/entry/server/s2.md" target="_blank" rel="noreferrer" data-v-0dac076a><!--[--><span class="vpi-square-pen edit-link-icon" data-v-0dac076a></span> 在 GitHub 上编辑此页<!--]--></a></div><div class="last-updated" data-v-0dac076a><p class="VPLastUpdated" data-v-0dac076a data-v-a25bacc5>上次更新: <time datetime="2023-09-06T08:45:32.000Z" data-v-a25bacc5></time></p></div></div><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-0dac076a><span class="visually-hidden" id="doc-footer-aria-label" data-v-0dac076a>Pager</span><div class="pager" data-v-0dac076a><a class="VPLink link pager-link prev" href="/entry/server/s1" data-v-0dac076a><!--[--><span class="desc" data-v-0dac076a>Previous page</span><span class="title" data-v-0dac076a>springBoot简介</span><!--]--></a></div><div class="pager" data-v-0dac076a><a class="VPLink link pager-link next" href="/entry/server/s3" data-v-0dac076a><!--[--><span class="desc" data-v-0dac076a>Next page</span><span class="title" data-v-0dac076a>yaml语法</span><!--]--></a></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><footer class="VPFooter has-sidebar" data-v-0a171f02 data-v-abd8d40d><div class="container" data-v-abd8d40d><p class="message" data-v-abd8d40d><a href="https://beian.miit.gov.cn/" target="_blank">冀ICP备2023044822号-2</a></p><p class="copyright" data-v-abd8d40d>Copyright © 2022-present codeLiu</p></div></footer><!--[--><!--]--></div></div>
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"entry_article_h1.md\":\"yZtTkeRf\",\"entry_article_h2.md\":\"BczDrYs5\",\"entry_article_h3.md\":\"B2LfzH1j\",\"entry_article_h4.md\":\"BhhRevur\",\"entry_common_公众号.md\":\"B8IjK9lW\",\"entry_common_小程序.md\":\"B6kRQaGy\",\"entry_front_001vue的seo问题【上】.md\":\"fUtMoJBg\",\"entry_front_002vue的seo问题【下】.md\":\"DXY1t_9o\",\"entry_front_gitee推送代码自动部署到静态资源服务器.md\":\"1QAyk-VL\",\"entry_server_s1.md\":\"D1Y4x6ji\",\"entry_server_s2.md\":\"D70_hI0L\",\"entry_server_s3.md\":\"BzUdHQaD\",\"entry_server_s4.md\":\"CeiMVtoB\",\"entry_server_s5.md\":\"BzMa8FzB\",\"entry_server_s6.md\":\"B3vxyq5X\",\"index.md\":\"CUQCmP0z\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"凤凰城下的小码农\",\"description\":\"一个被敲代码耽误的大艺术家\",\"base\":\"/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"outlineTitle\":\"本页目录\",\"lastUpdatedText\":\"上次更新\",\"logo\":\"/logo.svg\",\"search\":{\"provider\":\"local\"},\"nav\":[{\"text\":\"一天一句毒鸡汤\",\"link\":\"/entry/common/小程序.md\",\"activeMatch\":\"\"},{\"text\":\"前端\",\"link\":\"/entry/front/001vue的seo问题【上】\",\"activeMatch\":\"^/entry/front/\"},{\"text\":\"后端\",\"link\":\"/entry/server/s1\",\"activeMatch\":\"^/entry/server/\"},{\"text\":\"文章\",\"link\":\"/entry/article/h1\",\"activeMatch\":\"^/entry/article/\"},{\"text\":\"我的博客\",\"items\":[{\"text\":\"微信公众号\",\"link\":\"/entry/common/公众号.md\"},{\"text\":\"摸鱼小程序\",\"link\":\"/entry/common/小程序.md\"},{\"text\":\"Github\",\"link\":\"https://github.com/qisi007\"},{\"text\":\"掘金\",\"link\":\"https://juejin.cn/user/3931509311153469/posts\"}]}],\"sidebar\":{\"/entry/front/\":[{\"text\":\"vue\",\"collapsible\":true,\"items\":[{\"text\":\"vue的seo问题【上】\",\"link\":\"/entry/front/001vue的seo问题【上】\"},{\"text\":\"vue的seo问题【下】\",\"link\":\"/entry/front/002vue的seo问题【下】\"},{\"text\":\"gitee推送代码自动部署到静态资源服务器\",\"link\":\"/entry/front/gitee推送代码自动部署到静态资源服务器\"}]},{\"text\":\"黑科技\",\"collapsible\":true,\"items\":[{\"text\":\"gitee推送代码自动部署到静态资源服务器\",\"link\":\"/entry/front/gitee推送代码自动部署到静态资源服务器\"}]}],\"/entry/server/\":[{\"text\":\"springBoot\",\"items\":[{\"text\":\"springBoot简介\",\"link\":\"/entry/server/s1\"},{\"text\":\"springBoot整合其他框架\",\"link\":\"/entry/server/s2\"},{\"text\":\"yaml语法\",\"link\":\"/entry/server/s3\"},{\"text\":\"springBoot自动配置-Condition\",\"link\":\"/entry/server/s4\"},{\"text\":\"springBoot切换web服务器\",\"link\":\"/entry/server/s5\"},{\"text\":\"Enable注解原理\",\"link\":\"/entry/server/s6\"}]}],\"/entry/article/\":[{\"text\":\"年终总结\",\"items\":[{\"text\":\"2019年\",\"link\":\"/entry/article/h1\"},{\"text\":\"2020年\",\"link\":\"/entry/article/h2\"},{\"text\":\"2021年\",\"link\":\"/entry/article/h3\"},{\"text\":\"2022年\",\"link\":\"/entry/article/h4\"}]}]},\"editLink\":{\"pattern\":\"https://github.com/qisi007/qisi007.github.io/edit/main/docs/:path\",\"text\":\"在 GitHub 上编辑此页\"},\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/qisi007\"}],\"footer\":{\"message\":\"<a href=\\\"https://beian.miit.gov.cn/\\\" target=\\\"_blank\\\">冀ICP备2023044822号-2</a>\",\"copyright\":\"Copyright © 2022-present codeLiu\"}},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":true}");</script>
+    
+  </body>
+</html>
