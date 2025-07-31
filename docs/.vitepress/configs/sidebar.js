@@ -17,6 +17,10 @@ function getFrontSidebar() {
         {
           text: 'vue的seo问题【下】',
           link: '/entry/front/002vue的seo问题【下】'
+        },
+        {
+          text: 'gitee推送代码自动部署到静态资源服务器',
+          link: '/entry/front/gitee推送代码自动部署到静态资源服务器'
         }
       ]
     },
