@@ -16,7 +16,12 @@ echo "代码已上传到仓库，开始打包"
 
 sleep 3
 
-pnpm docs:build
+# 下载依赖
+
+pnpm install
+
+pnpm docs:build\
+
 
 echo "打包完成，等待复制站点文件"
 
