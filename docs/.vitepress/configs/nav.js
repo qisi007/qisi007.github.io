@@ -3,6 +3,7 @@ export default [
   { text: '前端', link: '/entry/front/001vue的seo问题【上】', activeMatch: '^/entry/front/' },
   { text: '后端', link: '/entry/server/s1', activeMatch: '^/entry/server/' },
   { text: '文章', link: '/entry/article/h1', activeMatch: '^/entry/article/' },
+  { text: '问题记录', link: '/entry/problem/为什么gitbash能运行shell脚本', activeMatch: '^/entry/problem/' },
   {
     text: '我的博客',
     items: [

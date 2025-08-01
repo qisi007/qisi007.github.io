@@ -1,7 +1,8 @@
 export default {
   '/entry/front/': getFrontSidebar(),
   '/entry/server/': getServerSidebar(),
-  '/entry/article/': getArticleSidebar()
+  '/entry/article/': getArticleSidebar(),
+  '/entry/problem/': getProblemSidebar()
 }
 
 function getFrontSidebar() {
@@ -87,6 +88,20 @@ function getArticleSidebar() {
         {
           text: '2022年',
           link: '/entry/article/h4'
+        }
+      ]
+    }
+  ]
+}
+
+function getProblemSidebar() {
+  return [
+    {
+      text: '问题记录',
+      items: [
+        {
+          text: '为什么git bash能运行shell脚本？',
+          link: '/entry/problem/为什么gitbash能运行shell脚本'
         }
       ]
     }

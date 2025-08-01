@@ -1,3 +1,7 @@
+---
+title: 凤凰城下的小码农
+titleTemplate: 一个被敲代码耽误的大艺术家
+---
 
 ## 1.配置gitee仓库
 
@@ -126,4 +130,4 @@ curl -X POST webhook地址 -H "X-Gitee-Token: 密码
  chmod +x deploy.sh
 ```
 
-最后你就可以修改网站代码，推送，查看你修改的内容是否更新
+最后你就可以修改网站代码，推送，查看你修改的内容是否更新。
